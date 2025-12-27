@@ -1,21 +1,18 @@
-import * as fs from 'fs';
-import * as yaml from 'js-yaml';
-import { CVType } from '../model/CV';
 
-/**
- * Lee y parsea el archivo YAML del CV
- * @param filePath - Ruta al archivo YAML
- * @returns Objeto con los datos del CV
- */
-function loadCV(filePath: string): CVType {
-  try {
-    const fileContents = fs.readFileSync(filePath, 'utf8');
-    const data = yaml.load(fileContents) as CVType;
-    return data;
-  } catch (error) {
-    console.error('Error leyendo el archivo YAML del CV:', error);
-    throw error;
-  }
+import yaml from 'js-yaml';
+import type { CVType } from '../model/CV';
+
+export async function loadCV(filePath: string): Promise<CVType> {
+    try {
+        const response = await fetch(filePath);
+        if (!response.ok) {
+            throw new Error(`Failed to fetch CV: ${response.statusText}`);
+        }
+        const yamlText = await response.text();
+        const cvData = yaml.load(yamlText) as CVType;
+        return cvData;
+    } catch (error) {
+        console.error('Error reading CV YAML file:', error);
+        throw error;
+    }
 }
-
-export { loadCV };
