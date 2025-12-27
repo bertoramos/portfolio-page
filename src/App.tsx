@@ -1,5 +1,5 @@
-import { Redirect, Route } from 'react-router-dom';
-import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
+import { HashRouter, Redirect, Route } from 'react-router-dom';
+import { IonApp, IonContent, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import Home from './pages/Home';
 
@@ -32,21 +32,29 @@ import '@ionic/react/css/palettes/dark.system.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import Template from './components/Template';
 
 setupIonicReact();
 
+const PageDemo: React.FC<{ num: number }> = ({ num }) => (
+  <IonContent>{`Demo Page ${num}`}</IonContent>
+);
+
 const App: React.FC = () => (
   <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route exact path="/home">
+    <HashRouter>
+        <Route path="/">
           <Home />
         </Route>
-        <Route exact path="/">
-          <Redirect to="/home" />
+        
+        <Route path="/page-1">
+          <PageDemo num={1} />
         </Route>
-      </IonRouterOutlet>
-    </IonReactRouter>
+
+        <Route path="/page-2">
+          <PageDemo num={2} />
+        </Route>
+    </HashRouter>
   </IonApp>
 );
 
