@@ -10,6 +10,7 @@ export default defineConfig({
     react(),
     legacy()
   ],
+  base: '/portfolio-page/',
   test: {
     globals: true,
     environment: 'jsdom',
