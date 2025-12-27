@@ -1,7 +1,11 @@
-import { HashRouter, Redirect, Route } from 'react-router-dom';
-import { IonApp, IonContent, IonRouterOutlet, setupIonicReact } from '@ionic/react';
-import { IonReactRouter } from '@ionic/react-router';
+import { HashRouter, Route } from 'react-router-dom';
+import { IonApp, IonContent, setupIonicReact } from '@ionic/react';
+
 import Home from './pages/Home';
+import About from './pages/About';
+import Education from './pages/Education';
+import Experience from './pages/Experience';
+import Projects from './pages/Projects';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -42,17 +46,34 @@ const PageDemo: React.FC<{ num: number }> = ({ num }) => (
 
 const App: React.FC = () => (
   <IonApp>
+    {
+      /*
+       	• HOME
+	      • ABOUT
+	      • EDUCATION
+	      • EXPERIENCE
+        • PROJECTS
+      */
+    }
     <HashRouter>
-        <Route path="/">
-          <Home />
+        <Route exact path="/">
+          <Template title="Home" content={<Home />} />
         </Route>
         
-        <Route path="/page-1">
-          <PageDemo num={1} />
+        <Route exact path="/about">
+          <Template title="About" content={<About />} />
         </Route>
 
-        <Route path="/page-2">
-          <PageDemo num={2} />
+        <Route exact path="/education">
+          <Template title="Education" content={<Education />} />
+        </Route>
+
+        <Route exact path="/experience">
+          <Template title="Experience" content={<Experience />} />
+        </Route>
+
+        <Route exact path="/projects">
+          <Template title="Projects" content={<Projects />} />
         </Route>
     </HashRouter>
   </IonApp>

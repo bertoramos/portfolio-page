@@ -1,15 +1,14 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import './Home.css';
+import './Projects.css';
 
-const Home: React.FC = () => {
+const Projects: React.FC = () => {
   return (
     
     <IonContent fullscreen>
-      HOME
+      PROJECTS
     </IonContent>
     
   );
 };
 
-export default Home;
+export default Projects;

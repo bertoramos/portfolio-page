@@ -1,15 +1,14 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
-import ExploreContainer from '../components/ExploreContainer';
-import './Home.css';
+import './Experience.css';
 
-const Home: React.FC = () => {
+const Experience: React.FC = () => {
   return (
     
     <IonContent fullscreen>
-      HOME
+      EXPERIENCE
     </IonContent>
     
   );
 };
 
-export default Home;
+export default Experience;
