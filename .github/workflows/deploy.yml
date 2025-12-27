@@ -1,4 +1,4 @@
-name: Deploy Ionic React to GitHub Pages
+name: Deploy Ionic React to GitHub Pages via SSH
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: 20
 
       - name: Install dependencies
         run: npm ci
@@ -24,9 +24,19 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.8.1
         with:
-          github_token: ${{ secrets.GH_PAT }}
-          publish_dir: ./dist
-          force_orphan: true
+          ssh-private-key: ${{ secrets.GH_SSH_KEY }}
+
+      - name: Deploy to GitHub Pages
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@users.noreply.github.com"
+          cd dist
+          git init
+          git remote add origin git@github.com:bertoramos/portfolio-page.git
+          git checkout -b gh-pages
+          git add .
+          git commit -m "Deploy via GitHub Actions"
+          git push -f origin gh-pages
