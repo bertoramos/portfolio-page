@@ -1,6 +1,6 @@
 
 import yaml from 'js-yaml';
-import type { CVType } from '../model/CV';
+import { CVType } from '../model/cv';
 
 export async function loadCV(filePath: string): Promise<CVType> {
     try {
