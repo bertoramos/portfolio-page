@@ -82,19 +82,19 @@ const App: React.FC = () => {
         </Route>
         
         <Route exact path="/about">
-          <Template title="About" content={<About />} />
+          <Template title="About" content={<About cv={cv} />} />
         </Route>
 
         <Route exact path="/education">
-          <Template title="Education" content={<Education />} />
+          <Template title="Education" content={<Education cv={cv} />} />
         </Route>
 
         <Route exact path="/experience">
-          <Template title="Experience" content={<Experience />} />
+          <Template title="Experience" content={<Experience cv={cv} />} />
         </Route>
 
         <Route exact path="/projects">
-          <Template title="Projects" content={<Projects />} />
+          <Template title="Projects" content={<Projects cv={cv} />} />
         </Route>
     </HashRouter>
   </IonApp>

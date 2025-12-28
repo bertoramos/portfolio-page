@@ -1,7 +1,8 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import './Projects.css';
+import { CVType } from '../model/cv';
 
-const Projects: React.FC = () => {
+const Projects: React.FC<{ cv: CVType | null }> = ({ cv }) => {
   return (
     
     <IonContent fullscreen>
