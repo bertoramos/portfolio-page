@@ -1,4 +1,4 @@
-import { IonHeader, IonPage, IonIcon, IonToolbar, IonTitle, IonButtons, IonButton } from '@ionic/react';
+import { IonHeader, IonPage, IonIcon, IonToolbar, IonTitle, IonButtons, IonButton, IonMenu, IonContent, IonList, IonItem, IonMenuButton } from '@ionic/react';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
@@ -8,40 +8,73 @@ import "./Template.css";
 
 const Template: React.FC<{ title: string, content: React.ReactNode }> = ({ title, content }) => {
 
+  const [scrolled, setScrolled] = React.useState(false);
+
+  const handleScroll = (event: CustomEvent) => {
+    const scrollTop = event.detail.scrollTop;
+    setScrolled(scrollTop > 0);
+    console.log('Scroll Top:', scrollTop);
+  };
+
+  const menuItems = [
+    { path: '/', label: 'Home' },
+    { path: '/about', label: 'About' },
+    { path: '/education', label: 'Education' },
+    { path: '/experience', label: 'Experience' },
+    { path: '/projects', label: 'Projects' }
+  ];
+
   return (
+    <>
+      { /* Menu for mobile view */ }
+      <IonMenu contentId="main-content">
+        <IonHeader>
+          <IonToolbar color="primary">
+            <IonTitle>Menu</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        <IonContent>
+          <IonList>
+            {menuItems.map(item => (
+              <IonItem key={item.path}>
+                <NavLink exact to={item.path}>{item.label}</NavLink>
+              </IonItem>
+            ))}
+          </IonList>
+        </IonContent>
+      </IonMenu>
+      
+      <IonPage id="main-content">
 
-    <IonPage>
+        
+        <IonHeader id="main_header">
 
-      <IonHeader id="main_header">
-        <IonToolbar>
-          
-          
-          <IonTitle><IonIcon icon={logoIonic} />Portfolio</IonTitle>
+          <IonToolbar id="menu_toolbar" className={scrolled ? 'scrolled' : ''}>
 
-          <IonButtons slot="end">
-            <IonButton>
-              <NavLink exact to="/">Home</NavLink>
-            </IonButton>
-            <IonButton>
-              <NavLink exact to="/about">About</NavLink>
-            </IonButton>
-            <IonButton>
-              <NavLink exact to="/education">Education</NavLink>
-            </IonButton>
-            <IonButton>
-              <NavLink exact to="/experience">Experience</NavLink>
-            </IonButton>
-            <IonButton>
-              <NavLink exact to="/projects">Projects</NavLink>
-            </IonButton>
-          </IonButtons>
-        </IonToolbar>
-      </IonHeader>
+            { /* Menu button for mobile view */ }
+            <IonButtons slot="start">
+              <IonMenuButton className="mobile-menu-btn" />
+            </IonButtons>
+            
+            { /* Title with logo */ }
+            <IonTitle><IonIcon icon={logoIonic} />Portfolio</IonTitle>
 
-      {content}
+            { /* Navigation for desktop view */ }
+            <IonButtons slot="end" className="desktop-nav">
+              {menuItems.map(item => (
+                <IonButton key={item.path}>
+                  <NavLink exact to={item.path}>{item.label}</NavLink>
+                </IonButton>
+              ))}
+            </IonButtons>
+          </IonToolbar>
 
-    </IonPage>
-
+        </IonHeader>
+        <IonContent onIonScroll={handleScroll} scrollEvents={true}>
+          {content}
+        </IonContent>
+      </IonPage>
+    </>
   );
 };
 

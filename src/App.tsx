@@ -37,15 +37,36 @@ import '@ionic/react/css/palettes/dark.system.css';
 /* Theme variables */
 import './theme/variables.css';
 import Template from './components/Template';
+import { useEffect, useState } from 'react';
+import { CVType } from './model/CV';
+import { loadCV } from './controller/cv_load';
 
 setupIonicReact();
 
-const PageDemo: React.FC<{ num: number }> = ({ num }) => (
-  <IonContent>{`Demo Page ${num}`}</IonContent>
-);
+const App: React.FC = () => {
+  const baseUrl = import.meta.env.BASE_URL;
 
-const App: React.FC = () => (
-  <IonApp>
+  const [cv, setCV] = useState<CVType | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  
+  useEffect(() => {
+    const fetchCV = async () => {
+      try {
+        const cvData = await loadCV(`${baseUrl}cv-alberto.yaml`);
+        setCV(cvData);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Error loading CV');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCV();
+  }, []);
+
+  return (
+    <IonApp>
     {
       /*
        	• HOME
@@ -57,7 +78,7 @@ const App: React.FC = () => (
     }
     <HashRouter>
         <Route exact path="/">
-          <Template title="Home" content={<Home />} />
+          <Template title="Home" content={<Home cv={cv} />} />
         </Route>
         
         <Route exact path="/about">
@@ -77,6 +98,7 @@ const App: React.FC = () => (
         </Route>
     </HashRouter>
   </IonApp>
-);
+  );
+};
 
 export default App;

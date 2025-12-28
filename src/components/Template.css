@@ -1,0 +1,27 @@
+
+/* Desktop version */
+@media (min-width: 768px) {
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+
+/* Mobile version */
+@media (max-width: 767px) {
+  .desktop-nav {
+    display: none;
+  }
+}
+
+#menu_header {
+  margin-bottom: 20px;
+  padding-bottom: 30px;
+}
+
+#menu_toolbar {
+  --background: transparent;
+}
+
+#menu_toolbar.scrolled {
+  --background: red;
+}
