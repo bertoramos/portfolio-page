@@ -13,7 +13,6 @@ const Template: React.FC<{ title: string, content: React.ReactNode }> = ({ title
   const handleScroll = (event: CustomEvent) => {
     const scrollTop = event.detail.scrollTop;
     setScrolled(scrollTop > 0);
-    console.log('Scroll Top:', scrollTop);
   };
 
   const menuItems = [
@@ -47,7 +46,11 @@ const Template: React.FC<{ title: string, content: React.ReactNode }> = ({ title
       <IonPage id="main-content">
 
         
-        <IonHeader id="main_header">
+        <IonHeader
+          id="main_header"
+          translucent={true}
+          className='ion-no-border'
+          >
 
           <IonToolbar id="menu_toolbar" className={scrolled ? 'scrolled' : ''}>
 
@@ -60,17 +63,24 @@ const Template: React.FC<{ title: string, content: React.ReactNode }> = ({ title
             <IonTitle><IonIcon icon={logoIonic} />Portfolio</IonTitle>
 
             { /* Navigation for desktop view */ }
-            <IonButtons slot="end" className="desktop-nav">
+            <div
+              slot="end"
+              className="desktop-nav">
               {menuItems.map(item => (
-                <IonButton key={item.path}>
-                  <NavLink exact to={item.path}>{item.label}</NavLink>
-                </IonButton>
+                <NavLink 
+                  key={item.path}
+                  exact 
+                  to={item.path}
+                  className="p-8 !text-white-500 hover:!text-sky-100 hover:font-bold transition-colors duration-300"
+                  >
+                  {item.label}
+                </NavLink>
               ))}
-            </IonButtons>
+            </div>
           </IonToolbar>
 
         </IonHeader>
-        <IonContent onIonScroll={handleScroll} scrollEvents={true}>
+        <IonContent fullscreen onIonScroll={handleScroll} scrollEvents={true}>
           {content}
         </IonContent>
       </IonPage>

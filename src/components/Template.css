@@ -1,4 +1,3 @@
-
 /* Desktop version */
 @media (min-width: 768px) {
   .mobile-menu-btn {
@@ -20,8 +19,25 @@
 
 #menu_toolbar {
   --background: transparent;
+  position: relative;
 }
 
-#menu_toolbar.scrolled {
-  --background: red;
+#menu_toolbar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: transparent;
+  backdrop-filter: blur(0px);
+  
+  transition: background 0.8s ease-in-out, backdrop-filter 0.3s ease-in-out;
+  z-index: -1;
+}
+
+#menu_toolbar.scrolled::before {
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
 }

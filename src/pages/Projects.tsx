@@ -7,7 +7,7 @@ const Projects: React.FC<{ cv: CVType | null }> = ({ cv }) => {
     
     <IonContent fullscreen>
       <div className='snap-container'>
-        <div className='snap-item'>
+        <div className='snap-item bg-red-500'>
           Project 1
         </div>
         <div className='snap-item bg-green-500'>
