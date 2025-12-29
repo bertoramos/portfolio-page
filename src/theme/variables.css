@@ -2,3 +2,17 @@
 http://ionicframework.com/docs/theming/ */
 
 @import "tailwindcss";
+
+:root {
+    --app_light_background_color: #eaf4f4;
+    --app_medium_background_color: #d9ebeb;
+    --app_dark_background_color: #014f86;
+    --app_main_text_color: #333;
+    --app_clear_highlighted_text_color: #3fa7d6;
+    --app_dark_highlighted_text_color: #ff6f59;
+    --app_relevant_button_bg_color: #ff6f59;
+    --app_relevant_button_text_color: #eaf4f4;
+    --app_button_bg_color: #3fa7d6;
+    --app_button_text_color: #8390a5;
+    --app_decoration_color: #f4d35e;
+}

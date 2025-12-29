@@ -1,24 +1,30 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import './Projects.css';
 import { CVType } from '../model/cv';
+import ProjectComponent from '../components/ProjectComponent';
 
 const Projects: React.FC<{ cv: CVType | null }> = ({ cv }) => {
   return (
-    
+
     <IonContent fullscreen>
       <div className='snap-container'>
-        <div className='snap-item bg-red-500'>
-          Project 1
-        </div>
-        <div className='snap-item bg-green-500'>
-          Project 2
-        </div>
-        <div className='snap-item bg-blue-500'>
-          Project 3
-        </div>
+        {
+          cv?.projects.map((project, index) => (
+            <div key={index} className='snap-item bg-sky-500'>
+              <ProjectComponent
+                title={project.name}
+                description={project.description}
+                short_description={project.short_description}
+                url={project.url}
+                image={"image"}
+                technologies={project.technologies}
+              />
+            </div>
+          ))
+        }
       </div>
     </IonContent>
-    
+
   );
 };
 
