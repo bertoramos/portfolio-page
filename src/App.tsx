@@ -38,7 +38,7 @@ import '@ionic/react/css/palettes/dark.system.css';
 import './theme/variables.css';
 import Template from './components/Template';
 import { useEffect, useState } from 'react';
-import { CVType } from './model/CV';
+import { CVType } from './model/cv';
 import { loadCV } from './controller/cv_load';
 
 setupIonicReact();
@@ -78,23 +78,23 @@ const App: React.FC = () => {
     }
     <HashRouter>
         <Route exact path="/">
-          <Template title="Home" content={<Home cv={cv} />} />
+          <Template title="Home" content={<Home cv={cv} />} noContentScroll={true} />
         </Route>
         
         <Route exact path="/about">
-          <Template title="About" content={<About cv={cv} />} />
+          <Template title="About" content={<About cv={cv} />} noContentScroll={false} />
         </Route>
 
         <Route exact path="/education">
-          <Template title="Education" content={<Education cv={cv} />} />
+          <Template title="Education" content={<Education cv={cv} />} noContentScroll={true} />
         </Route>
 
         <Route exact path="/experience">
-          <Template title="Experience" content={<Experience cv={cv} />} />
+          <Template title="Experience" content={<Experience cv={cv} />} noContentScroll={true} />
         </Route>
 
         <Route exact path="/projects">
-          <Template title="Projects" content={<Projects cv={cv} />} />
+          <Template title="Projects" content={<Projects cv={cv} />} noContentScroll={true} />
         </Route>
     </HashRouter>
   </IonApp>

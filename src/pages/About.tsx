@@ -6,7 +6,13 @@ const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
   return (
     
     <>
-      ABOUT
+    {
+      Array.from({ length: 10 }, (_, i) => (
+        <p key={i}>{cv?.about.about_description}</p>
+      ))
+    }
+      
+
     </>
     
   );
