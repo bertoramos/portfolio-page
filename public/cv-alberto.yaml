@@ -129,7 +129,8 @@ about:
 experience:
   - position: "Data analyst"
     company: "EmoturLAB - Tides"
-    period: "Sep 2025 - Mar 2026"
+    startDate: "Sep 2025"
+    endDate: "Mar 2026"
     location: "Las Palmas de Gran Canaria"
     url: "https://emotur.ulpgc.es/emoturlab/"
     description: '"Spain Living Lab" project: Application of artificial intelligence, metaverse and neurotechnology for the transformation of tourist behaviour and operational improvement in the tourism sector. Data analysis and visualization of tourism data in the Canary Islands through the development of dashboards and reports to support decision-making processes.'
@@ -142,7 +143,8 @@ experience:
 
   - position: "Data scientist"
     company: "Fundación Universitaria de Las Palmas (FULP)"
-    period: "Dec 2023 - Dec 2024"
+    startDate: "Dec 2023"
+    endDate: "Dec 2024"
     location: "Las Palmas de Gran Canaria"
     url: "www.fulp.es"
     description: '"Investigo" programme: "SMART GIP: Applying Artificial Intelligence (AI) to Integrated Project Management". Optimization of key processes through development through the development of a platform for payroll management and electronic invoicing.'
@@ -158,7 +160,8 @@ experience:
 
   - position: "Computer scientist"
     company: "Subsea Mechatronics (SSM)"
-    period: "Jan 2022 - Jul 2023"
+    startDate: "Jan 2022"
+    endDate: "Jul 2023"
     location: "Las Palmas de Gran Canaria"
     url: "www.ssmrovs.com"
     description: '"Investigo" programme: "IngenIoT". Improving the perception of the underwater environment through 3D reconstruction and analysis of campaign data.'
@@ -172,7 +175,8 @@ experience:
 
   - position: "Computer scientist internship"
     company: "IUCTC ULPGC"
-    period: "Sep 2019 - Ene 2020"
+    startDate: "Sep 2019"
+    endDate: "Ene 2020"
     location: "Las Palmas de Gran Canaria"
     url: "www.ciberlandia.org"
     description: "Computer science internships. Support in the design and development of activities for the Cyberlandia Project and the Science Week."
@@ -187,7 +191,8 @@ experience:
 education:
   - degree: "PhD in Bussiness, Internet and Communications Technologies"
     institution: "ULPGC"
-    period: "Oct 2022 - Present"
+    startDate: "Oct 2022"
+    endDate: "Present"
     location: "Las Palmas de Gran Canaria"
     url: "https://www2.ulpgc.es/plan-estudio/6024"
     description: "A multidisciplinary programme focusing on the development and management of information, communication and knowledge technologies and their socio-economic impact."
@@ -196,7 +201,8 @@ education:
 
   - degree: "Master's Degree in Intelligent Systems and Numerical Applications in Engineering"
     institution: "ULPGC"
-    period: "Oct 2020 - Sep 2022"
+    startDate: "Oct 2020"
+    endDate: "Sep 2022"
     location: "Las Palmas de Gran Canaria"
     url: "www.siani.es"
     description: "The programme has been designed to equip students with the necessary skills and tools to initiate R&D&I activities in areas such as artificial intelligence and numerical applications in engineering. The programme is taught by the University Institute of Intelligent Systems and Numerical Applications in Engineering (SIANI), a research and teaching centre for postgraduate studies attached to the ULPGC."
@@ -209,7 +215,8 @@ education:
 
   - degree: "Degree in Computer Engineering with a major in Computer Science"
     institution: "ULPGC"
-    period: "Jun 2016 - Jul 2020"
+    startDate: "Jun 2016"
+    endDate: "Jul 2020"
     location: "Las Palmas de Gran Canaria"
     url: "www.eii.ulpgc.es"
     description: "The programme offers a comprehensive training in computer science with a focus on multidisciplinary research and innovation tasks. It prepares students for a range of tasks, from theoretical analysis to software development, addressing topics such as algorithms and computational complexity, systems modelling and analysis, user interface design and evaluation, intelligent systems and data mining, advanced numerical methods, language processing and Semantic Web technologies. This approach combines theoretical foundations with practical tools, enabling students to solve complex problems and develop innovative solutions."
@@ -225,6 +232,7 @@ projects:
   - name: "Dron assisted Indoor Positioning System"
     short_description: Implements a drone capture system with a mobile device and a 3D application to capture Bluetooth Low Energy signals, enhancing the efficiency of Indoor Positioning Systems in GPS denied environments.
     description: This work was developed in the context of Indoor Positioning Systems (IPS) based on Bluetooth Low Energy signals. IPS makes it possible to locate people or objects in environments where the reception of the Global Positioning System (GPS) signal is inaccessible or very weak, such as buildings, subway stations, etc. To implement these systems, an environment survey methodology to gather Received Signal Strength Indicators is required. Previous projects have proven that using an automated robotic platform reduces capture time and increases performance of positioning. This work is intended to use a Unmanned Aerial Vehicle (UAV) to capture data from Bluetooth Low Energy beacons. The capture will be done via an on-board mobile device and a 3D application that helps the pilot to follow a route.
+    date: "2022"
     technologies:
       - *tech_android
       - *tech_blender
@@ -232,9 +240,10 @@ projects:
       - *tech_marvelmind
       - *tech_latex
     url: "http://hdl.handle.net/10553/118069"
-
+    
   - name: "Development of a communication module in Blender for interoperation with a robotic platform"
     short_description: This project focuses on automating signal collection for Indoor Positioning Systems using a software solution that includes 3D scenario design tools and a communication module for real-time tracking of a robotic platform.
+    date: "2020"
     description: This project was developed in the context of Indoor Positioning Systems. The most used devices are Bluetooth Low Energy beacons or WiFi access points. These positioning systems require a environment survey procedure during which a radio-map is constructed by laboriously collecting Received Signal Strength Indicators. The collection of these signals is the necessary basis for correct functioning of the IPS. After an evaluation of different signal collecting methods, it was necessary to choose a robotic platform to automate the process. This work proposes the creation of a software solution that includes tools that facilitate 3D scenario design and a communication module with platform. Communication module permits design and send custom navigations plans, and a real-time tracking of a robotic platform.
     technologies:
       - *tech_python

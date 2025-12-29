@@ -36,7 +36,8 @@ interface ExperienceType {
 interface EducationType {
   degree: string;
   institution: string;
-  period: string;
+  startDate: string;
+  endDate: string | null;
   location: string;
   url: string;
   description: string;

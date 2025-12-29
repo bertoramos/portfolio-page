@@ -1,0 +1,9 @@
+.education-bg {
+    min-height: 100vh;
+}
+
+
+ion-accordion.accordion-expanding,
+ion-accordion.accordion-expanded {
+    margin: 2vh 0;
+}
