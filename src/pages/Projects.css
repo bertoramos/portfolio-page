@@ -1,4 +1,4 @@
-.snap-item {
+.project-snap-section {
   scroll-snap-align: start;
   scroll-snap-stop: always;
   height: 100vh;
@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-.snap-container {
+.project-snap-container {
   scroll-snap-type: y mandatory;
   overflow-y: scroll;
   height: 100vh;

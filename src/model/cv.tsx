@@ -52,6 +52,7 @@ interface ProjectType {
   description: string;
   technologies: TechnologyType[];
   url: string;
+  image: string;
 }
 
 interface CVType {

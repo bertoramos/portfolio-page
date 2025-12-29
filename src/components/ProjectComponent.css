@@ -1,87 +1,3 @@
-.project-component-grid {
-    margin-top: 0vh;
-    
-    background-color: var(--app_light_background_color);
-    
-    @media screen and (max-width: 768px) {
-        margin: 0;
-    }
-}
-
-.project-component-center-column {
-    @media screen and (max-width: 768px) {
-        
-        position: relative;
-        top: 0;
-        margin-top: 0;
-        display: flex;
-        flex-direction: column;
-        /* Opcional: organiza el contenido verticalmente */
-        align-items: center;
-        /* Centra horizontalmente los elementos */
-        text-align: center;
-        /* Centra el texto dentro de los elementos */
-        height: 100%;
-        /* Asegura que el contenedor use todo el espacio disponible si es necesario */
-    }
-}
-
-.project-component-image-column {
-    margin-top: 15%;
-    margin-left: -5%;
-
-    @media screen and (max-width: 768px) {
-        margin-left: 0;
-        height: 50%;
-    }
-}
-
-.project-component-image-column img {
-    border-radius: 50px;
-
-    @media screen and (max-width: 768px) {
-        height: 80%;
-        width: 80%;
-        border-radius: 25px;
-        margin: 0;
-        padding: 0;
-    }
-}
-
-.project-component-title {
-    font-size: 5vh;
-
-    margin-left: 10%;
-    color: var(--app_main_text_color);
-    
-    @media screen and (max-width: 768px) {
-        margin: 1;
-        padding: 3;
-        font-size: 2vh;
-    }
-}
-
-.project-component-description {
-    font-family: 'Source Code Pro Light', sans-serif;
-    font-size: 3vh;
-
-    margin-left: 10%;
-
-    @media screen and (max-width: 768px) {
-        margin: 0;
-        padding: 3vh;
-        font-size: 2vh;
-    }
-}
-
-.project-component-description ion-button {
-    color: var(--app_clear_highlighted_text_color);
-}
-
-.project-technologies-container ion-chip * {
-    color: var(--app_main_text_color);
-}
-
 .project-detail-modal {
     --width: 80%;
     --height: 80%;
@@ -117,11 +33,6 @@
     font-family: "Source Code Pro Light";
 }
 
-.project-component-description-text {
-    color: var(--app_main_text_color);
-    font-family: "Source Code Pro Light";
-}
-
 .project-detail-justify {
     text-align: justify;
     text-justify: inter-word;
@@ -133,8 +44,4 @@
     @media screen and (max-width: 768px) {
         padding: 0;
     }
-}
-
-.project-detail-image-column {
-    
 }

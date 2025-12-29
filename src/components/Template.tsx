@@ -6,7 +6,7 @@ import { logoIonic } from 'ionicons/icons';
 
 import "./Template.css";
 
-const Template: React.FC<{ title: string, content: React.ReactNode }> = ({ title, content }) => {
+const Template: React.FC<{ title: string, content: React.ReactNode, noContentScroll?: boolean }> = ({ title, content, noContentScroll = false }) => {
 
   const [scrolled, setScrolled] = React.useState(false);
 
@@ -80,7 +80,7 @@ const Template: React.FC<{ title: string, content: React.ReactNode }> = ({ title
           </IonToolbar>
 
         </IonHeader>
-        <IonContent fullscreen onIonScroll={handleScroll} scrollEvents={true}>
+        <IonContent fullscreen onIonScroll={handleScroll} scrollEvents={true} scrollY={!noContentScroll}>
           {content}
         </IonContent>
       </IonPage>

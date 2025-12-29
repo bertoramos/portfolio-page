@@ -240,6 +240,7 @@ projects:
       - *tech_marvelmind
       - *tech_latex
     url: "http://hdl.handle.net/10553/118069"
+    image: "/assets/images/projects/drone_ips.webp"
     
   - name: "Development of a communication module in Blender for interoperation with a robotic platform"
     short_description: This project focuses on automating signal collection for Indoor Positioning Systems using a software solution that includes 3D scenario design tools and a communication module for real-time tracking of a robotic platform.
@@ -250,3 +251,4 @@ projects:
       - *tech_blender
       - *tech_latex
     url: "http://hdl.handle.net/10553/77830"
+    image: "/assets/images/projects/blender_ips.webp"
