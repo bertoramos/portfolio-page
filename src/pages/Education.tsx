@@ -32,7 +32,7 @@ const Education: React.FC<{ cv: CVType | null }> = ({ cv }) => {
                           <IonIcon icon={locationOutline} /> {edu.location}
                         </IonCol>
                         <IonCol size="auto">
-                          <IonIcon icon={globe} /> <a href={"http://" + edu.url} target="_blank">{edu.url}</a>
+                          <IonIcon icon={globe} /> <a href={edu.url} target="_blank">{edu.url}</a>
                         </IonCol>
                       </IonRow>
                     </IonCardHeader>

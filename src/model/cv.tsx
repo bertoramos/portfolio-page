@@ -22,11 +22,12 @@ interface AboutType {
 interface ExperienceType {
   position: string;
   company: string;
-  period: string;
+  startDate: string;
+  endDate: string | null;
   location: string;
   url: string;
   description: string;
-  technologies: (TechnologyType | string)[];
+  technologies: TechnologyType[];
   urls?: Array<{
     name: string;
     link: string;
