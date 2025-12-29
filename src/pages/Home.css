@@ -1,0 +1,71 @@
+
+#home-content {
+    --ion-background-color: var(--app_light_background_color);
+}
+
+#home-grid {
+    height: 100%;
+    background-color: var(--app_light_background_color);
+
+    @media screen and (max-width: 768px) {
+        height: 40%;
+    }
+}
+
+#home-text-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#home-image-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#home-image{
+    height: 100%;
+    object-fit: cover;
+}
+
+#home-text {
+    margin: 10% 0% 0% 10%;
+    padding: 0;
+    position: relative;
+    text-align: left;
+    
+    height: 100%;
+    width: 100%;
+
+    @media screen and (max-width: 768px) {
+        text-align: center;
+        margin: 0;
+    }
+}
+
+#home-title {
+    font-family: 'Source Code Pro Black', sans-serif;
+    font-size: 9vh;
+    color: var(--app_main_text_color);
+    padding-bottom: 0;
+    margin-bottom: 5%;
+
+    @media screen and (max-width: 768px) {
+        font-size: 4vh;
+    }
+}
+
+#home-subtitle {
+    font-family: 'Source Code Pro Light', sans-serif;
+    font-size: 4vh;
+    color: var(--app_main_text_color);
+    padding-top: 0;
+    margin-top: 0;
+
+    @media screen and (max-width: 768px) {
+        font-size: 2vh;
+    }
+}
