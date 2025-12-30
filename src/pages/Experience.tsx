@@ -5,6 +5,7 @@ import { locationOutline, globe } from 'ionicons/icons';
 
 const Experience: React.FC<{ cv: CVType | null }> = ({ cv }) => {
 
+  const baseURL = import.meta.env.BASE_URL || '';
   const experience = cv?.experience || [];
 
   return (
@@ -39,10 +40,12 @@ const Experience: React.FC<{ cv: CVType | null }> = ({ cv }) => {
                       <IonCardContent>
                         <IonRow>
                           <IonCol offset="0" size="12" size-md="2" push-md="9.5" className="ion-text-center">
-                            <img src={"logo"} alt={"logo"} />
+                            <img src={baseURL + exp.company_logo} alt={"logo " + exp.company} />
                           </IonCol>
                           <IonCol size="12" size-md="9" pull-md="2">
+                            
                             <div>{exp.description}</div>
+                            
                             <div className='ion-padding-top'>{
                               exp.technologies.map((tech, index) => (
                                 <IonCol key={index} size="auto" >

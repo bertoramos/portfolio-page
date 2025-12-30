@@ -6,19 +6,19 @@ technologies:
   
   powerbi: &tech_powerbi
     name: PowerBI
-    icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/powerbi.svg"
+    icon: "https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
   
   dash: &tech_dash
     name: Dash
-    icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/plotly.svg"
+    icon: "/portfolio-page/assets/logos/technologies/plotly.svg"
   
   snowflake: &tech_snowflake
     name: Snowflake
-    icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/snowflake.svg"
+    icon: "/portfolio-page/assets/logos/technologies/snowflake.svg"
   
   dbt: &tech_dbt
     name: DBT
-    icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/dbt.svg"
+    icon: "/portfolio-page/assets/logos/technologies/dbt.svg"
   
   spacy: &tech_spacy
     name: Spacy
@@ -34,7 +34,7 @@ technologies:
   
   laravel: &tech_laravel
     name: Laravel
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg"
+    icon: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg"
   
   cpp: &tech_cpp
     name: C++
@@ -54,7 +54,7 @@ technologies:
   
   lego: &tech_lego
     name: Lego Mindstorm EV3
-    icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/lego.svg"
+    icon: "/portfolio-page/assets/logos/technologies/ev3.svg"
   
   inkscape: &tech_inkscape
     name: Inkscape
@@ -66,7 +66,7 @@ technologies:
   
   waspmote: &tech_waspmote
     name: Waspmote
-    icon: ""
+    icon: "/portfolio-page/assets/logos/technologies/waspmote.svg"
   
   java: &tech_java
     name: Java
@@ -94,11 +94,11 @@ technologies:
   
   ble: &tech_ble
     name: BLE
-    icon: ""
+    icon: "https://upload.wikimedia.org/wikipedia/commons/e/e1/Bluetooth_Figure_Mark_Logo.svg"
   
   marvelmind: &tech_marvelmind
     name: Marvelmind
-    icon: ""
+    icon: "/portfolio-page/assets/logos/technologies/marvelmind.svg"
   
   latex: &tech_latex
     name: Latex
@@ -129,6 +129,7 @@ about:
 experience:
   - position: "Data analyst"
     company: "EmoturLAB - Tides"
+    company_logo: "/assets/logos/companies/logoEmotur.svg"
     startDate: "Sep 2025"
     endDate: "Mar 2026"
     location: "Las Palmas de Gran Canaria"
@@ -143,6 +144,7 @@ experience:
 
   - position: "Data scientist"
     company: "Fundación Universitaria de Las Palmas (FULP)"
+    company_logo: "/assets/logos/companies/logoFULP.svg"
     startDate: "Dec 2023"
     endDate: "Dec 2024"
     location: "Las Palmas de Gran Canaria"
@@ -160,6 +162,7 @@ experience:
 
   - position: "Computer scientist"
     company: "Subsea Mechatronics (SSM)"
+    company_logo: "/assets/logos/companies/logoSSM.svg"
     startDate: "Jan 2022"
     endDate: "Jul 2023"
     location: "Las Palmas de Gran Canaria"
@@ -175,6 +178,7 @@ experience:
 
   - position: "Computer scientist internship"
     company: "IUCTC ULPGC"
+    company_logo: "/assets/logos/companies/logoIUCTC.svg"
     startDate: "Sep 2019"
     endDate: "Ene 2020"
     location: "Las Palmas de Gran Canaria"
@@ -191,16 +195,23 @@ experience:
 education:
   - degree: "PhD in Bussiness, Internet and Communications Technologies"
     institution: "ULPGC"
+    institution_logo: "/assets/logos/institutions/logoDoctorado.svg"
     startDate: "Oct 2022"
     endDate: "Present"
     location: "Las Palmas de Gran Canaria"
     url: "https://www2.ulpgc.es/plan-estudio/6024"
     description: "A multidisciplinary programme focusing on the development and management of information, communication and knowledge technologies and their socio-economic impact."
     grade: null
-    technologies: []
+    technologies: 
+      - *tech_python
+      - *tech_blender
+      - *tech_ble
+      - *tech_marvelmind
+      - *tech_latex
 
   - degree: "Master's Degree in Intelligent Systems and Numerical Applications in Engineering"
     institution: "ULPGC"
+    institution_logo: "/assets/logos/institutions/logoSIANI.svg"
     startDate: "Oct 2020"
     endDate: "Sep 2022"
     location: "Las Palmas de Gran Canaria"
@@ -215,6 +226,7 @@ education:
 
   - degree: "Degree in Computer Engineering with a major in Computer Science"
     institution: "ULPGC"
+    institution_logo: "/assets/logos/institutions/logoEII.svg"
     startDate: "Jun 2016"
     endDate: "Jul 2020"
     location: "Las Palmas de Gran Canaria"

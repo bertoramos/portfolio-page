@@ -22,6 +22,7 @@ interface AboutType {
 interface ExperienceType {
   position: string;
   company: string;
+  company_logo: string;
   startDate: string;
   endDate: string | null;
   location: string;
@@ -37,6 +38,7 @@ interface ExperienceType {
 interface EducationType {
   degree: string;
   institution: string;
+  institution_logo: string;
   startDate: string;
   endDate: string | null;
   location: string;

@@ -5,6 +5,7 @@ import { globe, locationOutline } from 'ionicons/icons';
 
 const Education: React.FC<{ cv: CVType | null }> = ({ cv }) => {
 
+  const baseURL = import.meta.env.BASE_URL || '';
   const education = cv?.education || [];
 
   return (
@@ -39,7 +40,7 @@ const Education: React.FC<{ cv: CVType | null }> = ({ cv }) => {
                     <IonCardContent>
                       <IonRow>
                         <IonCol offset="0" size="12" size-md="2" push-md="9.5" className="ion-text-center">
-                          <img src={"logo"} alt={"logo"} />
+                          <img src={baseURL + edu.institution_logo} alt={"logo " + edu.institution} />
                         </IonCol>
                         <IonCol size="12" size-md="9" pull-md="2">
                           <div>{edu.description}</div>
