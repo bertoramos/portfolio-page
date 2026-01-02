@@ -55,7 +55,8 @@ export default function Contact({ cv, isOpen, onClose }: { cv: CVType | null, is
                                         shape="round"
                                         fill="clear"
                                         href={"cvurl"}>
-                                        <IonIcon className="ion-padding" size="large" slot="icon-only" icon={download} /> <span style={{ "textAlign": "center", "fontFamily": "Source Code Pro Black" }}>resume</span>
+                                        <IonIcon className="ion-padding" size="large" slot="icon-only" icon={download} />
+                                        <span className="pr-5 text-center">resume</span>
                                     </IonButton>
                                 </div>
                             </IonRow>
