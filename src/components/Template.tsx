@@ -6,6 +6,7 @@ import { chatbubblesOutline, logoIonic } from 'ionicons/icons';
 
 import "./Template.css";
 import Contact from '../pages/Contact';
+import Menu from './Menu';
 
 const Template: React.FC<{ title: string, content: React.ReactNode, noContentScroll?: boolean }> = ({ title, content, noContentScroll = false }) => {
 
@@ -27,24 +28,8 @@ const Template: React.FC<{ title: string, content: React.ReactNode, noContentScr
 
   return (
     <>
-      { /* Menu for mobile view */ }
-      <IonMenu contentId="main-content">
-        <IonHeader>
-          <IonToolbar color="primary">
-            <IonTitle>Menu</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <IonContent>
-          <IonList>
-            {menuItems.map(item => (
-              <IonItem key={item.path}>
-                <NavLink exact to={item.path}>{item.label}</NavLink>
-              </IonItem>
-            ))}
-          </IonList>
-        </IonContent>
-      </IonMenu>
-      
+      <Menu />
+
       <IonPage id="main-content">
         
         <IonHeader
@@ -63,21 +48,6 @@ const Template: React.FC<{ title: string, content: React.ReactNode, noContentScr
             { /* Title with logo */ }
             <IonTitle><IonIcon icon={logoIonic} />Portfolio</IonTitle>
 
-            { /* Navigation for desktop view */ }
-            <div
-              slot="end"
-              className="desktop-nav">
-              {menuItems.map(item => (
-                <NavLink 
-                  key={item.path}
-                  exact 
-                  to={item.path}
-                  className="p-8 !text-white-500 hover:!text-sky-100 hover:font-bold transition-colors duration-300"
-                  >
-                  {item.label}
-                </NavLink>
-              ))}
-            </div>
           </IonToolbar>
 
         </IonHeader>
