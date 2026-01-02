@@ -18,14 +18,6 @@ const Template: React.FC<{ title: string, content: React.ReactNode, noContentScr
     setScrolled(scrollTop > 0);
   };
 
-  const menuItems = [
-    { path: '/', label: 'Home' },
-    { path: '/about', label: 'About' },
-    { path: '/education', label: 'Education' },
-    { path: '/experience', label: 'Experience' },
-    { path: '/projects', label: 'Projects' }
-  ];
-
   return (
     <>
       <Menu />

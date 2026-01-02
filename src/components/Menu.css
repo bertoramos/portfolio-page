@@ -11,10 +11,25 @@
     background-color: black;
 }
 
+#menu_button {
+  display:flex;
+  position: fixed;
+  top: 1vh;
+  right: 1vh;
+  z-index: 1005;
+}
+
+.main-menu {
+
+}
+
 .menu-open {
     opacity: 1;
+    transition: opacity 0.5s ease-in-out;
 }
 
 .menu-closed {
     opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
 }
