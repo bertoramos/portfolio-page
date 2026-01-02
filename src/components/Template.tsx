@@ -10,7 +10,6 @@ import Menu from './Menu';
 
 const Template: React.FC<{ title: string, content: React.ReactNode, noContentScroll?: boolean, menuOpen: boolean, toggleMenu: () => void }> = ({ title, content, noContentScroll = false, menuOpen, toggleMenu }) => {
 
-  const [isContactOpen, setIsContactOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
 
   const handleScroll = (event: CustomEvent) => {
@@ -47,15 +46,7 @@ const Template: React.FC<{ title: string, content: React.ReactNode, noContentScr
           {content}
         </IonContent>
         
-        <IonButton
-          id="contact_button"
-          shape="round"
-          onClick={() => setIsContactOpen(isContactOpen => !isContactOpen)}
-          >
-          <IonIcon slot="start" icon={chatbubblesOutline} />
-          Contact
-        </IonButton>
-        <Contact isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
+        
       </IonPage>
     </>
   );

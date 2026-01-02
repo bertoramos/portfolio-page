@@ -1,5 +1,5 @@
 import { HashRouter, Route } from 'react-router-dom';
-import { IonApp, IonContent, setupIonicReact } from '@ionic/react';
+import { IonApp, IonButton, IonContent, IonIcon, setupIonicReact } from '@ionic/react';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -43,7 +43,8 @@ import { loadCV } from './controller/cv_load';
 import React from 'react';
 import Hamburger from 'hamburger-react';
 import Menu from './components/Menu';
-import { toggle } from 'ionicons/icons';
+import { chatbubblesOutline, toggle } from 'ionicons/icons';
+import Contact from './pages/Contact';
 
 setupIonicReact();
 
@@ -75,6 +76,9 @@ const App: React.FC = () => {
     setMenuOpen(!menuOpen);
   };
 
+  const [isContactOpen, setIsContactOpen] = React.useState(false);
+
+
   return (
     <IonApp>
 
@@ -82,6 +86,16 @@ const App: React.FC = () => {
         <Hamburger size={20} toggled={menuOpen} toggle={setMenuOpen} />
       </div>
 
+      <IonButton
+        id="contact_button"
+        shape="round"
+        onClick={() => setIsContactOpen(isContactOpen => !isContactOpen)}
+      >
+        <IonIcon slot="start" icon={chatbubblesOutline} />
+        Contact
+      </IonButton>
+
+      <Contact cv={cv} isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
 
       {
         /*
@@ -109,21 +123,21 @@ const App: React.FC = () => {
         </Route>
 
         <Route exact path="/education">
-          <Template 
+          <Template
             title="Education" content={<Education cv={cv} />} noContentScroll={true}
             menuOpen={menuOpen} toggleMenu={toggleMenu}
           />
         </Route>
 
         <Route exact path="/experience">
-          <Template 
+          <Template
             title="Experience" content={<Experience cv={cv} />} noContentScroll={true}
             menuOpen={menuOpen} toggleMenu={toggleMenu}
           />
         </Route>
 
         <Route exact path="/projects">
-          <Template 
+          <Template
             title="Projects" content={<Projects cv={cv} />} noContentScroll={true}
             menuOpen={menuOpen} toggleMenu={toggleMenu}
           />

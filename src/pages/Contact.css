@@ -1,3 +1,8 @@
+.contact-modal {
+    --width: 90%;
+    --height: 85%;
+    --border-radius: 16px;
+}
 
 .contact-header {
     --background: var(--app_light_background_color);
@@ -7,4 +12,101 @@
 .contact-content {
     --background: var(--app_light_background_color);
     --color: var(--app_main_text_color);
+    display: flex;
+    align-items: center;
+}
+
+.contact-content ion-grid {
+    max-width: 1200px;
+    height: 100%;
+    padding: 2rem;
+}
+
+.contact-content ion-row {
+    height: 100%;
+    align-items: center;
+}
+
+.contact-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.contact-col h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+.contact-col p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    text-align-last: center;
+}
+
+.contact-col a {
+    color: var(--ion-color-primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-col a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    margin-top: 1rem;
+}
+
+#contact-buttons-container {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.image-col img {
+    max-width: 100%;
+    height: auto;
+    max-height: 450px;
+    border-radius: 1rem;
+}
+
+@media (max-width: 768px) {
+    .contact-modal {
+        --width: 95%;
+        --height: 90%;
+    }
+
+    .contact-content ion-grid {
+        padding: 1rem;
+    }
+
+    .contact-col {
+        padding: 1rem;
+    }
+
+    .contact-col h2 {
+        font-size: 2rem;
+    }
+
+    .image-col {
+        margin-top: 2rem;
+    }
+
+    .image-col img {
+        max-height: 300px;
+    }
 }
