@@ -41,3 +41,33 @@
   background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(15px);
 }
+
+#contact_button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+
+  --background: orange;
+  animation: button-anim 4s infinite ease-in-out;
+  border-radius: 100%;
+  
+  ion-icon {
+    padding-right: 1vw;
+  }
+
+}
+
+@keyframes button-anim {
+  
+  0%, 50%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px orange;
+  }
+  
+  25%, 75% {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px red;
+  }
+
+}

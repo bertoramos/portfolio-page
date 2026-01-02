@@ -1,0 +1,10 @@
+
+.contact-header {
+    --background: var(--app_light_background_color);
+    --color: var(--app_main_text_color);
+}
+
+.contact-content {
+    --background: var(--app_light_background_color);
+    --color: var(--app_main_text_color);
+}

@@ -2,12 +2,14 @@ import { IonHeader, IonPage, IonIcon, IonToolbar, IonTitle, IonButtons, IonButto
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { logoIonic } from 'ionicons/icons';
+import { chatbubblesOutline, logoIonic } from 'ionicons/icons';
 
 import "./Template.css";
+import Contact from '../pages/Contact';
 
 const Template: React.FC<{ title: string, content: React.ReactNode, noContentScroll?: boolean }> = ({ title, content, noContentScroll = false }) => {
 
+  const [isContactOpen, setIsContactOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
 
   const handleScroll = (event: CustomEvent) => {
@@ -44,7 +46,6 @@ const Template: React.FC<{ title: string, content: React.ReactNode, noContentScr
       </IonMenu>
       
       <IonPage id="main-content">
-
         
         <IonHeader
           id="main_header"
@@ -83,6 +84,16 @@ const Template: React.FC<{ title: string, content: React.ReactNode, noContentScr
         <IonContent fullscreen onIonScroll={handleScroll} scrollEvents={true} scrollY={!noContentScroll}>
           {content}
         </IonContent>
+        
+        <IonButton
+          id="contact_button"
+          shape="round"
+          onClick={() => setIsContactOpen(isContactOpen => !isContactOpen)}
+          >
+          <IonIcon slot="start" icon={chatbubblesOutline} />
+          Contact
+        </IonButton>
+        <Contact isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
       </IonPage>
     </>
   );

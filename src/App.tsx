@@ -49,7 +49,7 @@ const App: React.FC = () => {
   const [cv, setCV] = useState<CVType | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  
+    
   useEffect(() => {
     const fetchCV = async () => {
       try {
