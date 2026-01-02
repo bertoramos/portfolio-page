@@ -8,7 +8,7 @@ import "./Template.css";
 import Contact from '../pages/Contact';
 import Menu from './Menu';
 
-const Template: React.FC<{ title: string, content: React.ReactNode, noContentScroll?: boolean }> = ({ title, content, noContentScroll = false }) => {
+const Template: React.FC<{ title: string, content: React.ReactNode, noContentScroll?: boolean, menuOpen: boolean, toggleMenu: () => void }> = ({ title, content, noContentScroll = false, menuOpen, toggleMenu }) => {
 
   const [isContactOpen, setIsContactOpen] = React.useState(false);
   const [scrolled, setScrolled] = React.useState(false);
@@ -20,7 +20,7 @@ const Template: React.FC<{ title: string, content: React.ReactNode, noContentScr
 
   return (
     <>
-      <Menu />
+      <Menu menuOpen={menuOpen} toggleMenu={toggleMenu} />
 
       <IonPage id="main-content">
         

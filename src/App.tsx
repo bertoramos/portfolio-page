@@ -40,6 +40,10 @@ import Template from './components/Template';
 import { useEffect, useState } from 'react';
 import { CVType } from './model/cv';
 import { loadCV } from './controller/cv_load';
+import React from 'react';
+import Hamburger from 'hamburger-react';
+import Menu from './components/Menu';
+import { toggle } from 'ionicons/icons';
 
 setupIonicReact();
 
@@ -49,7 +53,7 @@ const App: React.FC = () => {
   const [cv, setCV] = useState<CVType | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-    
+
   useEffect(() => {
     const fetchCV = async () => {
       try {
@@ -65,39 +69,67 @@ const App: React.FC = () => {
     fetchCV();
   }, []);
 
+  const [menuOpen, setMenuOpen] = React.useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
   return (
     <IonApp>
-    {
-      /*
-       	• HOME
-	      • ABOUT
-	      • EDUCATION
-	      • EXPERIENCE
-        • PROJECTS
-      */
-    }
-    <HashRouter>
+
+      <div slot="end" id="menu_button" onClick={() => { setMenuOpen(!menuOpen); }}>
+        <Hamburger size={20} toggled={menuOpen} toggle={setMenuOpen} />
+      </div>
+
+
+      {
+        /*
+            • HOME
+          • ABOUT
+          • EDUCATION
+          • EXPERIENCE
+          • PROJECTS
+        */
+      }
+      <HashRouter>
         <Route exact path="/">
-          <Template title="Home" content={<Home cv={cv} />} noContentScroll={true} />
+          <Template
+            title="Home"
+            content={<Home cv={cv} />} noContentScroll={true}
+            menuOpen={menuOpen} toggleMenu={toggleMenu}
+          />
         </Route>
-        
+
         <Route exact path="/about">
-          <Template title="About" content={<About cv={cv} />} noContentScroll={false} />
+          <Template
+            title="About" content={<About cv={cv} />} noContentScroll={false}
+            menuOpen={menuOpen} toggleMenu={toggleMenu}
+          />
         </Route>
 
         <Route exact path="/education">
-          <Template title="Education" content={<Education cv={cv} />} noContentScroll={true} />
+          <Template 
+            title="Education" content={<Education cv={cv} />} noContentScroll={true}
+            menuOpen={menuOpen} toggleMenu={toggleMenu}
+          />
         </Route>
 
         <Route exact path="/experience">
-          <Template title="Experience" content={<Experience cv={cv} />} noContentScroll={true} />
+          <Template 
+            title="Experience" content={<Experience cv={cv} />} noContentScroll={true}
+            menuOpen={menuOpen} toggleMenu={toggleMenu}
+          />
         </Route>
 
         <Route exact path="/projects">
-          <Template title="Projects" content={<Projects cv={cv} />} noContentScroll={true} />
+          <Template 
+            title="Projects" content={<Projects cv={cv} />} noContentScroll={true}
+            menuOpen={menuOpen} toggleMenu={toggleMenu}
+          />
         </Route>
-    </HashRouter>
-  </IonApp>
+      </HashRouter>
+    </IonApp>
   );
 };
 
