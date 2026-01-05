@@ -3,106 +3,182 @@ technologies:
   python: &tech_python
     name: Python
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+    category: programming_language
+    categoryLabel: Programming Language
   
   powerbi: &tech_powerbi
     name: PowerBI
     icon: "https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
+    category: visualization_tool
+    categoryLabel: Visualization Tool
   
   dash: &tech_dash
     name: Dash
     icon: "/portfolio-page/assets/logos/technologies/plotly.svg"
+    category: visualization_tool
+    categoryLabel: Visualization Tool
   
   snowflake: &tech_snowflake
     name: Snowflake
     icon: "/portfolio-page/assets/logos/technologies/snowflake.svg"
+    category: database
+    categoryLabel: Database
   
   dbt: &tech_dbt
     name: DBT
     icon: "/portfolio-page/assets/logos/technologies/dbt.svg"
+    category: database
+    categoryLabel: Database
   
   spacy: &tech_spacy
     name: Spacy
     icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/spacy.svg"
+    category: artificial_intelligence
+    categoryLabel: Artificial Intelligence
   
   php: &tech_php
     name: PHP
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
+    category: web_development
+    categoryLabel: Web Development
   
   html: &tech_html
     name: HTML/CSS
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+    category: web_development
+    categoryLabel: Web Development
   
   laravel: &tech_laravel
     name: Laravel
     icon: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg"
+    category: web_development
+    categoryLabel: Web Development
+  
+  react: &tech_react
+    name: React
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+    category: web_development
+    categoryLabel: Web Development
   
   cpp: &tech_cpp
     name: C++
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+    category: programming_language
+    categoryLabel: Programming Language
   
   ros: &tech_ros
     name: ROS1
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ros/ros-original.svg"
+    category: robotics
+    categoryLabel: Robotics
   
   docker: &tech_docker
     name: Docker
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+    category: os
+    categoryLabel: OS
   
   nvidia: &tech_nvidia
     name: NVIDIA Jetson
     icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/nvidia.svg"
+    category: embedded_system
+    categoryLabel: Embedded System
   
   lego: &tech_lego
     name: Lego Mindstorm EV3
     icon: "/portfolio-page/assets/logos/technologies/ev3.svg"
+    category: embedded_system
+    categoryLabel: Embedded System
   
   inkscape: &tech_inkscape
     name: Inkscape
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/inkscape/inkscape-original.svg"
+    category: design_tool
+    categoryLabel: Design Tool
   
   pytorch: &tech_pytorch
     name: Pytorch
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
+    category: artificial_intelligence
+    categoryLabel: Artificial Intelligence
   
   waspmote: &tech_waspmote
     name: Waspmote
     icon: "/portfolio-page/assets/logos/technologies/waspmote.svg"
+    category: embedded_system
+    categoryLabel: Embedded System
   
   java: &tech_java
     name: Java
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+    category: programming_language
+    categoryLabel: Programming Language
   
   matlab: &tech_matlab
     name: Matlab
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg"
+    category: programming_language
+    categoryLabel: Programming Language
   
   arduino: &tech_arduino
     name: Arduino
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg"
+    category: embedded_system
+    categoryLabel: Embedded System
   
   linux: &tech_linux
     name: Linux
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+    category: os
+    categoryLabel: OS
   
   android: &tech_android
     name: Android
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg"
+    category: os
+    categoryLabel: OS
   
   blender: &tech_blender
     name: Blender
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg"
+    category: design_tool
+    categoryLabel: Design Tool
   
   ble: &tech_ble
     name: BLE
     icon: "https://upload.wikimedia.org/wikipedia/commons/e/e1/Bluetooth_Figure_Mark_Logo.svg"
+    category: robotics
+    categoryLabel: Robotics
   
   marvelmind: &tech_marvelmind
     name: Marvelmind
     icon: "/portfolio-page/assets/logos/technologies/marvelmind.svg"
+    category: robotics
+    categoryLabel: Robotics
   
   latex: &tech_latex
     name: Latex
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/latex/latex-original.svg"
+    category: documentation_tool
+    categoryLabel: Documentation Tool
+  
+  oracle: &tech_oracle
+    name: Oracle DB
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg"
+    category: database
+    categoryLabel: Database
+  
+  mysql: &tech_mysql
+    name: MySQL
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+    category: database
+    categoryLabel: Database
+  
+  git: &tech_git
+    name: Git
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+    category: documentation_tool
+    categoryLabel: Documentation Tool
 
 contact:
   email: "mailto:albertoramossanchez@outlook.es"

@@ -1,14 +1,95 @@
-.about-section {
-  height: 100vh;
-  display: flex;
-
-  border: 2px solid red;
-
-  justify-content: center;
-  align-items: center;
-  
-}
-
+/* ============================================
+   CONTENEDOR PRINCIPAL
+   ============================================ */
 .about-page-container {
   height: 100vh;
 }
+
+/* ============================================
+   SECCIONES GENERALES
+   ============================================ */
+.about-section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid red; /* TODO: Eliminar border de debug */
+}
+
+/* ============================================
+   SECCIÓN DE SKILLS
+   ============================================ */
+
+/* Grid principal de skills */
+.about-skills-grid {
+  height: 100%;
+}
+
+/* Título de la sección Skills */
+.about-skills-title {
+  height: 25vh;
+  padding-bottom: 2vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Contenedor del grid de tecnologías */
+.skills-grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Móvil: 2 columnas */
+  grid-template-rows: repeat(5, 1fr);    /* Móvil: 5 filas */
+  gap: 1rem;
+  height: 75vh;
+  padding: 1rem;
+
+}
+
+/* Items individuales de skills */
+.tech-items-container {
+  overflow: hidden;   /* oculta lo que se desplaza */
+  padding-left: 0;    /* opcional, para no sumar espacio extra */
+  margin: 0;
+  list-style: none;
+}
+
+.tech-item {
+  width: 90%;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(120vw);
+  opacity: 0;
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+.tech-item * {
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.tech-item.visible {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* ============================================
+   MEDIA QUERIES
+   ============================================ */
+
+
+@media (min-width: 768px) {
+
+
+  /* Desktop: cambiar a 5 columnas x 2 filas */
+  .skills-grid-container {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+
+/* ============================================
+   CATEGORÍAS DE HABILIDADES
+   ============================================ */
