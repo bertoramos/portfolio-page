@@ -161,6 +161,24 @@ technologies:
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/latex/latex-original.svg"
     category: documentation_tool
     categoryLabel: Documentation Tool
+  
+  oracle: &tech_oracle
+    name: Oracle DB
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg"
+    category: database
+    categoryLabel: Database
+  
+  mysql: &tech_mysql
+    name: MySQL
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+    category: database
+    categoryLabel: Database
+  
+  git: &tech_git
+    name: Git
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+    category: documentation_tool
+    categoryLabel: Documentation Tool
 
 contact:
   email: "mailto:albertoramossanchez@outlook.es"

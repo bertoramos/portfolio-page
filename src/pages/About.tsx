@@ -1,7 +1,8 @@
-
 import './About.css';
 import { CVType } from '../model/cv';
-import { IonCol, IonGrid, IonRow, IonText } from '@ionic/react';
+import { IonChip, IonCol, IonGrid, IonIcon, IonRow, IonText } from '@ionic/react';
+import { useEffect, useRef, useState } from 'react';
+
 
 const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
   {
@@ -14,21 +15,30 @@ const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
     */
   }
 
-  const createGrid = (rows: number, cols: number, content: any[]) => {
-    return Array.from({ length: rows }, (_, rowIndex) => (
-      <IonRow key={rowIndex}>
-        {Array.from({ length: cols }, (_, colIndex) => (
-          <IonCol key={colIndex}>
-            {content[rowIndex * cols + colIndex]}
-          </IonCol>
-        ))}
-      </IonRow>
-    ));
-  };
-
   // Obtener todas las tecnologias
   const technologies = Object.entries(cv?.technologies || {});
   const categories = Array.from(new Set(technologies.map(([_, tech]) => tech.categoryLabel || 'Other')));
+  
+  const [skillsVisible, setSkillsVisible] = useState(false);
+  const skillsContainerRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const skillsObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        setSkillsVisible(entry.isIntersecting)
+      });
+    });
+
+    if (skillsContainerRef.current) {
+      skillsObserver.observe(skillsContainerRef.current);
+    }
+
+    return () => {
+      if (skillsContainerRef.current) {
+        skillsObserver.unobserve(skillsContainerRef.current);
+      }
+    };
+  }, []);
 
   return (
 
@@ -41,31 +51,39 @@ const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
           {cv?.about.about_description}
         </section>
         <section id="skills-section" className="about-section">
-          <IonGrid>
-            <IonRow>
+          <IonGrid className="about-skills-grid">
+
+            <IonRow className="about-skills-title">
               <IonCol
                 sizeMd="12"
-                className="ion-text-center ion-padding-bottom"
+                className="ion-text-center"
               >
                 <IonText className="text-3xl">
                   Skills
                 </IonText>
               </IonCol>
             </IonRow>
-            {
-              createGrid(2, 5, categories.map(
-                (category) => (
-                  <div key={category} className="tech-category">
-                    <span className="category-label text-xl font-bold" key={category}>{category}</span>
-                    <ul>
-                      {technologies.filter(([_, tech]) => (tech.categoryLabel || 'Other') === category)
-                        .map(([techKey, tech]) => (
-                          <li className='tech-item' key={techKey}>{tech.name}</li>
-                        ))}
-                    </ul>
+            <div className="skills-grid-container" ref={skillsContainerRef}>
+              {categories.map((category) => (
+                <div key={category} className="tech-category">
+                  <span className="category-label text-xl font-bold text-center block w-full mb-4">{category}</span>
+                  <div className="tech-items-container flex flex-col items-center gap-1">
+                    {technologies
+                      .filter(([_, tech]) => (tech.categoryLabel || 'Other') === category)
+                      .map(([techKey, tech], idx) => (
+                        <IonChip
+                          className={`tech-item ${skillsVisible ? 'visible' : ''}`}
+                          key={techKey}
+                          style={{ transitionDelay: `${idx * 120}ms` }}  // escalonado por índice
+                        >
+                          <IonIcon src={tech.icon || ""} />
+                          {tech.name}
+                        </IonChip>
+                      ))}
                   </div>
-                )))
-            }
+                </div>
+              ))}
+            </div>
           </IonGrid>
         </section>
         <section id="location-section" className="about-section">
@@ -90,3 +108,4 @@ const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
 };
 
 export default About;
+
