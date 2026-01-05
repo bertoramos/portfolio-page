@@ -18,7 +18,7 @@ const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
   // Obtener todas las tecnologias
   const technologies = Object.entries(cv?.technologies || {});
   const categories = Array.from(new Set(technologies.map(([_, tech]) => tech.categoryLabel || 'Other')));
-  
+
   const [skillsVisible, setSkillsVisible] = useState(false);
   const skillsContainerRef = useRef<HTMLDivElement | null>(null);
 
@@ -96,7 +96,9 @@ const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
                 Online
               </IonCol>
               <IonCol sizeMd="4" className="ion-text-center">
-                Location
+                <div className="google-map-code">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2264142.544824199!2d-15.26492770059671!3d28.393133433208302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1767631204684!5m2!1ses!2ses" width="600" height="450" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+                </div>
               </IonCol>
             </IonRow>
           </IonGrid>
