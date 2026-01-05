@@ -3,6 +3,8 @@
 interface TechnologyType {
   name: string;
   icon: string;
+  category?: string;
+  categoryLabel?: string;
 }
 
 interface ContactType {
@@ -63,6 +65,7 @@ interface CVType {
   experience: ExperienceType[];
   education: EducationType[];
   projects: ProjectType[];
+  technologies?: Record<string, TechnologyType>;
 }
 
 export type { CVType, TechnologyType, ContactType, AboutType, ExperienceType, EducationType, ProjectType };

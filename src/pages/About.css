@@ -12,3 +12,8 @@
 .about-page-container {
   height: 100vh;
 }
+
+.tech-item {
+  padding: 0 1vw;
+}
+
