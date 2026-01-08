@@ -2,6 +2,7 @@ import './About.css';
 import { CVType } from '../model/cv';
 import { IonChip, IonCol, IonGrid, IonIcon, IonRow, IonText } from '@ionic/react';
 import { useEffect, useRef, useState } from 'react';
+import { logoGithub, logoLinkedin, mail } from 'ionicons/icons';
 
 
 const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
@@ -91,11 +92,18 @@ const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
             <IonRow>
               <IonCol sizeMd="4" className="ion-text-center">
                 Offline
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               </IonCol>
               <IonCol sizeMd="4" className="ion-text-center">
                 Online
+                <ul>
+                  <li><IonIcon icon={logoGithub} /> <a href={cv?.contact.github || '#'} target="_blank" rel="noopener noreferrer">{cv?.contact.github || 'N/A'}</a></li>
+                  <li><IonIcon icon={logoLinkedin} /> <a href={cv?.contact.linkedin || '#'} target="_blank" rel="noopener noreferrer">{cv?.contact.linkedin || 'N/A'}</a></li>
+                  <li><IonIcon icon={mail} /> <a href={`${cv?.contact.email || ''}`} target="_blank" rel="noopener noreferrer">{cv?.contact.email.slice(7) || 'N/A'}</a></li>
+                </ul>
               </IonCol>
               <IonCol sizeMd="4" className="ion-text-center">
+                Based in
                 <div className="google-map-code">
                   <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2264142.544824199!2d-15.26492770059671!3d28.393133433208302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1767631204684!5m2!1ses!2ses" width="600" height="450" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                 </div>
