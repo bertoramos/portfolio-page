@@ -1,0 +1,342 @@
+# Definir tecnologías utilizadas en el CV
+technologies:
+  python: &tech_python
+    name: Python
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+    category: programming_language
+    categoryLabel: Programming Language
+  
+  powerbi: &tech_powerbi
+    name: PowerBI
+    icon: "https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg"
+    category: visualization_tool
+    categoryLabel: Visualization Tool
+  
+  dash: &tech_dash
+    name: Dash
+    icon: "/portfolio-page/assets/logos/technologies/plotly.svg"
+    category: visualization_tool
+    categoryLabel: Visualization Tool
+  
+  snowflake: &tech_snowflake
+    name: Snowflake
+    icon: "/portfolio-page/assets/logos/technologies/snowflake.svg"
+    category: database
+    categoryLabel: Database
+  
+  dbt: &tech_dbt
+    name: DBT
+    icon: "/portfolio-page/assets/logos/technologies/dbt.svg"
+    category: database
+    categoryLabel: Database
+  
+  spacy: &tech_spacy
+    name: Spacy
+    icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/spacy.svg"
+    category: artificial_intelligence
+    categoryLabel: Artificial Intelligence
+  
+  php: &tech_php
+    name: PHP
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
+    category: web_development
+    categoryLabel: Web Development
+  
+  html: &tech_html
+    name: HTML/CSS
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+    category: web_development
+    categoryLabel: Web Development
+  
+  laravel: &tech_laravel
+    name: Laravel
+    icon: "https://upload.wikimedia.org/wikipedia/commons/9/9a/Laravel.svg"
+    category: web_development
+    categoryLabel: Web Development
+  
+  react: &tech_react
+    name: React
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+    category: web_development
+    categoryLabel: Web Development
+  
+  cpp: &tech_cpp
+    name: C++
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+    category: programming_language
+    categoryLabel: Programming Language
+  
+  ros: &tech_ros
+    name: ROS1
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ros/ros-original.svg"
+    category: robotics
+    categoryLabel: Robotics
+  
+  docker: &tech_docker
+    name: Docker
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+    category: os
+    categoryLabel: OS
+  
+  nvidia: &tech_nvidia
+    name: NVIDIA Jetson
+    icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/nvidia.svg"
+    category: embedded_system
+    categoryLabel: Embedded System
+  
+  lego: &tech_lego
+    name: Lego Mindstorm EV3
+    icon: "/portfolio-page/assets/logos/technologies/ev3.svg"
+    category: embedded_system
+    categoryLabel: Embedded System
+  
+  inkscape: &tech_inkscape
+    name: Inkscape
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/inkscape/inkscape-original.svg"
+    category: design_tool
+    categoryLabel: Design Tool
+  
+  pytorch: &tech_pytorch
+    name: Pytorch
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
+    category: artificial_intelligence
+    categoryLabel: Artificial Intelligence
+  
+  waspmote: &tech_waspmote
+    name: Waspmote
+    icon: "/portfolio-page/assets/logos/technologies/waspmote.svg"
+    category: embedded_system
+    categoryLabel: Embedded System
+  
+  java: &tech_java
+    name: Java
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+    category: programming_language
+    categoryLabel: Programming Language
+  
+  matlab: &tech_matlab
+    name: Matlab
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg"
+    category: programming_language
+    categoryLabel: Programming Language
+  
+  arduino: &tech_arduino
+    name: Arduino
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg"
+    category: embedded_system
+    categoryLabel: Embedded System
+  
+  linux: &tech_linux
+    name: Linux
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+    category: os
+    categoryLabel: OS
+  
+  android: &tech_android
+    name: Android
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg"
+    category: os
+    categoryLabel: OS
+  
+  blender: &tech_blender
+    name: Blender
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg"
+    category: design_tool
+    categoryLabel: Design Tool
+  
+  ble: &tech_ble
+    name: BLE
+    icon: "https://upload.wikimedia.org/wikipedia/commons/e/e1/Bluetooth_Figure_Mark_Logo.svg"
+    category: robotics
+    categoryLabel: Robotics
+  
+  marvelmind: &tech_marvelmind
+    name: Marvelmind
+    icon: "/portfolio-page/assets/logos/technologies/marvelmind.svg"
+    category: robotics
+    categoryLabel: Robotics
+  
+  latex: &tech_latex
+    name: Latex
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/latex/latex-original.svg"
+    category: documentation_tool
+    categoryLabel: Documentation Tool
+  
+  oracle: &tech_oracle
+    name: Oracle DB
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg"
+    category: database
+    categoryLabel: Database
+  
+  mysql: &tech_mysql
+    name: MySQL
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+    category: database
+    categoryLabel: Database
+  
+  git: &tech_git
+    name: Git
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+    category: documentation_tool
+    categoryLabel: Documentation Tool
+
+contact:
+  email: "mailto:albertoramossanchez@outlook.es"
+  phone: "tel:+34635190624"
+  github: "https://github.com/bertoramos"
+  linkedin: "https://www.linkedin.com/in/alberto-rs/"
+
+about:
+  name: "Alberto Ramos Sánchez"
+  title: "Computer Scientist"
+  short_description: "Computer scientist specialising in machine learning, robotics and sensorisation, with experience in collaborative environments. Passionate about technologies for solving complex problems and continuous learning in the field of computer science."
+  about_description: 👋 Hi! I'm Alberto, a computer scientist with a strong background in the exciting world of technology. With a degree in Computer Science (ULPGC) and a Master's degree in "Intelligent Systems and Numerical Applications" (SIANI - ULPGC), I have developed skills in the field of machine learning and robotics, where my passion lies in creating revolutionary solutions that integrate artificial intelligence with engineering to significantly transform our environment. I have had the privilege of working in dynamic and collaborative environments, which has strengthened my ability to communicate effectively and work in teams.
+
+    In addition to my technical expertise, I have a proactive approach to continuous learning and constantly updating my skills to keep up with the latest trends in the industry. Currently, I am engaged in pursuing my PhD, specializing in the Information and Communication Technology (ICT) and business field.
+
+    When I am not coding, I explore a diversity of activities that enrich my life. In addition, I find balance in sports, which not only keep me fit, but also help me recharge and stay focused. In my peaceful moments, I enjoy creative activities, which allow me to disconnect and develop my artistic side.
+
+    I eagerly look forward to the opportunity to bring my experience and passion to teams that value technical excellence and creativity in the field of computer engineering.
+
+    Feel free to say hello. I'll be excited to hear from you.
+
+    Take care and stay awesome!
+
+experience:
+  - position: "Data analyst"
+    company: "EmoturLAB - Tides"
+    company_logo: "/assets/logos/companies/logoEmotur.svg"
+    startDate: "Sep 2025"
+    endDate: "Mar 2026"
+    location: "Las Palmas de Gran Canaria"
+    url: "https://emotur.ulpgc.es/emoturlab/"
+    description: '"Spain Living Lab" project: Application of artificial intelligence, metaverse and neurotechnology for the transformation of tourist behaviour and operational improvement in the tourism sector. Data analysis and visualization of tourism data in the Canary Islands through the development of dashboards and reports to support decision-making processes.'
+    technologies:
+      - *tech_python
+      - *tech_powerbi
+      - *tech_dash
+      - *tech_snowflake
+      - *tech_dbt
+
+  - position: "Data scientist"
+    company: "Fundación Universitaria de Las Palmas (FULP)"
+    company_logo: "/assets/logos/companies/logoFULP.svg"
+    startDate: "Dec 2023"
+    endDate: "Dec 2024"
+    location: "Las Palmas de Gran Canaria"
+    url: "www.fulp.es"
+    description: '"Investigo" programme: "SMART GIP: Applying Artificial Intelligence (AI) to Integrated Project Management". Optimization of key processes through development through the development of a platform for payroll management and electronic invoicing.'
+    technologies:
+      - *tech_python
+      - *tech_spacy
+      - *tech_php
+      - *tech_html
+      - *tech_laravel
+    urls:
+      - name: "SMART GIP"
+        link: "https://www.fulp.es/index.php/actualidad/noticias/la-fulp-investiga-la-aplicacion-de-inteligencia-artificial-la-gestion-de"
+
+  - position: "Computer scientist"
+    company: "Subsea Mechatronics (SSM)"
+    company_logo: "/assets/logos/companies/logoSSM.svg"
+    startDate: "Jan 2022"
+    endDate: "Jul 2023"
+    location: "Las Palmas de Gran Canaria"
+    url: "www.ssmrovs.com"
+    description: '"Investigo" programme: "IngenIoT". Improving the perception of the underwater environment through 3D reconstruction and analysis of campaign data.'
+    technologies:
+      - *tech_python
+      - *tech_cpp
+      - *tech_ros
+      - *tech_docker
+      - *tech_nvidia
+    urls: []
+
+  - position: "Computer scientist internship"
+    company: "IUCTC ULPGC"
+    company_logo: "/assets/logos/companies/logoIUCTC.svg"
+    startDate: "Sep 2019"
+    endDate: "Ene 2020"
+    location: "Las Palmas de Gran Canaria"
+    url: "www.ciberlandia.org"
+    description: "Computer science internships. Support in the design and development of activities for the Cyberlandia Project and the Science Week."
+    technologies:
+      - *tech_python
+      - *tech_lego
+      - *tech_inkscape
+    urls:
+      - name: "SEMANA DE LA CIENCIA 2019"
+        link: "https://ciberlandia.org/semanas-de-la-ciencia-y-la-innovacion-en-canarias-2019-gran-canaria/"
+
+education:
+  - degree: "PhD in Bussiness, Internet and Communications Technologies"
+    institution: "ULPGC"
+    institution_logo: "/assets/logos/institutions/logoDoctorado.svg"
+    startDate: "Oct 2022"
+    endDate: "Present"
+    location: "Las Palmas de Gran Canaria"
+    url: "https://www2.ulpgc.es/plan-estudio/6024"
+    description: "A multidisciplinary programme focusing on the development and management of information, communication and knowledge technologies and their socio-economic impact."
+    grade: null
+    technologies: 
+      - *tech_python
+      - *tech_blender
+      - *tech_ble
+      - *tech_marvelmind
+      - *tech_latex
+
+  - degree: "Master's Degree in Intelligent Systems and Numerical Applications in Engineering"
+    institution: "ULPGC"
+    institution_logo: "/assets/logos/institutions/logoSIANI.svg"
+    startDate: "Oct 2020"
+    endDate: "Sep 2022"
+    location: "Las Palmas de Gran Canaria"
+    url: "www.siani.es"
+    description: "The programme has been designed to equip students with the necessary skills and tools to initiate R&D&I activities in areas such as artificial intelligence and numerical applications in engineering. The programme is taught by the University Institute of Intelligent Systems and Numerical Applications in Engineering (SIANI), a research and teaching centre for postgraduate studies attached to the ULPGC."
+    grade: "9.505"
+    technologies:
+      - *tech_python
+      - *tech_cpp
+      - *tech_pytorch
+      - *tech_waspmote
+
+  - degree: "Degree in Computer Engineering with a major in Computer Science"
+    institution: "ULPGC"
+    institution_logo: "/assets/logos/institutions/logoEII.svg"
+    startDate: "Jun 2016"
+    endDate: "Jul 2020"
+    location: "Las Palmas de Gran Canaria"
+    url: "www.eii.ulpgc.es"
+    description: "The programme offers a comprehensive training in computer science with a focus on multidisciplinary research and innovation tasks. It prepares students for a range of tasks, from theoretical analysis to software development, addressing topics such as algorithms and computational complexity, systems modelling and analysis, user interface design and evaluation, intelligent systems and data mining, advanced numerical methods, language processing and Semantic Web technologies. This approach combines theoretical foundations with practical tools, enabling students to solve complex problems and develop innovative solutions."
+    grade: "8.163"
+    technologies:
+      - *tech_python
+      - *tech_java
+      - *tech_matlab
+      - *tech_arduino
+      - *tech_linux
+
+projects:
+  - name: "Dron assisted Indoor Positioning System"
+    short_description: Implements a drone capture system with a mobile device and a 3D application to capture Bluetooth Low Energy signals, enhancing the efficiency of Indoor Positioning Systems in GPS denied environments.
+    description: This work was developed in the context of Indoor Positioning Systems (IPS) based on Bluetooth Low Energy signals. IPS makes it possible to locate people or objects in environments where the reception of the Global Positioning System (GPS) signal is inaccessible or very weak, such as buildings, subway stations, etc. To implement these systems, an environment survey methodology to gather Received Signal Strength Indicators is required. Previous projects have proven that using an automated robotic platform reduces capture time and increases performance of positioning. This work is intended to use a Unmanned Aerial Vehicle (UAV) to capture data from Bluetooth Low Energy beacons. The capture will be done via an on-board mobile device and a 3D application that helps the pilot to follow a route.
+    date: "2022"
+    technologies:
+      - *tech_android
+      - *tech_blender
+      - *tech_ble
+      - *tech_marvelmind
+      - *tech_latex
+    url: "http://hdl.handle.net/10553/118069"
+    image: "/assets/images/projects/drone_ips.webp"
+    
+  - name: "Development of a communication module in Blender for interoperation with a robotic platform"
+    short_description: This project focuses on automating signal collection for Indoor Positioning Systems using a software solution that includes 3D scenario design tools and a communication module for real-time tracking of a robotic platform.
+    date: "2020"
+    description: This project was developed in the context of Indoor Positioning Systems. The most used devices are Bluetooth Low Energy beacons or WiFi access points. These positioning systems require a environment survey procedure during which a radio-map is constructed by laboriously collecting Received Signal Strength Indicators. The collection of these signals is the necessary basis for correct functioning of the IPS. After an evaluation of different signal collecting methods, it was necessary to choose a robotic platform to automate the process. This work proposes the creation of a software solution that includes tools that facilitate 3D scenario design and a communication module with platform. Communication module permits design and send custom navigations plans, and a real-time tracking of a robotic platform.
+    technologies:
+      - *tech_python
+      - *tech_blender
+      - *tech_latex
+    url: "http://hdl.handle.net/10553/77830"
+    image: "/assets/images/projects/blender_ips.webp"
