@@ -124,14 +124,14 @@ const App: React.FC = () => {
 
         <Route exact path="/education">
           <Template
-            title="Education" content={<Education cv={cv} />} noContentScroll={true}
+            title="Education" content={<Education cv={cv} />} noContentScroll={false}
             menuOpen={menuOpen} toggleMenu={toggleMenu}
           />
         </Route>
 
         <Route exact path="/experience">
           <Template
-            title="Experience" content={<Experience cv={cv} />} noContentScroll={true}
+            title="Experience" content={<Experience cv={cv} />} noContentScroll={false}
             menuOpen={menuOpen} toggleMenu={toggleMenu}
           />
         </Route>

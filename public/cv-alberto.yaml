@@ -24,12 +24,6 @@ technologies:
     category: database
     categoryLabel: Database
   
-  dbt: &tech_dbt
-    name: DBT
-    icon: "/portfolio-page/assets/logos/technologies/dbt.svg"
-    category: database
-    categoryLabel: Database
-  
   spacy: &tech_spacy
     name: Spacy
     icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/spacy.svg"
@@ -191,16 +185,10 @@ about:
   title: "Computer Scientist"
   short_description: "Computer scientist specialising in machine learning, robotics and sensorisation, with experience in collaborative environments. Passionate about technologies for solving complex problems and continuous learning in the field of computer science."
   about_description: 👋 Hi! I'm Alberto, a computer scientist with a strong background in the exciting world of technology. With a degree in Computer Science (ULPGC) and a Master's degree in "Intelligent Systems and Numerical Applications" (SIANI - ULPGC), I have developed skills in the field of machine learning and robotics, where my passion lies in creating revolutionary solutions that integrate artificial intelligence with engineering to significantly transform our environment. I have had the privilege of working in dynamic and collaborative environments, which has strengthened my ability to communicate effectively and work in teams.
-
     In addition to my technical expertise, I have a proactive approach to continuous learning and constantly updating my skills to keep up with the latest trends in the industry. Currently, I am engaged in pursuing my PhD, specializing in the Information and Communication Technology (ICT) and business field.
-
-    When I am not coding, I explore a diversity of activities that enrich my life. In addition, I find balance in sports, which not only keep me fit, but also help me recharge and stay focused. In my peaceful moments, I enjoy creative activities, which allow me to disconnect and develop my artistic side.
-
     I eagerly look forward to the opportunity to bring my experience and passion to teams that value technical excellence and creativity in the field of computer engineering.
-
-    Feel free to say hello. I'll be excited to hear from you.
-
-    Take care and stay awesome!
+  about_appeal: Feel free to say hello. I'll be excited to hear from you.  
+  about_take_care: Take care and stay awesome!
 
 experience:
   - position: "Data analyst"
@@ -216,8 +204,7 @@ experience:
       - *tech_powerbi
       - *tech_dash
       - *tech_snowflake
-      - *tech_dbt
-
+  
   - position: "Data scientist"
     company: "Fundación Universitaria de Las Palmas (FULP)"
     company_logo: "/assets/logos/companies/logoFULP.svg"
