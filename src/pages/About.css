@@ -9,7 +9,7 @@
    SECCIONES GENERALES
    ============================================ */
 .about-section {
-  height: 100vh;
+  min-height: 100vh; /* Cambiar de height a min-height */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,11 +23,12 @@
 /* Grid principal de skills */
 .about-skills-grid {
   height: 100%;
+  width: 100%; /* Asegurar que ocupe todo el ancho */
 }
 
 /* Título de la sección Skills */
 .about-skills-title {
-  height: 25vh;
+  min-height: 10vh; /* Cambiar a min-height y reducir */
   padding-bottom: 2vh;
   text-align: center;
   display: flex;
@@ -38,12 +39,12 @@
 /* Contenedor del grid de tecnologías */
 .skills-grid-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Móvil: 2 columnas */
-  grid-template-rows: repeat(5, 1fr);    /* Móvil: 5 filas */
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto; /* Cambiar de repeat(5, 1fr) a auto */
   gap: 1rem;
-  height: 75vh;
+  min-height: 75vh; /* Cambiar a min-height */
   padding: 1rem;
-
+  padding-bottom: 3rem; /* Añadir espacio inferior */
 }
 
 /* Items individuales de skills */

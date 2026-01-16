@@ -88,24 +88,40 @@ const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
           </IonGrid>
         </section>
         <section id="location-section" className="about-section">
-          <IonGrid>
-            <IonRow>
-              <IonCol sizeMd="4" className="ion-text-center">
-                Offline
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <IonGrid className="ion-no-padding">
+            <IonRow className="flex flex-col md:flex-row gap-4 md:gap-2 p-4">
+              <IonCol size="12" sizeMd="4" className="ion-text-center flex flex-col items-center">
+                <h3 className="text-2xl font-bold mb-4">Offline</h3>
+                <p className="text-base max-w-md">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
               </IonCol>
-              <IonCol sizeMd="4" className="ion-text-center">
-                Online
-                <ul>
-                  <li><IonIcon icon={logoGithub} /> <a href={cv?.contact.github || '#'} target="_blank" rel="noopener noreferrer">{cv?.contact.github || 'N/A'}</a></li>
-                  <li><IonIcon icon={logoLinkedin} /> <a href={cv?.contact.linkedin || '#'} target="_blank" rel="noopener noreferrer">{cv?.contact.linkedin || 'N/A'}</a></li>
-                  <li><IonIcon icon={mail} /> <a href={`${cv?.contact.email || ''}`} target="_blank" rel="noopener noreferrer">{cv?.contact.email.slice(7) || 'N/A'}</a></li>
+              <IonCol size="12" sizeMd="4" className="ion-text-center flex flex-col items-center">
+                <h3 className="text-2xl font-bold mb-4">Online</h3>
+                <ul className="list-none space-y-2">
+                  <li className="flex items-center justify-center gap-2">
+                    <IonIcon icon={logoGithub} className="text-xl" /> 
+                    <a href={cv?.contact.github || '#'} target="_blank" rel="noopener noreferrer" className="hover:underline">{cv?.contact.github || 'N/A'}</a>
+                  </li>
+                  <li className="flex items-center justify-center gap-2">
+                    <IonIcon icon={logoLinkedin} className="text-xl" /> 
+                    <a href={cv?.contact.linkedin || '#'} target="_blank" rel="noopener noreferrer" className="hover:underline">{cv?.contact.linkedin || 'N/A'}</a>
+                  </li>
+                  <li className="flex items-center justify-center gap-2">
+                    <IonIcon icon={mail} className="text-xl" /> 
+                    <a href={`${cv?.contact.email || ''}`} target="_blank" rel="noopener noreferrer" className="hover:underline">{cv?.contact.email.slice(7) || 'N/A'}</a>
+                  </li>
                 </ul>
               </IonCol>
-              <IonCol sizeMd="4" className="ion-text-center">
-                Based in
-                <div className="google-map-code">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2264142.544824199!2d-15.26492770059671!3d28.393133433208302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1767631204684!5m2!1ses!2ses" width="600" height="450" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+              <IonCol size="12" sizeMd="3" className="ion-text-center flex flex-col items-center">
+                <h3 className="text-2xl font-bold mb-4">Based in</h3>
+                <div className="google-map-code w-full max-w-md">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2264142.544824199!2d-15.26492770059671!3d28.393133433208302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1767631204684!5m2!1ses!2ses" 
+                    className="w-full h-64 md:h-80 rounded-lg shadow-md" 
+                    style={{ border: 0 }} 
+                    allowFullScreen 
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade">
+                  </iframe>
                 </div>
               </IonCol>
             </IonRow>

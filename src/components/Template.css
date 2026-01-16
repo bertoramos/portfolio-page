@@ -17,9 +17,14 @@
   padding-bottom: 30px;
 }
 
+#main_header {
+    height: 60px;
+}
+
 #menu_toolbar {
   --background: transparent;
   position: relative;
+  height: 60px;
 }
 
 #menu_toolbar::before {
