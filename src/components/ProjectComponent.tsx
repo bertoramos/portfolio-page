@@ -3,6 +3,7 @@ import { IonButton, IonButtons, IonChip, IonCol, IonContent, IonGrid, IonHeader,
 import "./ProjectComponent.css";
 import { mailOutline, logoGithub, logoLinkedin } from "ionicons/icons";
 import { TechnologyType } from "../model/cv";
+import TechChip from "./TechChip";
 
 interface ProjectDetailProps {
     modal_trigger: string;
@@ -50,10 +51,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = (props) => {
                             <div className="project-technologies-container">
                                 {
                                     props.technologies.map((tech, index) => (
-                                        <IonChip key={index}>
-                                            <IonIcon icon={tech.icon}></IonIcon>
-                                            <IonLabel>{tech.name}</IonLabel>
-                                        </IonChip>
+                                        <TechChip tech={tech} />
                                     ))
                                 }
                             </div>
@@ -113,10 +111,7 @@ const ProjectComponent: React.FC<ProjectComponentProps> = (props) => {
                         <div className="project-technologies-container">
                             {
                                 props.technologies.map((tech, index) => (
-                                    <IonChip key={index}>
-                                        <IonIcon icon={tech.icon}></IonIcon>
-                                        <IonLabel>{tech.name}</IonLabel>
-                                    </IonChip>
+                                    <TechChip tech={tech} />
                                 ))
                             }
                         </div>

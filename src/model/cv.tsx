@@ -21,6 +21,7 @@ interface AboutType {
   about_description: string;
   about_appeal: string;
   about_take_care: string;
+  about_offline: string;
 }
 
 interface ExperienceType {

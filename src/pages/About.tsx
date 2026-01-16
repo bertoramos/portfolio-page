@@ -4,7 +4,6 @@ import { IonChip, IonCol, IonGrid, IonIcon, IonRow, IonText } from '@ionic/react
 import { useEffect, useRef, useState } from 'react';
 import { logoGithub, logoLinkedin, mail } from 'ionicons/icons';
 
-var offline_text = "Outside of coding and research, I enjoy a variety of activities that help me maintain balance and perspective. Sports play an important role in my routine, helping me stay active, focused, and energized. I also dedicate time to creative pursuits, which allow me to disconnect from technical work and explore my artistic side.";
 
 const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
   {
@@ -115,6 +114,7 @@ const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
                           <IonIcon src={tech.icon || ""} />
                           {tech.name}
                         </IonChip>
+                        
                       ))}
                   </div>
                 </div>
@@ -128,7 +128,7 @@ const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
               <IonCol size="12" sizeMd="4" className="ion-text-center flex flex-col items-center">
                 <h3 className="text-2xl font-bold mb-20">Offline</h3>
                 <p className="text-base max-w-md mt-8">
-                  {offline_text}
+                  {cv?.about.about_offline}
                 </p>
               </IonCol>
               <IonCol size="12" sizeMd="4" className="ion-text-center flex flex-col items-center">

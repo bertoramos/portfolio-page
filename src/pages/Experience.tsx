@@ -2,6 +2,7 @@ import { IonAccordion, IonAccordionGroup, IonCard, IonCardContent, IonCardHeader
 import './Experience.css';
 import { CVType } from '../model/cv';
 import { locationOutline, globe } from 'ionicons/icons';
+import TechChip from '../components/TechChip';
 
 const Experience: React.FC<{ cv: CVType | null }> = ({ cv }) => {
 
@@ -24,39 +25,38 @@ const Experience: React.FC<{ cv: CVType | null }> = ({ cv }) => {
                 <IonLabel>{exp.position} @ {exp.company}</IonLabel>
                 <IonLabel className="mr-8" slot="end">{exp.startDate} - {exp.endDate || 'Present'}</IonLabel>
               </IonItem>
-              <div className="ion-padding" slot="content">
+              <div slot="content">
                 <IonCard>
-                  <IonCardHeader>
+                  <IonCardHeader className="m-8">
                     <IonRow>
                       <IonCol size="auto">
-                        <IonIcon icon={locationOutline} /> {exp.location}
+                        <IonIcon className="ml-2 mr-2" icon={locationOutline} /> {exp.location}
                       </IonCol>
                       <IonCol size="auto">
-                        <IonIcon icon={globe} /> <a href={exp.url} target="_blank">{exp.url}</a>
+                        <IonIcon className="ml-2 mr-2" icon={globe} /> <a href={exp.url} target="_blank">{exp.url}</a>
                       </IonCol>
                     </IonRow>
                   </IonCardHeader>
-                  <IonCardContent>
-                    <IonRow>
-                      <IonCol offset="0" size="12" size-md="2" push-md="9.5" className="ion-text-center">
-                        <img src={baseURL + exp.company_logo} alt={"logo " + exp.company} />
-                      </IonCol>
-                      <IonCol size="12" size-md="9" pull-md="2">
-
+                  <IonCardContent className="m-8">
+                    <div className="flex items-start justify-between gap-4">
+                      <div className="flex-1">
                         <div>{exp.description}</div>
-
                         <div className='ion-padding-top'>{
                           exp.technologies.map((tech, index) => (
                             <IonCol key={index} size="auto" >
-                              <IonChip>
-                                <IonIcon icon={tech.icon}></IonIcon>
-                                <IonLabel>{tech.name}</IonLabel>
-                              </IonChip>
+                              <TechChip tech={tech} />
                             </IonCol>
                           ))
                         }</div>
-                      </IonCol>
-                    </IonRow>
+                      </div>
+                      <div className="w-24 h-24 flex items-center justify-center overflow-hidden flex-shrink-0">
+                        <img 
+                          src={baseURL + exp.company_logo} 
+                          alt={"logo " + exp.company}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                    </div>
                   </IonCardContent>
                 </IonCard>
               </div>
@@ -65,9 +65,9 @@ const Experience: React.FC<{ cv: CVType | null }> = ({ cv }) => {
         )
         }
       </IonAccordionGroup>
-    </>
-
-  );
+      </>
+  
+    );
 };
 
 export default Experience;
