@@ -33,7 +33,7 @@ const Experience: React.FC<{ cv: CVType | null }> = ({ cv }) => {
                         <IonIcon className="ml-2 mr-2" icon={locationOutline} /> {exp.location}
                       </IonCol>
                       <IonCol size="auto">
-                        <IonIcon className="ml-2 mr-2" icon={globe} /> <a href={exp.url} target="_blank">{exp.url}</a>
+                        <IonIcon className="ml-2 mr-2" icon={globe} /> <a href={exp.url.startsWith('http') ? exp.url : `https://${exp.url}`} target="_blank" rel="noopener noreferrer">{exp.url}</a>
                       </IonCol>
                     </IonRow>
                   </IonCardHeader>
