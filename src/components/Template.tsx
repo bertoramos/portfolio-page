@@ -29,7 +29,7 @@ const Template: React.FC<{ title: string, content: React.ReactNode, noContentScr
           className='ion-no-border'
           >
 
-          <IonToolbar id="menu_toolbar" className={scrolled ? 'scrolled' : ''}>
+          <IonToolbar id="menu_toolbar" className={`flex items-center justify-between ${scrolled ? 'scrolled' : ''}`}>
 
             { /* Menu button for mobile view */ }
             <IonButtons slot="start">
@@ -37,7 +37,10 @@ const Template: React.FC<{ title: string, content: React.ReactNode, noContentScr
             </IonButtons>
             
             { /* Title with logo */ }
-            <IonTitle><IonIcon icon={logoIonic} />Portfolio</IonTitle>
+            <div className="p-8 flex items-center gap-3">
+              <IonIcon icon={logoIonic} className="text-2xl" />
+              <span className="text-lg font-semibold text-white">Portfolio</span>
+            </div>
 
           </IonToolbar>
 

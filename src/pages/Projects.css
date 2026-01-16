@@ -1,14 +1,23 @@
-.project-snap-section {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+/* Contenedor principal que maneja el scroll y el snap */
+.project-snap-container {
+    background-color: var(--app_light_background_color);
+    
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll; /* Habilita desplazamiento vertical */
+    scroll-snap-type: y mandatory; /* Habilita el comportamiento snap vertical */
+    height: 100%; /* Ocupa todo el área disponible del IonContent */
 }
 
-.project-snap-container {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
+/* Sección de cada tarjeta */
+.project-snap-section {
+    flex: 0 0 100%; /* Cada sección ocupa el 100% del tamaño del contenedor */
+    scroll-snap-align: start; /* Alinea cada sección al inicio del scroll */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa todo el alto del contenedor principal */
+    overflow: hidden; /* Asegura que el contenido fuera de los límites no sea visible */
 }

@@ -43,6 +43,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = (props) => {
                             </p>
                             <div className="ion-padding">
                                 <a 
+                                    className="hover:underline font-bold"
                                     href={props.url}
                                     target="_blank"
                                     rel="noopener noreferrer">Click here for more info.
