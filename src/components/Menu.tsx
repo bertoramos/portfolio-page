@@ -6,7 +6,7 @@ import { useLocation } from "react-router-dom";
 import { Spin as Hamburger } from 'hamburger-react'
 import { NavLink } from "react-router-dom";
 
-export default function Menu({menuOpen, toggleMenu}: {menuOpen: boolean, toggleMenu: () => void}) {
+export default function Menu({ menuOpen, toggleMenu }: { menuOpen: boolean, toggleMenu: () => void }) {
     const location = useLocation();
 
     const menuItems = [
@@ -20,28 +20,30 @@ export default function Menu({menuOpen, toggleMenu}: {menuOpen: boolean, toggleM
     const handleMenuClick = () => {
         setTimeout(() => {
             toggleMenu();
-        }, 100); // Ajusta este valor según tu transición CSS
+        }, 100);
     };
 
     return (
         <>
-            <div className={`main-menu ${menuOpen ? "menu-open" : "menu-closed"}`} id="main_menu">
-                <div slot="end" className="menu-nav">
-                    <ul>
-                        {menuItems.map(item => (
-                            <li key={item.path} className="p-8">
-                                <NavLink
-                                    exact
-                                    to={item.path}
-                                    onClick={handleMenuClick}
-                                    className={`!text-white-500 hover:!text-sky-100 hover:font-bold transition-colors duration-300 ${location.pathname === item.path ? 'active' : ''}`}
-                                >
-                                    {item.label}
-                                </NavLink>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+            <div className={`main-menu
+                            bg-gray-900 
+                            ${menuOpen ? "menu-active" : "menu-inactive"}`
+                } id="main_menu">
+                <ul className="link-container">
+                    {menuItems.map((item, idx) => (
+                        <li key={item.path} className="text-container p-4">
+                            <NavLink
+                                exact
+                                to={item.path}
+                                onClick={handleMenuClick}
+                                className={`text group ${location.pathname === item.path ? 'active' : ''}`}
+                            >
+                                <span className="menu-num text-2xl">{`0${idx + 1}`}</span>
+                                <span className="menu-item text-4xl md:text-7xl">{item.label}</span>
+                            </NavLink>
+                        </li>
+                    ))}
+                </ul>
             </div>
         </>
     );

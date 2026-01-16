@@ -19,6 +19,9 @@ interface AboutType {
   title: string;
   short_description: string;
   about_description: string;
+  about_appeal: string;
+  about_take_care: string;
+  about_offline: string;
 }
 
 interface ExperienceType {
