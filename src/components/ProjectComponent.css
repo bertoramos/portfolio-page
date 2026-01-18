@@ -37,7 +37,9 @@
 }
 
 .project-component-image-column img {
-    border-radius: 50px;
+    border-radius: 0px;
+    margin-bottom: 30%;
+    height: 100%;
 
     @media screen and (max-width: 768px) {
         height: 80%;
@@ -94,6 +96,7 @@
     --width: 80%;
     --height: 80%;
     --ion-background-color: var(--app_light_background_color);
+    --border-radius: 30px;
 
     @media screen and (max-width: 768px) {
         --width: 100%;
