@@ -58,7 +58,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = (props) => {
                             </div>
                         </IonCol>
                         <IonCol size="12" size-md="4" className="project-detail-image-column ion-text-center">
-                            <img style={{height: "70%"}} src={props.image} alt={props.title} />
+                            <img src={props.image} alt={props.title} />
                         </IonCol>
                     </IonRow>
                 </IonGrid>

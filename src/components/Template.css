@@ -1,3 +1,9 @@
+body {
+  --ion-background-color: var(--app_light_background_color);
+  --ion-text-color: var(--app_light_text_color);
+  color: var(--app_main_text_color);
+}
+
 /* Desktop version */
 @media (min-width: 768px) {
   .mobile-menu-btn {

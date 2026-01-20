@@ -22,24 +22,23 @@ const Template: React.FC<{ title: string, content: React.ReactNode, noContentScr
       <Menu menuOpen={menuOpen} toggleMenu={toggleMenu} />
 
       <IonPage id="main-content">
-        
+
         <IonHeader
           id="main_header"
           translucent={true}
           className='ion-no-border'
-          >
+        >
 
           <IonToolbar id="menu_toolbar" className={`flex items-center justify-between ${scrolled ? 'scrolled' : ''}`}>
 
-            { /* Menu button for mobile view */ }
+            { /* Menu button for mobile view */}
             <IonButtons slot="start">
               <IonMenuButton className="mobile-menu-btn" />
             </IonButtons>
-            
-            { /* Title with logo */ }
+
+            { /* Title with logo */}
             <div className="p-8 flex items-center gap-3">
               <IonIcon icon={logoIonic} className="text-2xl" />
-              <span className="text-lg font-semibold text-white">Portfolio</span>
             </div>
 
           </IonToolbar>
@@ -48,8 +47,8 @@ const Template: React.FC<{ title: string, content: React.ReactNode, noContentScr
         <IonContent fullscreen onIonScroll={handleScroll} scrollEvents={true} scrollY={!noContentScroll}>
           {content}
         </IonContent>
-        
-        
+
+
       </IonPage>
     </>
   );
