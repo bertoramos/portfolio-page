@@ -197,3 +197,62 @@
 
     }
 }
+
+.project-detail-modal {
+    --width: clamp(85%, 80%, 90%);
+    --height: clamp(75%, 80%, 90%);
+    --ion-background-color: var(--app_light_background_color);
+
+    @media screen and (max-width: 768px) {
+        --width: 100%;
+        --height: 100%;
+
+        text-align: center;
+    }
+}
+
+.project-detail-modal ion-toolbar {
+    --background: var(--app_light_background_color);
+}
+
+.project-detail-modal ion-header {
+    --ion-color: var(--app_main_text_color);
+    --background: var(--app_light_background_color);
+    --ion-box-shadow: none;
+    box-shadow: none;
+    --ion-toolbar-shadow: none;
+}
+
+.project-detail-modal ion-button {
+    color: var(--app_clear_highlighted_text_color);
+}
+
+.project-detail-modal-content * {
+    color: var(--app_main_text_color);
+    --ion-color: var(--app_main_text_color);
+    font-family: "Source Code Pro Light";
+}
+
+.project-detail-justify {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.project-detail-text-column {
+    padding: clamp(0%, 5%, 15%) clamp(10%, 15%, 20%) clamp(0%, 5%, 15%) clamp(2%, 5%, 8%);
+
+    @media screen and (max-width: 768px) {
+        padding: 0;
+    }
+}
+
+.project-detail-image-column {
+    
+    @media screen and (max-width: 768px) {
+        margin-top: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+}
