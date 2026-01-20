@@ -1,3 +1,4 @@
+/*
 .project-component-grid {
     margin-top: 0vh;
     
@@ -16,13 +17,13 @@
         margin-top: 0;
         display: flex;
         flex-direction: column;
-        /* Opcional: organiza el contenido verticalmente */
+        /* Opcional: organiza el contenido verticalmente * /
         align-items: center;
-        /* Centra horizontalmente los elementos */
+        /* Centra horizontalmente los elementos * /
         text-align: center;
-        /* Centra el texto dentro de los elementos */
+        /* Centra el texto dentro de los elementos * /
         height: 100%;
-        /* Asegura que el contenedor use todo el espacio disponible si es necesario */
+        /* Asegura que el contenedor use todo el espacio disponible si es necesario * /
     }
 }
 
@@ -157,3 +158,42 @@
     }
 }
 
+*/
+
+
+/*  */
+.project-component-grid {
+
+    @media screen and (max-width: 768px) {
+        height: 100%;
+    }
+}
+
+.project-image-column {
+    @media screen and (max-width: 768px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 40vh;
+    }
+}
+
+.project-image-column img {
+    width: 100%;
+    height: auto;
+
+    border-radius: 0 15% 15% 0 / 0 45% 45% 0;
+
+    transform: translateX(-5%);
+
+    @media screen and (max-width: 768px) {
+        border-radius: 10%;
+        transform: translateX(0);
+        padding: 0;
+
+        height: 100%;
+        width: auto;
+
+    }
+}
