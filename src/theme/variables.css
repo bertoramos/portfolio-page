@@ -13,6 +13,7 @@ http://ionicframework.com/docs/theming/ */
     --app_relevant_button_bg_color: #ff6f59;
     --app_relevant_button_text_color: #eaf4f4;
     --app_button_bg_color: #3fa7d6;
+    --app_chip_bg_color: #3fa6d666;
     --app_button_text_color: #8390a5;
     --app_decoration_color: #f4d35e;
 }

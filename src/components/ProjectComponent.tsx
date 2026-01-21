@@ -7,7 +7,6 @@ import TechChip from "./TechChip";
 
 import "./ProjectComponent.css";
 
-
 interface ProjectDetailProps {
     modal_trigger: string;
     title: string;
@@ -34,37 +33,52 @@ const ProjectDetail: React.FC<ProjectDetailProps> = (props) => {
                     </IonButtons>
                 </IonToolbar>
             </IonHeader>
-            <IonContent className="project-detail-modal-content ion-padding">
-                <IonGrid>
-                    <IonRow>
-                        <IonCol className="project-detail-text-column" size="12" size-md="8">
-                            <p style={{ textAlign: "center", fontWeight: "bold" }} className="project-detail-justify">
-                                {props.title}
-                            </p>
-                            <p className="project-detail-justify">
-                                {props.description}
-                            </p>
-                            <div className="ion-padding">
+            <IonContent className="ion-padding">
+                {/* Contenedor que centra el contenido del modal */}
+                <div className="flex items-center justify-center h-full">
+
+                    <IonGrid className="w-full">
+                        <IonRow className="items-center">
+
+                            { /* Columna izquierda - Texto */ }
+                            <IonCol
+                                size="12"
+                                size-md="6"
+                                className="flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-4"
+                            >
+                                <h2 className="text-2xl font-bold ml-8">
+                                    {props.title}
+                                </h2>
+
+                                <p className="text-gray-600 text-justify ml-8">
+                                    {props.description}
+                                </p>
+
                                 <a
-                                    className="hover:underline font-bold"
-                                    href={props.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer">Click here for more info.
+                                    href="{props.url}"
+                                    className="text-blue-600 font-semibold hover:underline ml-10"
+                                >
+                                    More info here
                                 </a>
-                            </div>
-                            <div className="project-technologies-container">
-                                {
-                                    props.technologies.map((tech, index) => (
-                                        <TechChip key={index} tech={tech} />
-                                    ))
-                                }
-                            </div>
-                        </IonCol>
-                        <IonCol size="12" size-md="4" className="project-detail-image-column ion-text-center">
-                            <img src={props.image} alt={props.title} />
-                        </IonCol>
-                    </IonRow>
-                </IonGrid>
+                            </IonCol>
+                            
+                            { /* Columna derecha - Imagen */ }
+                            <IonCol
+                                size="12"
+                                size-md="6"
+                                className="flex justify-center items-center mt-6 md:mt-0"
+                            >
+                                <img
+                                    src={props.image}
+                                    alt={props.title}
+                                    className="max-w-full h-128 object-contain rounded-lg"
+                                />
+                            </IonCol>
+
+                        </IonRow>
+                    </IonGrid>
+
+                </div>
             </IonContent>
         </IonModal>
     );
@@ -175,12 +189,12 @@ const ProjectComponent: React.FC<ProjectComponentProps> = (props) => {
                     className="md:flex md:flex-col md:justify-center"
                 >
                     <IonRow>
-                        {props.title}
+                        <p className="font-bold text-3xl m-5">{props.title}</p>
                     </IonRow>
-                    <IonRow>
+                    <IonRow className="mr-12 m-5">
                         {props.short_description}
                     </IonRow>
-                    <IonRow>
+                    <IonRow className="m-5">
                         <DetailsButton
                             title={props.title}
                             image={props.image}
@@ -189,7 +203,7 @@ const ProjectComponent: React.FC<ProjectComponentProps> = (props) => {
                             technologies={props.technologies}
                         />
                     </IonRow>
-                    <IonRow>
+                    <IonRow className="m-5 p-2">
                         {props.technologies.map((tech, index) => (
                             <TechChip tech={tech} key={index} />
                         ))}

@@ -148,13 +148,13 @@
 }
 
 .project-detail-image-column {
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
     @media screen and (max-width: 768px) {
         margin-top: 5vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
     }
 }
 
@@ -194,9 +194,12 @@
 
         height: 100%;
         width: auto;
-
     }
 }
+
+/*******************
+ **** Details ******
+ *******************/
 
 .project-detail-modal {
     --width: clamp(85%, 80%, 90%);
@@ -227,32 +230,18 @@
     color: var(--app_clear_highlighted_text_color);
 }
 
-.project-detail-modal-content * {
-    color: var(--app_main_text_color);
-    --ion-color: var(--app_main_text_color);
-    font-family: "Source Code Pro Light";
-}
-
-.project-detail-justify {
-    text-align: justify;
-    text-justify: inter-word;
-}
-
-.project-detail-text-column {
-    padding: clamp(0%, 5%, 15%) clamp(10%, 15%, 20%) clamp(0%, 5%, 15%) clamp(2%, 5%, 8%);
-
-    @media screen and (max-width: 768px) {
-        padding: 0;
-    }
-}
-
 .project-detail-image-column {
     
-    @media screen and (max-width: 768px) {
-        margin-top: 5vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
+}
+
+.project-detail-image-column img {
+    height: auto;
+    width: 80%;
+
+    border-radius: 3%;
+
+}
+
+.project-detail-modal-content * {
+    padding: 0% 1%;
 }

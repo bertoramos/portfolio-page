@@ -1,0 +1,9 @@
+
+.tech-chip {
+    background-color: var(--app_chip_bg_color);
+}
+
+.tech-label {
+    color: var(--app_main_text_color);
+    --ion-text-color: var(--app_main_text_color);
+}
