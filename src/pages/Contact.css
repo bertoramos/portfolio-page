@@ -75,6 +75,10 @@
     align-items: center;
     justify-content: center;
     padding: 2rem;
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
 }
 
 .image-col img {

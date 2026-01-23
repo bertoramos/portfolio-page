@@ -3,6 +3,7 @@ import { CVType } from '../model/cv';
 import { IonChip, IonCol, IonGrid, IonIcon, IonRow, IonText } from '@ionic/react';
 import { useEffect, useRef, useState } from 'react';
 import { logoGithub, logoLinkedin, mail } from 'ionicons/icons';
+import TechChip from '../components/TechChip';
 
 
 const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
@@ -106,15 +107,12 @@ const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
                     {technologies
                       .filter(([_, tech]) => (tech.categoryLabel || 'Other') === category)
                       .map(([techKey, tech], idx) => (
-                        <IonChip
+                        <TechChip
                           className={`tech-item ${skillsVisible ? 'visible' : ''}`}
-                          key={techKey}
-                          style={{ transitionDelay: `${idx * 120}ms` }}  // escalonado por índice
-                        >
-                          <IonIcon src={tech.icon || ""} />
-                          {tech.name}
-                        </IonChip>
-                        
+                          style={{ transitionDelay: `${idx * 50}ms` }}
+                          tech={tech}
+                          key={idx}
+                        />
                       ))}
                   </div>
                 </div>

@@ -46,6 +46,8 @@ import Menu from './components/Menu';
 import { chatbubblesOutline, toggle } from 'ionicons/icons';
 import Contact from './pages/Contact';
 
+import './App.css';
+
 setupIonicReact();
 
 const App: React.FC = () => {
@@ -92,7 +94,7 @@ const App: React.FC = () => {
         onClick={() => setIsContactOpen(isContactOpen => !isContactOpen)}
       >
         <IonIcon slot="start" icon={chatbubblesOutline} />
-        Contact
+        <span>Contact</span>
       </IonButton>
 
       <Contact cv={cv} isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />

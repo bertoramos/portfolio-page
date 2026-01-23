@@ -19,8 +19,7 @@
    SECCIÓN DE RESUMEN CORTO
    ============================================ */
 
-#about-content {
-}
+#about-content {}
 
 #about-grid {
     height: 100%;
@@ -80,7 +79,7 @@
     margin-top: 0;
 
     @media screen and (max-width: 768px) {
-        font-size: 2vh;
+      font-size: 2vh;
     }
 }
 

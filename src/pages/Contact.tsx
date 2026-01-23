@@ -7,7 +7,7 @@ export default function Contact({ cv, isOpen, onClose }: { cv: CVType | null, is
     if (!cv) {
         return <p>FATAL ERROR in cv loading</p>
     }
-
+    
     return (
         <IonModal isOpen={isOpen} onDidDismiss={onClose} className="contact-modal">
             <IonHeader className="ion-no-border">
@@ -20,7 +20,7 @@ export default function Contact({ cv, isOpen, onClose }: { cv: CVType | null, is
             <IonContent className="contact-content">
                 <IonGrid>
                     <IonRow>
-                        <IonCol className="contact-col" sizeMd="7">
+                        <IonCol className="contact-col" sizeMd="7" size="12">
                             <h2 className="mb-8 pb-8">Get in touch!</h2>
                             <p className="text-lg">Hey! 🤗 Feel free to send me an email at <a href={`mailto:${cv.contact.email}`}>{cv.contact.email.substring(7)}</a> or contact me on social media.</p>
                             <IonRow className="social-links">
@@ -61,7 +61,7 @@ export default function Contact({ cv, isOpen, onClose }: { cv: CVType | null, is
                                 </div>
                             </IonRow>
                         </IonCol>
-                        <IonCol className="image-col" sizeMd="5">
+                        <IonCol className="image-col" sizeMd="5" size="12">
                             <img src="assets/contact_image.svg" alt="Contact" />
                         </IonCol>
                     </IonRow>

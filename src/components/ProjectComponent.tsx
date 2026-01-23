@@ -189,7 +189,7 @@ const ProjectComponent: React.FC<ProjectComponentProps> = (props) => {
                     className="md:flex md:flex-col md:justify-center"
                 >
                     <IonRow>
-                        <p className="font-bold text-l m-5">{props.title}</p>
+                        <p className="font-bold text-lg md:text-3xl m-5">{props.title}</p>
                     </IonRow>
                     <IonRow className="mr-12 m-5">
                         {props.short_description}
