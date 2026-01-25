@@ -5,12 +5,21 @@
         height: 50px;
         padding: 0;
     }
+
+    color: var(--app_main_text_color);
+    font-family: var(--app_font_family_light);
+    --ion-font-family: var(--app_font_family_light);
+
 }
 
 #contact_button ion-icon {
     @media screen and (max-width: 768px) {
         font-size: 25px;
     }
+
+    color: var(--app_main_text_color);
+    font-family: var(--app_font_family_light);
+    --ion-font-family: var(--app_font_family_light);
 }
 
 #contact_button span {

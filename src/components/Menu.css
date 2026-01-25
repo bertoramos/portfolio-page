@@ -6,6 +6,9 @@
     position: fixed;
     top: 0;
     left: 0;
+
+    background-color: var(--app_menu_bg_color);
+    --ion-background-color: var(--app_menu_bg_color);
 }
 
 /* Menu list positioning */
@@ -22,6 +25,14 @@
 
 #main_menu li {
     margin: 4% 0%;
+}
+
+#main_menu span {
+    color: var(--app_menu_text_color);
+    --ion-color: var(--app_menu_text_color);
+
+    font-family: var(--app_menu_font);
+    --ion-font-family: var(--app_menu_font);
 }
 
 /* Menu active state */
@@ -68,7 +79,7 @@
     left: 0;
     width: 0;
     height: 4px;
-    background-color: currentColor;
+    
     transition: width 0.3s ease;
 }
 

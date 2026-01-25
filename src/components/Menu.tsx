@@ -25,8 +25,7 @@ export default function Menu({ menuOpen, toggleMenu }: { menuOpen: boolean, togg
 
     return (
         <>
-            <div className={`main-menu
-                            bg-gray-900 
+            <div className={`main-menu 
                             ${menuOpen ? "menu-active" : "menu-inactive"}`
                 } id="main_menu">
                 <ul className="link-container">

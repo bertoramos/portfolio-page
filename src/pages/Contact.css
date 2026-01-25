@@ -2,11 +2,16 @@
     --width: 90%;
     --height: 85%;
     --border-radius: 16px;
+
+    
 }
 
 .contact-header {
     --background: var(--app_light_background_color);
     --color: var(--app_main_text_color);
+
+    font-family: var(--app_font_family_light);
+    --ion-font-family: var(--app_font_family_light);
 }
 
 .contact-content {
@@ -14,6 +19,9 @@
     --color: var(--app_main_text_color);
     display: flex;
     align-items: center;
+
+    font-family: var(--app_font_family_light);
+    --ion-font-family: var(--app_font_family_light);
 }
 
 .contact-content ion-grid {
@@ -40,6 +48,9 @@
     font-size: 2.5rem;
     margin-bottom: 1rem;
     font-weight: bold;
+
+    font-family: var(--app_font_family_bold);
+    --ion-font-family: var(--app_font_family_bold);
 }
 
 .contact-col p {

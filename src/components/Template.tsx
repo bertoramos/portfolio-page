@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom';
 import { chatbubblesOutline, logoIonic } from 'ionicons/icons';
 
 import "./Template.css";
-import Contact from '../pages/Contact';
 import Menu from './Menu';
 
 const Template: React.FC<{ title: string, content: React.ReactNode, noContentScroll?: boolean, menuOpen: boolean, toggleMenu: () => void }> = ({ title, content, noContentScroll = false, menuOpen, toggleMenu }) => {

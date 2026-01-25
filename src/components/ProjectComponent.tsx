@@ -25,7 +25,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = (props) => {
 
     return (
         <IonModal className="project-detail-modal" ref={modal} trigger={props.modal_trigger}>
-            <IonHeader style={{ "--background": "#54d61c", "--ion-background-color": "red" }}>
+            <IonHeader>
                 <IonToolbar>
                     <IonTitle></IonTitle>
                     <IonButtons slot="end">
@@ -44,19 +44,19 @@ const ProjectDetail: React.FC<ProjectDetailProps> = (props) => {
                             <IonCol
                                 size="12"
                                 size-md="6"
-                                className="flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-4"
+                                className="project-detail-text-column flex flex-col justify-center items-center md:items-start text-center md:text-left space-y-4"
                             >
-                                <h2 className="text-2xl font-bold ml-8">
+                                <h2 className="text-2xl font-bold md:ml-8">
                                     {props.title}
                                 </h2>
-
-                                <p className="text-gray-600 text-justify ml-8">
+                                <p className="text-justify md:ml-8">
                                     {props.description}
                                 </p>
-
                                 <a
-                                    href="{props.url}"
-                                    className="text-blue-600 font-semibold hover:underline ml-10"
+                                    href={props.url}
+                                    target="_blank"
+                                    id="more-info-link"
+                                    className="font-semibold hover:underline md:ml-8"
                                 >
                                     More info here
                                 </a>
@@ -66,7 +66,7 @@ const ProjectDetail: React.FC<ProjectDetailProps> = (props) => {
                             <IonCol
                                 size="12"
                                 size-md="6"
-                                className="flex justify-center items-center mt-6 md:mt-0"
+                                className="project-detail-image-column flex justify-center items-center mt-6 md:mt-0"
                             >
                                 <img
                                     src={props.image}
@@ -189,9 +189,9 @@ const ProjectComponent: React.FC<ProjectComponentProps> = (props) => {
                     className="md:flex md:flex-col md:justify-center"
                 >
                     <IonRow>
-                        <p className="font-bold text-lg md:text-3xl m-5">{props.title}</p>
+                        <p className="project-component-title font-bold text-lg md:text-3xl m-5">{props.title}</p>
                     </IonRow>
-                    <IonRow className="mr-12 m-5">
+                    <IonRow className="project-component-description m-5">
                         {props.short_description}
                     </IonRow>
                     
