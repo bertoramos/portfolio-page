@@ -8,7 +8,7 @@
 
 .contact-header {
     --background: var(--app_light_background_color);
-    --color: var(--app_main_text_color);
+    --color: var(--app_clear_highlighted_text_color);
 
     font-family: var(--app_font_family_light);
     --ion-font-family: var(--app_font_family_light);
@@ -61,7 +61,7 @@
 }
 
 .contact-col a {
-    color: var(--ion-color-primary);
+    color: var(--ion-main-text-color);
     text-decoration: none;
     font-weight: 500;
 }
@@ -72,6 +72,9 @@
 
 .social-links {
     margin-top: 1rem;
+
+    color: var(--app_main_text_color);
+    --ion-color: var(--app_main_text_color);
 }
 
 #contact-buttons-container {
@@ -79,6 +82,10 @@
     gap: 0.5rem;
     align-items: center;
     justify-content: center;
+
+    ion-button {
+        --color: var(--app_clear_highlighted_text_color);
+    }
 }
 
 .image-col {
