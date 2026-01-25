@@ -94,7 +94,7 @@ const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
                 sizeMd="12"
                 className="ion-text-center"
               >
-                <IonText className="text-3xl">
+                <IonText className="text-3xl about-bold-title">
                   Skills
                 </IonText>
               </IonCol>
@@ -102,7 +102,7 @@ const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
             <div className="skills-grid-container" ref={skillsContainerRef}>
               {categories.map((category) => (
                 <div key={category} className="tech-category">
-                  <span className="category-label text-xl font-bold text-center block w-full mb-4">{category}</span>
+                  <span className="category-label text-xl about-bold-title text-center block w-full mb-4">{category}</span>
                   <div className="tech-items-container flex flex-col items-center gap-1">
                     {technologies
                       .filter(([_, tech]) => (tech.categoryLabel || 'Other') === category)
@@ -120,17 +120,43 @@ const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
             </div>
           </IonGrid>
         </section>
+        <section id="why-work-with-me-section" className="about-section">
+          <IonGrid>
+            <IonRow>
+              <IonCol size="12" sizeMd='6' className="ion-text-justify-start flex flex-col">
+                <p className="about-bold-title text-2xl mb-8 ml-8 text-center">Why work with me?</p>
+                <p className="mb-4 ml-8">
+                With a background in computer science, I'm trained to think in terms of problems and solutions. I like looking at strange and interesting ideas, and working out how to make them real.
+                </p>
+                <p className="mb-4 ml-8">
+                I'm curious, honest, and I don't like doing things on autopilot. If something can be done better, I'll question it.
+                </p>
+                <p className="mb-4 ml-8">
+                I care about what I build, and the people I build it with. I value clear communication, responsibility, appreciation, and doing things right without overcomplicating them. I take care of my work, and I treat projects as if they were my own.
+                </p>
+              </IonCol>
+
+              <IonCol size="12" sizeMd='6' className="ion-text-center">
+                <img
+                  src="/portfolio-page/assets/images/about/why-work-with-me.png"
+                  alt="Why work with me illustration"
+                  className="why-work-with-me-image mt-8"
+                />
+              </IonCol>
+            </IonRow>
+          </IonGrid>
+        </section>
         <section id="location-section" className="about-section">
           <IonGrid className="ion-no-padding">
             <IonRow className="flex flex-col md:flex-row gap-4 md:gap-2 p-4">
               <IonCol size="12" sizeMd="4" className="ion-text-center flex flex-col items-center">
-                <h3 className="text-2xl font-bold mb-20">Offline</h3>
-                <p className="text-base max-w-md mt-8">
+                <h3 className="about-bold-title text-2xl mb-20">Offline</h3>
+                <p className="text-base max-w-md mt-8 text-justify">
                   {cv?.about.about_offline}
                 </p>
               </IonCol>
               <IonCol size="12" sizeMd="4" className="ion-text-center flex flex-col items-center">
-                <h3 className="text-2xl font-bold mb-10">Online</h3>
+                <h3 className="about-bold-title text-2xl mb-10">Online</h3>
                 <ul className="list-none space-y-2 mt-8">
                   <li className="flex items-center justify-center gap-2">
                     <IonIcon icon={logoGithub} className="text-xl" />
@@ -147,7 +173,7 @@ const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
                 </ul>
               </IonCol>
               <IonCol size="12" sizeMd="3" className="ion-text-center flex flex-col items-center">
-                <h3 className="text-2xl font-bold mb-10">Based in</h3>
+                <h3 className="about-bold-title text-2xl mb-10">Based in</h3>
                 <div className="google-map-code w-full max-w-md mt-8">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2264142.544824199!2d-15.26492770059671!3d28.393133433208302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1767631204684!5m2!1ses!2ses"

@@ -12,7 +12,7 @@ const Experience: React.FC<{ cv: CVType | null }> = ({ cv }) => {
   return (
 
     <>
-      <h1 className="text-white text-center text-4xl font-bold p-4">Experience</h1>
+      <h1 className="experience-title text-center text-4xl p-4">Experience</h1>
 
       <IonAccordionGroup expand="inset" className="m-8">
 
@@ -21,12 +21,12 @@ const Experience: React.FC<{ cv: CVType | null }> = ({ cv }) => {
         ) : (
           experience.map((exp, index) => (
             <IonAccordion key={index} value={`exp-${index}`} toggleIconSlot="end">
-              <IonItem slot="header" color="light">
+              <IonItem className="experience-item" slot="header">
                 <IonLabel>{exp.position} @ {exp.company}</IonLabel>
                 <IonLabel className="mr-8" slot="end">{exp.startDate} - {exp.endDate || 'Present'}</IonLabel>
               </IonItem>
               <div slot="content">
-                <IonCard>
+                <IonCard className="experience-card">
                   <IonCardHeader className="m-8">
                     <IonRow>
                       <IonCol size="auto">

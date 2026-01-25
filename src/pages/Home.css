@@ -1,4 +1,8 @@
 
+#home-grid {
+    --ion-background-color: var(--app_light_background_color);
+}
+
 #home-content {
     --ion-background-color: var(--app_light_background_color);
 }
@@ -42,6 +46,7 @@
     padding: 0;
     position: relative;
     text-align: left;
+    color: var(--app_main_text_color);
     
     height: 100%;
     width: 100%;
@@ -56,7 +61,7 @@
 }
 
 #home-title {
-    font-family: 'Source Code Pro Black', sans-serif;
+    font-family: var(--app_font_family_bold);
     font-size: 9vh;
     color: var(--app_main_text_color);
     padding-bottom: 0;
@@ -68,7 +73,7 @@
 }
 
 #home-subtitle {
-    font-family: 'Source Code Pro Light', sans-serif;
+    font-family: var(--app_font_family_light);
     font-size: 4vh;
     color: var(--app_main_text_color);
     padding-top: 0;

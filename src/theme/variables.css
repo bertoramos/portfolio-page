@@ -16,4 +16,7 @@ http://ionicframework.com/docs/theming/ */
     --app_chip_bg_color: #3fa6d666;
     --app_button_text_color: #8390a5;
     --app_decoration_color: #f4d35e;
+
+    --app_font_family_bold: 'Comic Sans MS', cursive, sans-serif;
+    --app_font_family_light: 'Papyrus', fantasy, sans-serif;
 }

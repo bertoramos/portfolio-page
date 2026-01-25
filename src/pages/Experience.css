@@ -1,0 +1,44 @@
+.experience-item {
+    --ion-item-background: var(--app_medium_background_color) !important;
+    --ion-item-color: var(--app_main_text_color) !important;
+    --ion-font-family: var(--app_font_family_bold);
+    color: var(--app_main_text_color);
+    background-color: var(--app_medium_background_color) !important;
+}
+
+.experience-item ion-label {
+    --ion-background-color: var(--app_medium_background_color) !important;
+    color: var(--app_main_text_color) !important;
+    background-color: var(--app_medium_background_color) !important;
+
+    font-family: var(--app_font_family_bold);
+}
+
+ion-accordion.accordion-expanding,
+ion-accordion.accordion-expanded {
+    margin: 2vh 0;
+
+    background-color: var(--app_medium_background_color);
+    --ion-background-color: var(--app_medium_background_color);
+}
+
+.experience-item * {
+    font-family: var(--app_font_family_bold);
+    color: var(--app_main_text_color);
+
+    background-color: var(--app_medium_background_color);
+    --ion-background-color: var(--app_medium_background_color);
+}
+
+.experience-title {
+    font-family: var(--app_font_family_bold);
+    color: var(--app_main_text_color);
+}
+
+.experience-card {
+    background-color: var(--app_medium_background_color);
+    --ion-background-color: var(--app_medium_background_color);
+    color: var(--app_main_text_color);
+
+    font-family: var(--app_font_family_light);
+}

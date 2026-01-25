@@ -12,7 +12,7 @@ const Education: React.FC<{ cv: CVType | null }> = ({ cv }) => {
   return (
 
     <>
-      <h1 className="text-white text-center text-4xl font-bold p-4">Education</h1>
+      <h1 className="education-title text-center text-4xl p-4">Education</h1>
 
       <IonAccordionGroup expand="inset" className="m-8">
 
@@ -21,12 +21,12 @@ const Education: React.FC<{ cv: CVType | null }> = ({ cv }) => {
         ) : (
           education.map((edu, index) => (
             <IonAccordion key={index} value={`edu-${index}`} toggleIconSlot="end">
-              <IonItem slot="header" color="light">
+              <IonItem className='education-item' slot="header">
                 <IonLabel>{edu.degree} @ {edu.institution}</IonLabel>
                 <IonLabel className="mr-8" slot="end">{edu.startDate} - {edu.endDate || 'Present'}</IonLabel>
               </IonItem>
               <div slot="content">
-                <IonCard>
+                <IonCard className="education-card">
                   <IonCardHeader className="m-8">
                     <IonRow>
                       <IonCol size="auto">
