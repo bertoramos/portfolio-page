@@ -51,6 +51,12 @@ ion-accordion.accordion-expanded {
     background-color: var(--app_medium_background_color);
     --ion-background-color: var(--app_medium_background_color);
     color: var(--app_main_text_color);
+    --ion-text-color: var(--app_main_text_color);
 
     font-family: var(--app_font_family_light);
+}
+
+.education-card-header span, .education-card-header a, .education-card-header ion-icon {
+    color: var(--app_secondary_text_color);
+    --ion-text-color: var(--app_secondary_text_color);
 }

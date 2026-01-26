@@ -6,8 +6,9 @@
 }
 
 .tech-label {
-    color: var(--app_main_text_color);
-    --ion-text-color: var(--app_main_text_color);
+    color: var(--app_chip_text_color);
+    --ion-text-color: var(--app_chip_text_color);
+
     font-family: var(--app_font_family_light);
     --ion-font-family: var(--app_font_family_light);
 }

@@ -27,10 +27,11 @@ const Experience: React.FC<{ cv: CVType | null }> = ({ cv }) => {
               </IonItem>
               <div slot="content">
                 <IonCard className="experience-card">
-                  <IonCardHeader className="m-8">
+                  <IonCardHeader className="experience-card-header m-8">
                     <IonRow>
                       <IonCol size="auto">
-                        <IonIcon className="ml-2 mr-2" icon={locationOutline} /> {exp.location}
+                        <IonIcon className="ml-2 mr-2" icon={locationOutline} />
+                        <span>{exp.location}</span>
                       </IonCol>
                       <IonCol size="auto">
                         <IonIcon className="ml-2 mr-2" icon={globe} /> <a className='hover:underline font-bold' href={exp.url.startsWith('http') ? exp.url : `https://${exp.url}`} target="_blank" rel="noopener noreferrer">{exp.url}</a>

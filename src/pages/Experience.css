@@ -42,3 +42,8 @@ ion-accordion.accordion-expanded {
 
     font-family: var(--app_font_family_light);
 }
+
+.experience-card-header span, .experience-card-header a, .experience-card-header ion-icon {
+    color: var(--app_secondary_text_color);
+    --ion-text-color: var(--app_secondary_text_color);
+}

@@ -149,13 +149,13 @@ const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
         <section id="location-section" className="about-section">
           <IonGrid className="ion-no-padding">
             <IonRow className="flex flex-col md:flex-row gap-4 md:gap-2 p-4">
-              <IonCol size="12" sizeMd="4" className="ion-text-center flex flex-col items-center">
+              <IonCol size="12" sizeMd="4" className="offline-col ion-text-center flex flex-col items-center">
                 <h3 className="about-bold-title text-2xl mb-20">Offline</h3>
                 <p className="text-base max-w-md mt-8 text-justify">
                   {cv?.about.about_offline}
                 </p>
               </IonCol>
-              <IonCol size="12" sizeMd="4" className="ion-text-center flex flex-col items-center">
+              <IonCol size="12" sizeMd="4" className="online-col ion-text-center flex flex-col items-center">
                 <h3 className="about-bold-title text-2xl mb-10">Online</h3>
                 <ul className="list-none space-y-2 mt-8">
                   <li className="flex items-center justify-center gap-2">
@@ -172,7 +172,7 @@ const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
                   </li>
                 </ul>
               </IonCol>
-              <IonCol size="12" sizeMd="3" className="ion-text-center flex flex-col items-center">
+              <IonCol size="12" sizeMd="3" className="based-in-col ion-text-center flex flex-col items-center">
                 <h3 className="about-bold-title text-2xl mb-10">Based in</h3>
                 <div className="google-map-code w-full max-w-md mt-8">
                   <iframe

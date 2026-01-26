@@ -27,13 +27,15 @@ const Education: React.FC<{ cv: CVType | null }> = ({ cv }) => {
               </IonItem>
               <div slot="content">
                 <IonCard className="education-card">
-                  <IonCardHeader className="m-8">
+                  <IonCardHeader className="education-card-header m-8">
                     <IonRow>
                       <IonCol size="auto">
-                        <IonIcon className="ml-2 mr-2" icon={locationOutline} /> {edu.location}
+                        <IonIcon className="ml-2 mr-2" icon={locationOutline} />
+                        <span>{edu.location}</span>
                       </IonCol>
                       <IonCol size="auto">
-                        <IonIcon className="ml-2 mr-2" icon={globe} /> <a className='hover:underline font-bold' href={edu.url} target="_blank">{edu.url}</a>
+                        <IonIcon className="ml-2 mr-2" icon={globe} />
+                        <a className='hover:underline font-bold' href={edu.url} target="_blank">{edu.url}</a>
                       </IonCol>
                     </IonRow>
                   </IonCardHeader>
