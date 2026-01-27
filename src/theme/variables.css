@@ -30,3 +30,7 @@ http://ionicframework.com/docs/theming/ */
     --app_menu_font: 'Lucida Console', Monaco, monospace;
 
 }
+
+[data-theme="dark"] {
+    --app_main_text_color: #00ff;
+}

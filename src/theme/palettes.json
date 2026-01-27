@@ -1,0 +1,43 @@
+[
+    {
+        "url": "https://colorlisa.com/",
+        "name": "Turnsole by Kenneth Noland",
+        "colors": [
+            "#D0D8CD",
+            "#586180",
+            "#E2AC29",
+            "#1A1915",
+            "#E6E1CE"
+        ]
+    },
+    {
+        "name": "The Scream (pastel) by Edvard Munch",
+        "colors": [
+            "#5059A1",
+            "#EFC337",
+            "#1F386E",
+            "#D1AE82",
+            "#BE3B2C"
+        ]
+    },
+    {
+        "name": "The Great Wave off Kanagawa by Katsushika Hokusai",
+        "colors": [
+            "#1F284C",
+            "#2D4472",
+            "#6E6352",
+            "#D9CCAC",
+            "#ECE2C6"
+        ]
+    },
+    {
+        "name": "Seated Nude by Fernando Botero",
+        "colors": [
+            "#99B6BD",
+            "#B3A86A",
+            "#ECC9A0",
+            "#D4613E",
+            "#BB9568"
+        ]
+    }
+]

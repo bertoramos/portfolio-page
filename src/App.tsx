@@ -80,11 +80,19 @@ const App: React.FC = () => {
 
   const [isContactOpen, setIsContactOpen] = React.useState(false);
 
+  const toggleTheme = () => {
+    const current = document.documentElement.getAttribute("data-theme");
+    document.documentElement.setAttribute(
+      "data-theme",
+      current === "dark" ? "light" : "dark"
+    );
+  };
 
   return (
     <IonApp>
 
-      <div slot="end" id="menu_button" onClick={() => { setMenuOpen(!menuOpen); }}>
+      <div slot="end" id="menu_button" /*onClick={() => { setMenuOpen(!menuOpen); }}*/>
+        <IonButton onClick={toggleTheme}>Boton</IonButton>
         <Hamburger size={20} toggled={menuOpen} toggle={setMenuOpen} />
       </div>
 
