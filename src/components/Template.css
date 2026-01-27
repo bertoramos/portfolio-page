@@ -59,7 +59,7 @@ body {
   left: 20px;
   z-index: 1000;
 
-  --background: orange;
+  --background: var(--app_contact_button_bg_color);
   animation: button-anim 4s infinite ease-in-out;
   border-radius: 100%;
   
@@ -73,12 +73,12 @@ body {
   
   0%, 50%, 100% {
     transform: scale(1);
-    box-shadow: 0 0 10px orange;
+    box-shadow: 0 0 10px var(--app_contact_button_shadow_color_dark);
   }
   
   25%, 75% {
     transform: scale(1.1);
-    box-shadow: 0 0 20px red;
+    box-shadow: 0 0 20px var(--app_contact_button_shadow_color_light);;
   }
 
 }

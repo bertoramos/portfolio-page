@@ -39,5 +39,25 @@
             "#D4613E",
             "#BB9568"
         ]
+    },
+    {
+        "name": "Radical Optimism by Dua Lipa",
+        "colors": [
+            "#6a92b2",
+            "#dfc1a7",
+            "#8da8a6",
+            "#216972",
+            "#01454e"
+        ]
+    },
+    {
+        "name": "Future Nostalgia by Dua Lipa",
+        "colors": [
+            "#000000",
+	        "#53a1f9",
+	        "#f2e69e",
+	        "#f6aff3",
+	        "#8b0c0c"
+        ]
     }
 ]

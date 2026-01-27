@@ -9,34 +9,73 @@ http://ionicframework.com/docs/theming/ */
 :root { /* Light */
 /*[data-theme="light"] {*/
     --app_light_background_color: #eaf4f4;
-    --app_medium_background_color: #d9ebeb;
-    --app_dark_background_color: #014f86;
-    --app_main_text_color: red; /* #333; */
-    --app_secondary_text_color: #a00; /* #555; */
-    --app_clear_highlighted_text_color: olive; /* #3fa7d6 */;
-    --app_dark_highlighted_text_color: #ff6f59;
-    --app_relevant_button_bg_color: #ff6f59;
-    --app_relevant_button_text_color: #eaf4f4;
-    --app_button_bg_color: #3fa7d6;
+    --app_medium_background_color: #4da39d;
+    --app_dark_background_color: #216972;
+    
+    --app_main_text_color: #00353d; /* #333; */
+    --app_secondary_text_color: #0e636e; /* #555; */
 
-    --app_chip_bg_color: rgb(103, 184, 255);
-    --app_chip_text_color: rgba(0, 57, 77, 0.4);
+    --app_clear_highlighted_text_color: #D4613E; /* #3fa7d6 */;
+    --app_dark_highlighted_text_color: #D4613E;
+    --app_relevant_button_bg_color: #D4613E;
+
+    --app_relevant_button_text_color: #eaf4f4;
+    --app_button_bg_color: #216972;
+
+    --app_chip_bg_color: #dfc1a777;
+    --app_chip_text_color: #01454e;
 
     --app_button_text_color: green; /* #8390a5; */
     --app_decoration_color: #f4d35e;
 
-    --app_menu_bg_color: pink;
-    --app_menu_text_color: purple;
+    --app_menu_bg_color: #8da8a6;
+    --app_menu_text_color: #01454e;
 
     --app_menu_font: 'Lucida Console', Monaco, monospace;
 
-    --app_font_family_bold: 'Comic Sans MS', cursive, sans-serif;
-    --app_font_family_light: 'Papyrus', fantasy, sans-serif;
+    --app_font_family_bold: 'Lucida Console', cursive, sans-serif;
+    --app_font_family_light: 'Lucida Console', fantasy, sans-serif;
+
+    --app_contact_button_bg_color: #ec5425;
+    --app_contact_button_text_color: #00353d;
+    --app_contact_button_shadow_color_light: sandybrown;
+    --app_contact_button_shadow_color_dark: #D4613E;
     
 }
 
 [data-theme="dark"] {
-    --app_main_text_color: #00ff;
+    --app_light_background_color: white;
+    --app_medium_background_color: white;
+    --app_dark_background_color: white;
+    
+    --app_main_text_color: white; /* #333; */
+    --app_secondary_text_color: white; /* #555; */
+
+    --app_clear_highlighted_text_color: white; /* #3fa7d6 */;
+    --app_dark_highlighted_text_color: white;
+    --app_relevant_button_bg_color: white;
+
+    --app_relevant_button_text_color: white;
+    --app_button_bg_color: white;
+
+    --app_chip_bg_color: white;
+    --app_chip_text_color: white;
+
+    --app_button_text_color: white; /* #8390a5; */
+    --app_decoration_color: white;
+
+    --app_menu_bg_color: white;
+    --app_menu_text_color: white;
+
+    --app_menu_font: 'Lucida Console', Monaco, monospace;
+
+    --app_font_family_bold: 'Lucida Console', cursive, sans-serif;
+    --app_font_family_light: 'Lucida Console', fantasy, sans-serif;
+
+    --app_contact_button_bg_color: white;
+    --app_contact_button_text_color: white;
+    --app_contact_button_shadow_color_light: white;
+    --app_contact_button_shadow_color_dark: white;
 }
 
 * {
