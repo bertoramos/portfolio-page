@@ -5,6 +5,10 @@ import { useEffect, useRef, useState } from 'react';
 import { logoGithub, logoLinkedin, mail } from 'ionicons/icons';
 import TechChip from '../components/TechChip';
 
+const mapDarkVersion = "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1074089.532239715!2d-15.89262175711328!3d28.501311538612253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses!2ses!4v1769525889492!5m2!1ses!2ses";
+
+/* FIXME: arreglar zoom del mapa en version LIGHT */
+const mapLightVersion = "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d897606.9213929285!2d-15.89262175711328!3d28.501311538612253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1769526052747!5m2!1ses!2ses";
 
 const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
   {
@@ -126,13 +130,13 @@ const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
               <IonCol size="12" sizeMd='6' className="ion-text-justify-start flex flex-col">
                 <p className="about-bold-title text-2xl mb-8 ml-8 text-center">Why work with me?</p>
                 <p className="mb-4 ml-8">
-                With a background in computer science, I'm trained to think in terms of problems and solutions. I like looking at strange and interesting ideas, and working out how to make them real.
+                  With a background in computer science, I'm trained to think in terms of problems and solutions. I like looking at strange and interesting ideas, and working out how to make them real.
                 </p>
                 <p className="mb-4 ml-8">
-                I'm curious, honest, and I don't like doing things on autopilot. If something can be done better, I'll question it.
+                  I'm curious, honest, and I don't like doing things on autopilot. If something can be done better, I'll question it.
                 </p>
                 <p className="mb-4 ml-8">
-                I care about what I build, and the people I build it with. I value clear communication, responsibility, appreciation, and doing things right without overcomplicating them. I take care of my work, and I treat projects as if they were my own.
+                  I care about what I build, and the people I build it with. I value clear communication, responsibility, appreciation, and doing things right without overcomplicating them. I take care of my work, and I treat projects as if they were my own.
                 </p>
               </IonCol>
 
@@ -175,14 +179,16 @@ const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
               <IonCol size="12" sizeMd="3" className="based-in-col ion-text-center flex flex-col items-center">
                 <h3 className="about-bold-title text-2xl mb-10">Based in</h3>
                 <div className="google-map-code w-full max-w-md mt-8">
+
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2264142.544824199!2d-15.26492770059671!3d28.393133433208302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1767631204684!5m2!1ses!2ses"
+                    src={document.documentElement.getAttribute("data-theme") === "dark" ? mapDarkVersion : mapLightVersion}
                     className="w-full h-64 md:h-80 rounded-lg shadow-md"
                     style={{ border: 0 }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade">
                   </iframe>
+
                 </div>
               </IonCol>
             </IonRow>
