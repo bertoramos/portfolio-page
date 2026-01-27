@@ -4,33 +4,47 @@ http://ionicframework.com/docs/theming/ */
 @import "tailwindcss";
 
 :root {
+    
+}
+:root { /* Light */
+/*[data-theme="light"] {*/
     --app_light_background_color: #eaf4f4;
     --app_medium_background_color: #d9ebeb;
     --app_dark_background_color: #014f86;
-    --app_main_text_color: red; /*#333;*/
-    --app_secondary_text_color: #a00; /*#555;*/
-    --app_clear_highlighted_text_color: olive; /*#3fa7d6*/;
+    --app_main_text_color: red; /* #333; */
+    --app_secondary_text_color: #a00; /* #555; */
+    --app_clear_highlighted_text_color: olive; /* #3fa7d6 */;
     --app_dark_highlighted_text_color: #ff6f59;
     --app_relevant_button_bg_color: #ff6f59;
     --app_relevant_button_text_color: #eaf4f4;
     --app_button_bg_color: #3fa7d6;
-    
+
     --app_chip_bg_color: rgb(103, 184, 255);
     --app_chip_text_color: rgba(0, 57, 77, 0.4);
 
-    --app_button_text_color: green; /*#8390a5;*/
+    --app_button_text_color: green; /* #8390a5; */
     --app_decoration_color: #f4d35e;
-
-    --app_font_family_bold: 'Comic Sans MS', cursive, sans-serif;
-    --app_font_family_light: 'Papyrus', fantasy, sans-serif;
 
     --app_menu_bg_color: pink;
     --app_menu_text_color: purple;
 
     --app_menu_font: 'Lucida Console', Monaco, monospace;
 
+    --app_font_family_bold: 'Comic Sans MS', cursive, sans-serif;
+    --app_font_family_light: 'Papyrus', fantasy, sans-serif;
+    
 }
 
 [data-theme="dark"] {
     --app_main_text_color: #00ff;
+}
+
+* {
+  transition:
+    background-color 0.6s ease,
+    color 0.6s ease,
+    border-color 0.6s ease,
+    box-shadow 0.6s ease,
+    --ion-color 0.6s ease,
+    --ion-background-color 0.6s ease;
 }

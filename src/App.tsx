@@ -1,5 +1,5 @@
 import { HashRouter, Route } from 'react-router-dom';
-import { IonApp, IonButton, IonContent, IonIcon, setupIonicReact } from '@ionic/react';
+import { IonApp, IonButton, IonContent, IonIcon, IonToggle, setupIonicReact } from '@ionic/react';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -47,6 +47,7 @@ import { chatbubblesOutline, toggle } from 'ionicons/icons';
 import Contact from './pages/Contact';
 
 import './App.css';
+import ThemeToggle from './components/ThemeToggle';
 
 setupIonicReact();
 
@@ -68,31 +69,37 @@ const App: React.FC = () => {
         setLoading(false);
       }
     };
-
+    
     fetchCV();
   }, []);
 
   const [menuOpen, setMenuOpen] = React.useState(false);
+  const [isContactOpen, setIsContactOpen] = React.useState(false);
 
+  const [isDarkTheme, setIsDarkTheme] = React.useState(false);
+  
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const [isContactOpen, setIsContactOpen] = React.useState(false);
+  // Inicializar tema por defecto
+  useEffect(() => {
+    const theme = document.documentElement.getAttribute("data-theme") || "light";
+    document.documentElement.setAttribute("data-theme", theme);
+    setIsDarkTheme(theme === "dark");
+  }, []);
 
-  const toggleTheme = () => {
-    const current = document.documentElement.getAttribute("data-theme");
-    document.documentElement.setAttribute(
-      "data-theme",
-      current === "dark" ? "light" : "dark"
-    );
+  const toggleTheme = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newTheme = e.target.checked ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", newTheme);
+    setIsDarkTheme(e.target.checked);
   };
 
   return (
     <IonApp>
 
       <div slot="end" id="menu_button" /*onClick={() => { setMenuOpen(!menuOpen); }}*/>
-        <IonButton onClick={toggleTheme}>Boton</IonButton>
+        <ThemeToggle checked={isDarkTheme} onChange={toggleTheme} />
         <Hamburger size={20} toggled={menuOpen} toggle={setMenuOpen} />
       </div>
 
