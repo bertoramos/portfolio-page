@@ -1,74 +1,113 @@
 import { IonAccordion, IonAccordionGroup, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonChip, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonItem, IonLabel, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
 import './Education.css';
-import { CVType } from '../model/cv';
-import { globe, locationOutline } from 'ionicons/icons';
+import { CVType, EducationType } from '../model/cv';
+import { globe, locationOutline, school } from 'ionicons/icons';
 import TechChip from '../components/TechChip';
+import { useState, useEffect, useRef } from 'react';
+
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
 
 const Education: React.FC<{ cv: CVType | null }> = ({ cv }) => {
 
   const baseURL = import.meta.env.BASE_URL || '';
   const education = cv?.education || [];
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleClick = (idx: number, e: React.MouseEvent) => {
+    e.stopPropagation();
+    setExpandedIndex(expandedIndex === idx ? null : idx);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        setExpandedIndex(null);
+      }
+    };
+    
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, []);
 
   return (
-
     <>
-      <h1 className="education-title text-center text-4xl p-4">Education</h1>
+      <section className="education-page w-full py-8 md:py-12">
 
-      <IonAccordionGroup expand="inset" className="m-8">
+        <h2 className="education-title text-2xl sm:text-3xl md:text-4xl font-semibold pb-2 mb-8 md:mb-12 text-center">Education</h2>
 
-        {education.length === 0 ? (
-          <p>Error cargando CV</p>
-        ) : (
-          education.map((edu, index) => (
-            <IonAccordion key={index} value={`edu-${index}`} toggleIconSlot="end">
-              <IonItem className='education-item' slot="header">
-                <IonLabel>{edu.degree} @ {edu.institution}</IonLabel>
-                <IonLabel className="mr-8" slot="end">{edu.startDate} - {edu.endDate || 'Present'}</IonLabel>
-              </IonItem>
-              <div slot="content">
-                <IonCard className="education-card">
-                  <IonCardHeader className="education-card-header m-8">
-                    <IonRow>
-                      <IonCol size="auto">
-                        <IonIcon className="ml-2 mr-2" icon={locationOutline} />
-                        <span>{edu.location}</span>
-                      </IonCol>
-                      <IonCol size="auto">
-                        <IonIcon className="ml-2 mr-2" icon={globe} />
-                        <a className='hover:underline font-bold' href={edu.url} target="_blank">{edu.url}</a>
-                      </IonCol>
-                    </IonRow>
-                  </IonCardHeader>
-                  <IonCardContent className="m-8">
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex-1">
-                        <div>{edu.description}</div>
-                        <div className='ion-padding-top'>{
-                          edu.technologies.map((tech, index) => (
-                            <IonCol key={index} size="auto" >
-                              <TechChip tech={tech} />
-                            </IonCol>
-                          ))
-                        }</div>
-                      </div>
-                      <div className="w-24 h-24 flex items-center justify-center overflow-hidden flex-shrink-0">
-                        <img  
-                          src={baseURL + edu.institution_logo} 
-                          alt={"logo " + edu.institution}
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
-                    </div>
-                  </IonCardContent>
-                </IonCard>
+        <VerticalTimeline>
+          {education.map((edu: EducationType, index: number) => (
+            <VerticalTimelineElement
+              className="vertical-timeline-element--education"
+              contentStyle={{ background: 'var(--app_medium_background_color)', color: 'var(--app_main_text_color)' }}
+              contentArrowStyle={{ borderRight: '7px solid var(--app_medium_background_color)' }}
+              date={edu.startDate + (edu.endDate ? ' - ' + edu.endDate : ' - Present')}
+              iconStyle={{ background: 'var(--app_dark_background_color)', color: 'var(--app_light_background_color)' }}
+              icon={<IonIcon icon={school} />}
+              iconClassName="flex items-center justify-center"
+            >
+              <div
+                className=""
+                onClick={(e) => handleClick(index, e)}
+                ref={index === 0 ? containerRef : null}
+              >
+                
+                {/* Degree / Institution */}
+                <h3 className="education-company-role text-base sm:text-lg font-medium leading-tight">
+                  {edu.degree}
+                  <span>
+                    {" "}
+                    · {edu.institution}
+                  </span>
+                </h3>
+
+                {/* Location and URL */}
+                <div className="education-meta mt-1 sm:mt-2 text-xs sm:text-sm flex flex-col gap-1">
+                  <div className="flex items-center gap-1">
+                    <IonIcon icon={locationOutline} className="text-xs" />
+                    <span>{edu.location}</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <IonIcon icon={globe} className="text-xs" />
+                    <a className='hover:underline' href={edu.url} target="_blank" rel="noreferrer">{edu.url}</a>
+                  </div>
+                </div>
+
+                {/* Summary - Truncated with click to expand */}
+                <p className="education-description mt-2 sm:mt-3 text-xs sm:text-sm leading-relaxed transition-all duration-300">
+                  {expandedIndex === index
+                    ? edu.description
+                    : edu.description.split(' ').slice(0, 4).join(' ') + '...'}
+                </p>
+
+                {/* Indicator */}
+                {edu.description.length > 100 && (
+                  <span className="see-more-button text-xs text-blue-500 mt-1 inline-block">
+                    {expandedIndex === index ? 'Ver menos' : 'Ver más...'}
+                  </span>
+                )}
+
+                {/* Stack */}
+                <ul className="education-technologies mt-3 sm:mt-4 flex flex-wrap gap-1.5 sm:gap-2 text-xs">
+                  {edu.technologies.map((tech) => (
+                    <TechChip key={tech.name} tech={tech} />
+                  ))}
+                </ul>
               </div>
-            </IonAccordion>
-          ))
-        )
-        }
-      </IonAccordionGroup>
-    </>
+            </VerticalTimelineElement>
+          ))}
 
+          <VerticalTimelineElement
+            iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
+            icon={<IonIcon icon={school} />}
+            iconClassName="flex items-center justify-center"
+          />
+        </VerticalTimeline>
+
+      </section>
+    </>
   );
 };
 

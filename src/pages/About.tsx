@@ -5,10 +5,10 @@ import { useEffect, useRef, useState } from 'react';
 import { logoGithub, logoLinkedin, mail } from 'ionicons/icons';
 import TechChip from '../components/TechChip';
 
-const mapDarkVersion = "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1074089.532239715!2d-15.89262175711328!3d28.501311538612253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses!2ses!4v1769525889492!5m2!1ses!2ses";
+const mapDarkVersion = "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1755473.231203864!2d-15.771856166834326!3d28.471129475164613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1ses!2ses!4v1769590999372!5m2!1ses!2ses";
 
 /* FIXME: arreglar zoom del mapa en version LIGHT */
-const mapLightVersion = "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d897606.9213929285!2d-15.89262175711328!3d28.501311538612253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1769526052747!5m2!1ses!2ses";
+const mapLightVersion = "https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1795727.0820230588!2d-15.771856166834326!3d28.471129475164613!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2ses!4v1769591032260!5m2!1ses!2ses";
 
 const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
   {
@@ -84,11 +84,11 @@ const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
           </IonGrid>
         </section>
         <section id="long-resume-section" className="about-section">
-          <p>
+          <div>
             <p className='p-8 text-xl md:text-2xl text-center whitespace-pre-wrap'>{cv?.about.about_description}</p>
             <p className='pt-2 pb-4 text-xl md:text-2xl text-center whitespace-pre-wrap'>{cv?.about.about_appeal}</p>
             <p className='pt-10 pb-20 text-xl md:text-2xl text-center whitespace-pre-wrap'>{cv?.about.about_take_care}</p>
-          </p>
+          </div>
         </section>
         <section id="skills-section" className="about-section">
           <IonGrid className="about-skills-grid">

@@ -1,62 +1,16 @@
-.education-bg {
-    min-height: 100vh;
-}
-
-.education-item {
-    --ion-item-background: var(--app_medium_background_color) !important;
-    --ion-item-color: var(--app_main_text_color) !important;
-    --ion-font-family: var(--app_font_family_bold);
-    color: var(--app_main_text_color);
-    background-color: var(--app_medium_background_color) !important;
-}
-
-.education-item ion-label {
-    --ion-background-color: var(--app_medium_background_color) !important;
-    color: var(--app_main_text_color) !important;
-    background-color: var(--app_medium_background_color) !important;
-
-    --ion-font-family: var(--app_font_family_bold);
-}
-
-ion-accordion.accordion-expanding,
-ion-accordion.accordion-expanded {
-    margin: 2vh 0;
-
-    background-color: var(--app_medium_background_color);
-    --ion-background-color: var(--app_medium_background_color);
-}
-
-.education-item {
-    font-family: var(--app_font_family_bold);
-    color: var(--app_main_text_color);
-
-    background-color: var(--app_medium_background_color);
-    --ion-background-color: var(--app_medium_background_color);
-}
-
-.education-item * {
-    font-family: var(--app_font_family_bold);
-    color: var(--app_main_text_color);
-
-    background-color: var(--app_medium_background_color);
-    --ion-background-color: var(--app_medium_background_color);
-}
-
 .education-title {
+    color: var(--app_main_text_color);
     font-family: var(--app_font_family_bold);
-    color: var(--app_main_text_color);
+    --ion-color: var(--app_main_text_color);
 }
 
-.education-card {
-    background-color: var(--app_medium_background_color);
-    --ion-background-color: var(--app_medium_background_color);
-    color: var(--app_main_text_color);
-    --ion-text-color: var(--app_main_text_color);
-
-    font-family: var(--app_font_family_light);
-}
-
-.education-card-header span, .education-card-header a, .education-card-header ion-icon {
+.see-more-button {
     color: var(--app_secondary_text_color);
-    --ion-text-color: var(--app_secondary_text_color);
+}
+
+.education-meta {
+    color: var(--app_secondary_text_color);
+}
+.education-meta a {
+    color: var(--app_secondary_text_color);
 }

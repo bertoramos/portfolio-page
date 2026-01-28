@@ -74,8 +74,8 @@ http://ionicframework.com/docs/theming/ */
 
     --app_contact_button_bg_color: white;
     --app_contact_button_text_color: white;
-    --app_contact_button_shadow_color_light: white;
-    --app_contact_button_shadow_color_dark: white;
+    --app_contact_button_shadow_color_light: sandybrown;
+    --app_contact_button_shadow_color_dark: #D4613E;
 }
 
 * {
