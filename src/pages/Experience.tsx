@@ -3,7 +3,7 @@ import { briefcase, globe, locationOutline, school, star, starOutline } from 'io
 import './Experience.css';
 import { CVType, ExperienceType } from '../model/cv';
 import TechChip from '../components/TechChip';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
@@ -15,6 +15,8 @@ const ExperiencePage: React.FC<{ cv: CVType | null }> = ({ cv }) => {
   const experience = cv?.experience || [];
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const descriptionRefs = useRef<Array<HTMLParagraphElement | null>>([]);
+  const [expandedHeights, setExpandedHeights] = useState<Record<number, number>>({});
 
   const handleClick = (idx: number, e: React.MouseEvent) => {
     e.stopPropagation();
@@ -32,11 +34,21 @@ const ExperiencePage: React.FC<{ cv: CVType | null }> = ({ cv }) => {
     return () => document.removeEventListener('click', handleClickOutside);
   }, []);
 
+  useLayoutEffect(() => {
+    if (expandedIndex === null) return;
+    const el = descriptionRefs.current[expandedIndex];
+    if (!el) return;
+    const height = el.scrollHeight;
+    setExpandedHeights((prev) => (prev[expandedIndex] === height ? prev : { ...prev, [expandedIndex]: height }));
+  }, [expandedIndex, experience.length]);
+
   return (
     <>
-      <section className="experience-page w-full py-8 md:py-12">
+      <section className="experience-page w-full py-8 md:py-12" ref={containerRef}>
 
-        <h1 className="experience-title text-2xl sm:text-3xl md:text-4xl font-semibold pb-4 mb-8 md:mb-12 text-center">Experience</h1>
+        <span className="experience-title block text-2xl sm:text-3xl md:text-5xl font-semibold pb-4 mb-8 md:mb-12 text-center w-full">
+          Experience
+        </span>
 
         <VerticalTimeline>
           {experience.map((exp: ExperienceType, index: number) => (
@@ -51,8 +63,6 @@ const ExperiencePage: React.FC<{ cv: CVType | null }> = ({ cv }) => {
             >
               <div
                 className=""
-                onClick={(e) => handleClick(index, e)}
-                ref={index === 0 ? containerRef : null}
               >
 
                 {/* Role / Company */}
@@ -77,17 +87,33 @@ const ExperiencePage: React.FC<{ cv: CVType | null }> = ({ cv }) => {
                 </div>
 
                 {/* Summary - Truncated with click to expand */}
-                <p className="experience-description mt-2 sm:mt-3 text-xs sm:text-sm leading-relaxed transition-all duration-300">
-                  {expandedIndex === index
-                    ? exp.description
-                    : exp.description.split(' ').slice(0, 4).join(' ') + '...'}
+                <p
+                  className={
+                    `experience-description mt-2 sm:mt-3 text-xs sm:text-sm leading-relaxed ` +
+                    (expandedIndex === index ? 'is-expanded' : 'is-collapsed')
+                  }
+                  ref={(el) => {
+                    descriptionRefs.current[index] = el;
+                  }}
+                  style={
+                    expandedIndex === index
+                      ? { maxHeight: expandedHeights[index] ? `${expandedHeights[index]}px` : '1000px' }
+                      : undefined
+                  }
+                >
+                  {exp.description}
                 </p>
 
                 {/* Indicator */}
                 {exp.description.length > 100 && (
-                  <span className="see-more-button text-xs text-blue-500 mt-1 inline-block">
+                  <button
+                    type="button"
+                    className="see-more-button text-xs mt-1 inline-block"
+                    onClick={(e) => handleClick(index, e)}
+                    aria-expanded={expandedIndex === index}
+                  >
                     {expandedIndex === index ? 'Ver menos' : 'Ver más...'}
-                  </span>
+                  </button>
                 )}
 
                 {/* Stack */}
