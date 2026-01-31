@@ -58,7 +58,7 @@ const ExperiencePage: React.FC<{ cv: CVType | null }> = ({ cv }) => {
               contentStyle={{ background: 'var(--app_medium_background_color)', color: 'var(--app_main_text_color)' }}
               contentArrowStyle={{ borderRight: '7px solid var(--app_medium_background_color)' }}
               date={exp.startDate + (exp.endDate ? ' - ' + exp.endDate : ' - Present')}
-              iconStyle={{ background: 'var(--app_dark_background_color)', color: 'var(--app_light_background_color)' }}
+              iconStyle={{ background: 'var(--app_dark_background_color)', color: 'white' }}
               icon={<IonIcon icon={briefcase} />}
               iconClassName="flex items-center justify-center"
             >

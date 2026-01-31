@@ -123,47 +123,94 @@ http://ionicframework.com/docs/theming/ */
     
 }
 
-[data-theme="dark"] {
-    --app_light_background_color: white;
-    --app_medium_background_color: white;
-    --app_dark_background_color: white;
+[data-theme="dark"] { /* Dark - Future Nostalgia */
+    --app_light_background_color: #1A1A2E;       /* Azul noche profundo */
+    --app_medium_background_color: #16213E;      /* Azul oscuro metálico */
+    --app_dark_background_color: #0F0F1A;        /* Negro azulado */
     
-    --app_main_text_color: white; /* #333; */
-    --app_secondary_text_color: white; /* #555; */
+    --app_main_text_color: #E8D5E0;              /* Rosa pálido/plateado */
+    --app_secondary_text_color: #B8A9C9;         /* Lavanda suave */
 
-    --app_clear_highlighted_text_color: white; /* #3fa7d6 */;
-    --app_dark_highlighted_text_color: white;
-    --app_relevant_button_bg_color: white;
+    --app_clear_highlighted_text_color: #FF2E97; /* Rosa neón/magenta vibrante */
+    --app_dark_highlighted_text_color: #D4268C;  /* Magenta profundo */
+    --app_relevant_button_bg_color: #FF2E97;     /* Rosa neón */
 
-    --app_relevant_button_text_color: white;
-    --app_button_bg_color: white;
+    --app_relevant_button_text_color: #0F0F1A;   /* Negro azulado */
+    --app_button_bg_color: #2D3A6D;              /* Azul retro */
 
-    --app_chip_bg_color: white;
-    --app_chip_text_color: white;
+    --app_chip_bg_color: #3D2C5Eee;              /* Púrpura oscuro translúcido */
+    --app_chip_text_color: #FF9ED2;              /* Rosa claro */
 
-    --app_button_text_color: white; /* #8390a5; */
-    --app_decoration_color: white;
+    --app_button_text_color: #00D4FF;            /* Azul cian neón */
+    --app_decoration_color: #FFB347;             /* Dorado/naranja metálico */
 
-    --app_menu_bg_color: white;
-    --app_menu_text_color: white;
+    --app_menu_bg_color: #1F2B4D;                /* Azul medianoche */
+    --app_menu_text_color: #FF9ED2;              /* Rosa suave */
 
-    --app_menu_font: 'Lucida Console', Monaco, monospace;
+    --app_menu_font: 'Neue Haas Roman Black Italic', monospace;
 
-    --app_font_family_bold: 'Lucida Console', cursive, sans-serif;
-    --app_font_family_light: 'Lucida Console', fantasy, sans-serif;
+    --app_font_family_bold: 'Neue Haas Roman Bold Italic';
+    --app_font_family_light: 'Neue Haas Roman';
 
-    --app_contact_button_bg_color: white;
-    --app_contact_button_text_color: white;
-    --app_contact_button_shadow_color_light: sandybrown;
-    --app_contact_button_shadow_color_dark: #D4613E;
+    --app_contact_button_bg_color: #FF2E97;      /* Rosa neón vibrante */
+    --app_contact_button_text_color: #0F0F1A;    /* Negro azulado */
+    --app_contact_button_shadow_color_light: #f20790; /* Cian neón */
+    --app_contact_button_shadow_color_dark: #D4268C;  /* Magenta oscuro */
 }
 
-* {
+/* Overlay para transición día/noche */
+.theme-transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99999;
+}
+
+/* Efecto anochecer (light -> dark) */
+.theme-transition-overlay.to-dark {
+  background: linear-gradient(
+    to bottom,
+    #0F0F1A 0%,
+    #1A1A2E 50%,
+    #16213E 100%
+  );
+  animation: fade-in-out 1s ease-in-out forwards;
+}
+
+/* Efecto amanecer (dark -> light) */
+.theme-transition-overlay.to-light {
+  background: linear-gradient(
+    to bottom,
+    #F4E8E8 0%,
+    #E8A87C 50%,
+    #FFE4B5 100%
+  );
+  animation: fade-in-out 1s ease-in-out forwards;
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  40%, 60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+*, body {
   transition:
     background-color 0.6s ease,
     color 0.6s ease,
     border-color 0.6s ease,
     box-shadow 0.6s ease,
     --ion-color 0.6s ease,
-    --ion-background-color 0.6s ease;
+    --ion-background-color 0.6s ease,
+    --ion-header-background 0.6s ease,
+    --background 0.6s ease;
 }

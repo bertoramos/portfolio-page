@@ -18,19 +18,19 @@
     /* Se superpone al checkbox */
     inset: 0;
     /* Ocupa todo el espacio del contenedor (top, right, bottom, left: 0) */
-    background: #96dcee; /* CIELO DE DIA */
+    background: #87CEEB; /* Azul cielo suave */
     /* Color gris cuando está OFF */
-    border: 1px solid #108dad; /* BORDE CIELO DE DIA */
+    border: 1px solid #5DADE2; /* Borde azul más profundo */
     border-radius: 34px;
     /* Bordes redondeados (forma de píldora) */
     cursor: pointer;
     /* Cambia el cursor a mano */
     background-image:
         /* clouds */
-        radial-gradient(ellipse 8px 6px at 38px 12px, white, transparent),
-        radial-gradient(ellipse 10px 7px at 45px 14px, white, transparent),
-        radial-gradient(ellipse 7px 5px at 50px 12px, white, transparent),
-        radial-gradient(ellipse 6px 5px at 42px 10px, white, transparent);
+        radial-gradient(ellipse 8px 6px at 38px 12px, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(ellipse 10px 7px at 45px 14px, rgba(255, 255, 255, 0.85), transparent),
+        radial-gradient(ellipse 7px 5px at 50px 12px, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(ellipse 6px 5px at 42px 10px, rgba(255, 255, 255, 0.8), transparent);
 }
 
 /* Circulo en estado LIGHT */
@@ -44,12 +44,11 @@
     /* Posición inicial: izquierda con 4px de margen */
     bottom: 4px;
     /* 4px desde abajo para centrarlo verticalmente */
-    background: #fffaa8; /* SOL */
-    border: 1px solid #f5eb71; /* BORDE SOL */
+    background: radial-gradient(circle at 35% 35%, #FFF7E0, #FFD93D 50%, #F4C430 100%); /* Sol con volumen */
+    border: 1px solid #E6B800; /* Borde dorado */
     border-radius: 50%;
-    /* Lo hace circular */
+    
     transition: 0.3s;
-    /* Animación suave de 0.3 segundos */
 }
 
 /* Fondo en estado DARK */
