@@ -20,4 +20,7 @@
     width: 100%; /* Ocupa todo el ancho */
     height: 100%; /* Ocupa todo el alto del contenedor principal */
     overflow: hidden; /* Asegura que el contenido fuera de los límites no sea visible */
+
+    background-color: var(--app_light_background_color);
+    --ion-background-color: var(--app_light_background_color);
 }

@@ -1,98 +1,69 @@
 .project-component-grid {
-    margin-top: 0vh;
-    
-    background-color: var(--app_light_background_color);
 
     @media screen and (max-width: 768px) {
-        margin: 0;
-    }
-}
-
-.project-component-center-column {
-    @media screen and (max-width: 768px) {
-        
-        position: relative;
-        top: 0;
-        margin-top: 0;
-        display: flex;
-        flex-direction: column;
-        /* Opcional: organiza el contenido verticalmente */
-        align-items: center;
-        /* Centra horizontalmente los elementos */
-        text-align: center;
-        /* Centra el texto dentro de los elementos */
         height: 100%;
-        /* Asegura que el contenedor use todo el espacio disponible si es necesario */
     }
-}
 
-.project-component-image-column {
-    margin-top: 15%;
-    margin-left: -5%;
+    background-color: var(--app_light_background_color);
+    --ion-background-color: var(--app_light_background_color);
+    font-family: var(--app_font_family_light);
+    --ion-font-family: var(--app_font_family_light);
 
-    @media screen and (max-width: 768px) {
-        margin-left: 0;
-        height: 50%;
-    }
-}
-
-.project-component-image-column img {
-    border-radius: 50px;
-
-    @media screen and (max-width: 768px) {
-        height: 80%;
-        width: 80%;
-        border-radius: 25px;
-        margin: 0;
-        padding: 0;
-    }
-}
-
-.project-component-text-column {
-    margin-top: 20%;
-
-    @media screen and (max-width: 768px) {
-        margin: 0;
-        padding: 3vh;
-    }
+    color: var(--app_main_text_color);
+    --ion-color: var(--app_main_text_color);
 }
 
 .project-component-title {
-    font-size: 5vh;
+    font-family: var(--app_font_family_bold);
+    --ion-font-family: var(--app_font_family_bold);
 
-    margin-left: 10%;
     color: var(--app_main_text_color);
-    
-    @media screen and (max-width: 768px) {
-        margin: 1;
-        padding: 3;
-        font-size: 2vh;
-    }
+    --ion-color: var(--app_main_text_color);
 }
 
 .project-component-description {
-    font-size: 3vh;
+    font-family: var(--app_font_family_light);
+    --ion-font-family: var(--app_font_family_light);
 
-    margin-left: 10%;
+    color: var(--app_main_text_color);
+    --ion-color: var(--app_main_text_color);
+}
 
+.project-image-column {
     @media screen and (max-width: 768px) {
-        margin: 0;
-        padding: 3vh;
-        font-size: 2vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 40vh;
     }
 }
 
-.project-component-description ion-button {
-    color: var(--app_clear_highlighted_text_color);
+.project-image-column img {
+    width: 100%;
+    height: auto;
+
+    border-radius: 0 15% 15% 0 / 0 45% 45% 0;
+
+    transform: translateX(-5%);
+
+    @media screen and (max-width: 768px) {
+        border-radius: 10%;
+        transform: translateX(0);
+        padding: 0;
+
+        height: 100%;
+        width: auto;
+    }
 }
 
-.project-technologies-container ion-chip * {
-    color: var(--app_main_text_color);
-}
+/*******************
+ **** Details ******
+ *******************/
 
 .project-detail-modal {
-    --width: 80%;
-    --height: 80%;
+    --width: clamp(85%, 80%, 90%);
+    --height: clamp(75%, 80%, 90%);
     --ion-background-color: var(--app_light_background_color);
 
     @media screen and (max-width: 768px) {
@@ -100,6 +71,24 @@
         --height: 100%;
 
         text-align: center;
+    }
+}
+
+.project-detail-modal ion-content {
+    --ion-background-color: var(--app_light_background_color);
+
+
+    --overflow: hidden;
+
+    @media screen and (max-width: 768px) {
+        --overflow: auto;
+    }
+}
+
+.project-detail-modal .flex.items-center {
+    @media screen and (max-width: 768px) {
+        align-items: flex-start !important;
+        padding-top: 1rem;
     }
 }
 
@@ -119,38 +108,67 @@
     color: var(--app_clear_highlighted_text_color);
 }
 
+.project-detail-image-column {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    max-height: 45vh;
+
+    @media screen and (max-width: 768px) {
+        max-height: none;
+    }
+}
+
+.project-detail-image-column img {
+    max-height: 70%;
+    max-width: 70%;
+    width: auto;
+    height: auto;
+
+    border-radius: 5%;
+
+    @media screen and (max-width: 768px) {
+        padding: 10%;
+        max-height: 100%;
+        max-width: 100%;
+    }
+}
+
 .project-detail-modal-content * {
-    color: var(--app_main_text_color);
-    --ion-color: var(--app_main_text_color);
-    font-family: "Source Code Pro Light";
-}
-
-.project-component-description-text {
-    color: var(--app_main_text_color);
-    font-family: "Source Code Pro Light";
-}
-
-.project-detail-justify {
-    text-align: justify;
-    text-justify: inter-word;
+    padding: 0% 1%;
 }
 
 .project-detail-text-column {
-    padding: 0% 15% 0% 5%;
+    font-family: var(--app_font_family_light);
+    --ion-font-family: var(--app_font_family_light);
+    color: var(--app_main_text_color);
+    --ion-color: var(--app_main_text_color);
 
-    @media screen and (max-width: 768px) {
-        padding: 0;
+    color: var(--app_main_text_color);
+    --ion-color: var(--app_main_text_color);
+
+    background-color: var(--app_light_background_color);
+    --ion-background-color: var(--app_light_background_color);
+
+    h2 {
+        font-family: var(--app_font_family_bold);
+        --ion-font-family: var(--app_font_family_bold);
+
+        color: var(--app_main_text_color);
+        --ion-color: var(--app_main_text_color);
     }
 }
 
-.project-detail-image-column {
-    
-    @media screen and (max-width: 768px) {
-        margin-top: 5vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
+#more-info-link {
+    color: var(--app_dark_highlighted_text_color);
+    --ion-color: var(--app_dark_highlighted_text_color);
 }
 
+.project-component-detail-button {
+    background-color: transparent;
+    --ion-background-color: transparent;
+
+    color: var(--app_dark_highlighted_text_color);
+    --ion-color: var(--app_dark_highlighted_text_color);
+}

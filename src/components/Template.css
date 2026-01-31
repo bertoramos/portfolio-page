@@ -1,3 +1,16 @@
+/* Registrar propiedades CSS para permitir transiciones */
+@property --background {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: transparent;
+}
+
+body {
+  --ion-background-color: var(--app_light_background_color);
+  --ion-text-color: var(--app_light_text_color);
+  color: var(--app_main_text_color);
+}
+
 /* Desktop version */
 @media (min-width: 768px) {
   .mobile-menu-btn {
@@ -38,7 +51,10 @@
   background: transparent;
   backdrop-filter: blur(0px);
   
-  transition: background 0.8s ease-in-out, backdrop-filter 0.3s ease-in-out;
+  transition: 
+    background 0.8s ease-in-out, 
+    backdrop-filter 0.3s ease-in-out,
+    background-color 0.6s ease;
   z-index: -1;
 }
 
@@ -47,13 +63,25 @@
   backdrop-filter: blur(15px);
 }
 
+/* Asegurar transiciones de tema en la cabecera */
+#main_header,
+#menu_toolbar,
+#menu_toolbar ion-icon {
+  transition:
+    background-color 0.6s ease,
+    color 0.6s ease,
+    border-color 0.6s ease,
+    --background 0.6s ease,
+    --ion-background-color 0.6s ease;
+}
+
 #contact_button {
   position: fixed;
   bottom: 20px;
   left: 20px;
   z-index: 1000;
 
-  --background: orange;
+  --background: var(--app_contact_button_bg_color);
   animation: button-anim 4s infinite ease-in-out;
   border-radius: 100%;
   
@@ -67,12 +95,12 @@
   
   0%, 50%, 100% {
     transform: scale(1);
-    box-shadow: 0 0 10px orange;
+    box-shadow: 0 0 10px var(--app_contact_button_shadow_color_dark);
   }
   
   25%, 75% {
     transform: scale(1.1);
-    box-shadow: 0 0 20px red;
+    box-shadow: 0 0 20px var(--app_contact_button_shadow_color_light);;
   }
 
 }

@@ -1,0 +1,37 @@
+
+#contact_button {
+    @media screen and (max-width: 768px) {
+        width: 50px;
+        height: 50px;
+        padding: 0;
+    }
+
+    color: var(--app_contact_button_text_color);
+    font-family: var(--app_font_family_light);
+    --ion-font-family: var(--app_font_family_light);
+
+}
+
+#contact_button ion-icon {
+    @media screen and (max-width: 768px) {
+        font-size: 25px;
+    }
+
+    color: var(--app_contact_button_text_color);
+    font-family: var(--app_font_family_light);
+    --ion-font-family: var(--app_font_family_light);
+}
+
+#contact_button span {
+    
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+#menu_button {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}

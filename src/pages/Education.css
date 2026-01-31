@@ -1,9 +1,40 @@
-.education-bg {
-    min-height: 100vh;
+.education-title {
+    color: var(--app_main_text_color);
+    font-family: var(--app_font_family_bold);
+    --ion-color: var(--app_main_text_color);
 }
 
+.see-more-button {
+    color: var(--app_secondary_text_color);
+    background: transparent;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
 
-ion-accordion.accordion-expanding,
-ion-accordion.accordion-expanded {
-    margin: 2vh 0;
+.education-meta {
+    color: var(--app_secondary_text_color);
+}
+.education-meta a {
+    color: var(--app_secondary_text_color);
+}
+
+.education-description {
+    overflow: hidden;
+    transition: max-height 520ms cubic-bezier(0.22, 1, 0.36, 1), opacity 260ms ease;
+    will-change: max-height;
+}
+
+.education-description.is-collapsed {
+    max-height: 3.4em;
+    opacity: 0.92;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 70%, rgba(0,0,0,0));
+}
+
+.education-description.is-expanded {
+    max-height: 1000px;
+    opacity: 1;
+    mask-image: none;
 }

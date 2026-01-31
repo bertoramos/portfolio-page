@@ -25,8 +25,7 @@ export default function Menu({ menuOpen, toggleMenu }: { menuOpen: boolean, togg
 
     return (
         <>
-            <div className={`main-menu
-                            bg-gray-900 
+            <div className={`main-menu 
                             ${menuOpen ? "menu-active" : "menu-inactive"}`
                 } id="main_menu">
                 <ul className="link-container">
@@ -38,8 +37,13 @@ export default function Menu({ menuOpen, toggleMenu }: { menuOpen: boolean, togg
                                 onClick={handleMenuClick}
                                 className={`text group ${location.pathname === item.path ? 'active' : ''}`}
                             >
-                                <span className="menu-num text-2xl">{`0${idx + 1}`}</span>
-                                <span className="menu-item text-4xl md:text-7xl">{item.label}</span>
+                                <span className="menu-num text-2xl md:text-xl select-none">{`0${idx + 1}`}</span>
+                                <span 
+                                    className="text menu-item text-4xl md:text-6xl select-none"
+                                    data-text={item.label}
+                                >
+                                    {item.label}
+                                </span>
                             </NavLink>
                         </li>
                     ))}

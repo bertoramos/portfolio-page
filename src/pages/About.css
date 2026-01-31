@@ -3,6 +3,7 @@
    ============================================ */
 .about-page-container {
   height: 100vh;
+  background-color: var(--app_light_background_color);
 }
 
 /* ============================================
@@ -13,18 +14,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid red; /* TODO: Eliminar border de debug */
+  background-color: var(--app_light_background_color);
+  --ion-background-color: var(--app_light_background_color);
+
+  font-family: var(--app_font_family_light);
+  color: var(--app_main_text_color);
+}
+
+.about-bold-title {
+  font-family: var(--app_font_family_bold);
 }
 
 /* ============================================
    SECCIÓN DE RESUMEN CORTO
    ============================================ */
 
-#about-content {
-}
+#about-content {}
 
 #about-grid {
     height: 100%;
+    background-color: var(--app_light_background_color);
+    --ion-background-color: var(--app_light_background_color);
 
     @media screen and (max-width: 768px) {
         height: 40%;
@@ -43,11 +53,15 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+    background-color: var(--app_light_background_color);
+    --ion-background-color: var(--app_light_background_color);
 }
 
 #about-image{
     height: 100%;
     object-fit: cover;
+    background-color: var(--app_light_background_color);
+    --ion-background-color: var(--app_light_background_color);
 }
 
 #about-text {
@@ -55,6 +69,9 @@
     padding: 0;
     position: relative;
     text-align: left;
+    color: var(--app_main_text_color);
+    background-color: var(--app_light_background_color);
+    --ion-background-color: var(--app_light_background_color);
     
     height: 100%;
     width: 100%;
@@ -66,7 +83,9 @@
 }
 
 #about-title {
+    font-family: var(--app_font_family_bold);
     font-size: 9vh;
+    color: var(--app_main_text_color);
     padding-bottom: 0;
     margin-bottom: 5%;
 
@@ -76,12 +95,14 @@
 }
 
 #about-subtitle {
+    font-family: var(--app_font_family_light);
     font-size: 3vh;
+    color: var(--app_main_text_color);
     padding-top: 0;
     margin-top: 0;
 
     @media screen and (max-width: 768px) {
-        font-size: 2vh;
+      font-size: 2vh;
     }
 }
 
@@ -122,6 +143,7 @@
   padding-left: 0;    /* opcional, para no sumar espacio extra */
   margin: 0;
   list-style: none;
+  padding-bottom: 2rem; /* Añadir espacio inferior */
 }
 
 .tech-item {
@@ -146,6 +168,14 @@
 }
 
 /* ============================================
+   SECCIÓN DE HABILIDADES BLANDAS
+   ============================================ */
+
+#why-work-with-me-section {
+  min-height: 30vh;
+}
+
+/* ============================================
    MEDIA QUERIES
    ============================================ */
 
@@ -163,3 +193,12 @@
 /* ============================================
    CATEGORÍAS DE HABILIDADES
    ============================================ */
+
+
+/* ============================================
+   SECCIÓN DE OFFLINE, ONLINE Y UBICACIÓN
+   ============================================ */
+  
+.online-col a {
+  color: var(--app_main_text_color);
+}

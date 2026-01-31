@@ -1,73 +1,142 @@
 import { IonAccordion, IonAccordionGroup, IonCard, IonCardContent, IonCardHeader, IonChip, IonCol, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
+import { briefcase, globe, locationOutline, school, star, starOutline } from 'ionicons/icons';
 import './Experience.css';
-import { CVType } from '../model/cv';
-import { locationOutline, globe } from 'ionicons/icons';
+import { CVType, ExperienceType } from '../model/cv';
 import TechChip from '../components/TechChip';
+import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 
-const Experience: React.FC<{ cv: CVType | null }> = ({ cv }) => {
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+
+
+const ExperiencePage: React.FC<{ cv: CVType | null }> = ({ cv }) => {
 
   const baseURL = import.meta.env.BASE_URL || '';
   const experience = cv?.experience || [];
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const descriptionRefs = useRef<Array<HTMLParagraphElement | null>>([]);
+  const [expandedHeights, setExpandedHeights] = useState<Record<number, number>>({});
+
+  const handleClick = (idx: number, e: React.MouseEvent) => {
+    e.stopPropagation();
+    setExpandedIndex(expandedIndex === idx ? null : idx);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        setExpandedIndex(null);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, []);
+
+  useLayoutEffect(() => {
+    if (expandedIndex === null) return;
+    const el = descriptionRefs.current[expandedIndex];
+    if (!el) return;
+    const height = el.scrollHeight;
+    setExpandedHeights((prev) => (prev[expandedIndex] === height ? prev : { ...prev, [expandedIndex]: height }));
+  }, [expandedIndex, experience.length]);
 
   return (
-
     <>
-      <h1 className="text-white text-center text-4xl font-bold p-4">Experience</h1>
+      <section className="experience-page w-full py-8 md:py-12" ref={containerRef}>
 
-      <IonAccordionGroup expand="inset" className="m-8">
+        <span className="experience-title block text-2xl sm:text-3xl md:text-5xl font-semibold pb-4 mb-8 md:mb-12 text-center w-full">
+          Experience
+        </span>
 
-        {experience.length === 0 ? (
-          <p>Error cargando CV</p>
-        ) : (
-          experience.map((exp, index) => (
-            <IonAccordion key={index} value={`exp-${index}`} toggleIconSlot="end">
-              <IonItem slot="header" color="light">
-                <IonLabel>{exp.position} @ {exp.company}</IonLabel>
-                <IonLabel className="mr-8" slot="end">{exp.startDate} - {exp.endDate || 'Present'}</IonLabel>
-              </IonItem>
-              <div slot="content">
-                <IonCard>
-                  <IonCardHeader className="m-8">
-                    <IonRow>
-                      <IonCol size="auto">
-                        <IonIcon className="ml-2 mr-2" icon={locationOutline} /> {exp.location}
-                      </IonCol>
-                      <IonCol size="auto">
-                        <IonIcon className="ml-2 mr-2" icon={globe} /> <a className='hover:underline font-bold' href={exp.url.startsWith('http') ? exp.url : `https://${exp.url}`} target="_blank" rel="noopener noreferrer">{exp.url}</a>
-                      </IonCol>
-                    </IonRow>
-                  </IonCardHeader>
-                  <IonCardContent className="m-8">
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex-1">
-                        <div>{exp.description}</div>
-                        <div className='ion-padding-top'>{
-                          exp.technologies.map((tech, index) => (
-                            <IonCol key={index} size="auto" >
-                              <TechChip tech={tech} />
-                            </IonCol>
-                          ))
-                        }</div>
-                      </div>
-                      <div className="w-24 h-24 flex items-center justify-center overflow-hidden flex-shrink-0">
-                        <img 
-                          src={baseURL + exp.company_logo} 
-                          alt={"logo " + exp.company}
-                          className="w-full h-full object-contain"
-                        />
-                      </div>
-                    </div>
-                  </IonCardContent>
-                </IonCard>
+        <VerticalTimeline>
+          {experience.map((exp: ExperienceType, index: number) => (
+            <VerticalTimelineElement
+              key={index}
+              className="vertical-timeline-element--work"
+              contentStyle={{ background: 'var(--app_medium_background_color)', color: 'var(--app_main_text_color)' }}
+              contentArrowStyle={{ borderRight: '7px solid var(--app_medium_background_color)' }}
+              date={exp.startDate + (exp.endDate ? ' - ' + exp.endDate : ' - Present')}
+              iconStyle={{ background: 'var(--app_dark_background_color)', color: 'white' }}
+              icon={<IonIcon icon={briefcase} />}
+              iconClassName="flex items-center justify-center"
+            >
+              <div
+                className=""
+              >
+
+                {/* Role / Company */}
+                <h3 className="experience-company-role text-base sm:text-lg font-medium leading-tight">
+                  {exp.position}
+                  <span>
+                    {" "}
+                    · {exp.company}
+                  </span>
+                </h3>
+
+                {/* Location and URL */}
+                <div className="education-meta mt-1 sm:mt-2 text-xs sm:text-sm flex flex-col gap-1">
+                  <div className="flex items-center gap-1">
+                    <IonIcon icon={locationOutline} className="text-xs" />
+                    <span>{exp.location}</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <IonIcon icon={globe} className="text-xs" />
+                    <a className='hover:underline' href={exp.url} target="_blank" rel="noreferrer">{exp.url}</a>
+                  </div>
+                </div>
+
+                {/* Summary - Truncated with click to expand */}
+                <p
+                  className={
+                    `experience-description mt-2 sm:mt-3 text-xs sm:text-sm leading-relaxed ` +
+                    (expandedIndex === index ? 'is-expanded' : 'is-collapsed')
+                  }
+                  ref={(el) => {
+                    descriptionRefs.current[index] = el;
+                  }}
+                  style={
+                    expandedIndex === index
+                      ? { maxHeight: expandedHeights[index] ? `${expandedHeights[index]}px` : '1000px' }
+                      : undefined
+                  }
+                >
+                  {exp.description}
+                </p>
+
+                {/* Indicator */}
+                {exp.description.length > 100 && (
+                  <button
+                    type="button"
+                    className="see-more-button text-xs mt-1 inline-block"
+                    onClick={(e) => handleClick(index, e)}
+                    aria-expanded={expandedIndex === index}
+                  >
+                    {expandedIndex === index ? 'Ver menos' : 'Ver más...'}
+                  </button>
+                )}
+
+                {/* Stack */}
+                <ul className="experience-technologies mt-3 sm:mt-4 flex flex-wrap gap-1.5 sm:gap-2 text-xs">
+                  {exp.technologies.map((tech) => (
+                    <TechChip key={tech.name} tech={tech} />
+                  ))}
+                </ul>
               </div>
-            </IonAccordion>
-          ))
-        )
-        }
-      </IonAccordionGroup>
-      </>
-  
-    );
+            </VerticalTimelineElement>
+          ))}
+
+          <VerticalTimelineElement
+            iconStyle={{ background: 'rgb(16, 204, 82)', color: '#fff' }}
+            icon={<IonIcon icon={briefcase} />}
+            iconClassName="flex items-center justify-center"
+          />
+        </VerticalTimeline>
+
+      </section>
+    </>
+  )
 };
 
-export default Experience;
+export default ExperiencePage;
