@@ -1,4 +1,7 @@
-/* Menu container */
+/* =========================
+   MENU CONTAINER
+========================= */
+
 #main_menu {
     z-index: 1001;
     width: 100%;
@@ -9,15 +12,28 @@
 
     background-color: var(--app_menu_bg_color);
     --ion-background-color: var(--app_menu_bg_color);
-    
-    transition:
-        background-color 0.6s ease,
-        --ion-background-color 0.6s ease;
+
+    transition: opacity 0.5s ease-in-out, background-color 0.6s ease;
 }
 
-/* Menu list positioning */
+/* ACTIVE / INACTIVE */
+
+.menu-active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.menu-inactive {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* =========================
+   MENU LIST POSITIONING
+========================= */
+
 #main_menu ul {
-    list-style-type: none;
+    list-style: none;
     margin: 0;
     padding: 0;
     position: absolute;
@@ -27,44 +43,18 @@
     text-align: center;
 }
 
+/* =========================
+   LIST ITEM
+========================= */
+
 #main_menu li {
     margin: 4% 0%;
 }
 
-#main_menu span {
-    color: var(--app_menu_text_color);
-    --ion-color: var(--app_menu_text_color);
+/* =========================
+   TEXT CONTAINER (CUT EFFECT)
+========================= */
 
-    font-family: var(--app_menu_font);
-    --ion-font-family: var(--app_menu_font);
-    
-    transition:
-        color 0.6s ease,
-        --ion-color 0.6s ease;
-}
-
-/* Menu active state */
-.menu-active {
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out, display 0s ease-in-out 0.5s;
-}
-
-.menu-active .text span {
-    transform: translateY(0%);
-    transition: all 0.5s ease-in-out;
-}
-
-/* Menu inactive state */
-.menu-inactive {
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out, display 0s ease-in-out 0.5s;
-}
-
-.menu-inactive .text span {
-    transform: translateY(100%);
-    transition: all 0.5s ease-in-out;
-}
 
 /* Text container with overflow for cut effect */
 .text-container {
@@ -73,13 +63,66 @@
     margin: 10px 0;
 }
 
-/* Text layout */
+/* =========================
+   TEXT LAYOUT
+========================= */
+
 .text {
     display: flex;
+    position: relative; /* coincidencia con primer código */
+}
+
+/* =========================
+   BASE TEXT STYLE
+========================= */
+
+.text span {
+    color: var(--app_menu_text_color);
+    --ion-color: var(--app_menu_text_color);
+
+    font-family: var(--app_menu_font);
+    --ion-font-family: var(--app_menu_font);
+}
+
+/* =========================
+   NUMBER STYLE
+========================= */
+
+.menu-num {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    margin-bottom: 4px; /* igual que primer código */
+}
+
+/* =========================
+   ANIMATION BASE STATE
+========================= */
+
+.text .menu-num,
+.text .menu-item {
+    transform: translateY(120%);
+    opacity: 0;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* =========================
+   OPEN STATE
+========================= */
+
+.menu-active .text .menu-num,
+.menu-active .text .menu-item {
+    transform: translateY(0%);
+    opacity: 1;
+}
+
+/* =========================
+   GLITCH HOVER EFFECT
+========================= */
+
+.menu-item {
     position: relative;
 }
 
-/* Triple text effect on hover */
 .menu-item::before,
 .menu-item::after {
     content: attr(data-text);
@@ -92,12 +135,10 @@
 }
 
 .menu-item::before {
-    top: 0;
     color: rgba(255, 0, 255, 0.5);
 }
 
 .menu-item::after {
-    top: 0;
     color: rgba(0, 255, 255, 0.5);
 }
 
@@ -109,53 +150,30 @@
     animation: glitchDown 1s ease-out forwards;
 }
 
+/* =========================
+   GLITCH KEYFRAMES
+========================= */
+
 @keyframes glitchUp {
-    0% {
-        opacity: 0;
-        transform: translateX(1%) translateY(0);
-    }
-    25% {
-        opacity: 0.8;
-        transform: translateX(-1%) translateY(-30%);
-    }
-    50% {
-        opacity: 0.6;
-        transform: translateX(1%) translateY(-20%);
-    }
-    75% {
-        opacity: 0.3;
-        transform: translateX(-1%) translateY(-10%);
-    }
-    100% {
-        opacity: 0;
-        transform: translateX(1%) translateY(-0%);
-    }
+    0%   { opacity: 0; transform: translateX(1%) translateY(0); }
+    25%  { opacity: 0.8; transform: translateX(-1%) translateY(-30%); }
+    50%  { opacity: 0.6; transform: translateX(1%) translateY(-20%); }
+    75%  { opacity: 0.3; transform: translateX(-1%) translateY(-10%); }
+    100% { opacity: 0; transform: translateX(1%) translateY(0); }
 }
 
 @keyframes glitchDown {
-    0% {
-        opacity: 0;
-        transform: translateX(-1%) translateY(0);
-    }
-    25% {
-        opacity: 0.8;
-        transform: translateX(1%) translateY(30%);
-    }
-    50% {
-        opacity: 0.6;
-        transform: translateX(-1%) translateY(20%);
-    }
-    75% {
-        opacity: 0.3;
-        transform: translateX(1%) translateY(10%);
-    }
-    100% {
-        opacity: 0;
-        transform: translateX(-1%) translateY(0%);
-    }
+    0%   { opacity: 0; transform: translateX(-1%) translateY(0); }
+    25%  { opacity: 0.8; transform: translateX(1%) translateY(30%); }
+    50%  { opacity: 0.6; transform: translateX(-1%) translateY(20%); }
+    75%  { opacity: 0.3; transform: translateX(1%) translateY(10%); }
+    100% { opacity: 0; transform: translateX(-1%) translateY(0); }
 }
 
-/* Menu button */
+/* =========================
+   MENU BUTTON
+========================= */
+
 #menu_button {
     display: flex;
     position: fixed;
@@ -164,18 +182,20 @@
     z-index: 1005;
 }
 
-/* Mobile responsive */
+/* =========================
+   MOBILE
+========================= */
+
 @media screen and (max-width: 1100px) {
     #main_menu ul {
         left: 50%;
         transform: translate(-50%, -50%);
-        text-align: center;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
-    .text .menu-num {
+    .menu-num {
         display: none;
     }
 }
