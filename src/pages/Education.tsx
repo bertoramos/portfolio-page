@@ -52,6 +52,7 @@ const Education: React.FC<{ cv: CVType | null }> = ({ cv }) => {
         <VerticalTimeline>
           {education.map((edu: EducationType, index: number) => (
             <VerticalTimelineElement
+              key={index}
               className="vertical-timeline-element--education"
               contentStyle={{ background: 'var(--app_medium_background_color)', color: 'var(--app_main_text_color)' }}
               contentArrowStyle={{ borderRight: '7px solid var(--app_medium_background_color)' }}

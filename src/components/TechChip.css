@@ -3,6 +3,8 @@
     background-color: var(--app_chip_bg_color);
     font-family: var(--app_font_family_light);
     --ion-font-family: var(--app_font_family_light);
+
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .tech-label {

@@ -37,8 +37,8 @@ export default function Menu({ menuOpen, toggleMenu }: { menuOpen: boolean, togg
                                 onClick={handleMenuClick}
                                 className={`text group ${location.pathname === item.path ? 'active' : ''}`}
                             >
-                                <span className="menu-num text-2xl select-none">{`0${idx + 1}`}</span>
-                                <span className="menu-item text-4xl md:text-7xl select-none">{item.label}</span>
+                                <span className="menu-num text-2xl md:text-xl select-none">{`0${idx + 1}`}</span>
+                                <span className="menu-item text-4xl md:text-6xl select-none">{item.label}</span>
                             </NavLink>
                         </li>
                     ))}

@@ -3,43 +3,100 @@ http://ionicframework.com/docs/theming/ */
 
 @import "tailwindcss";
 
-:root {
-    
+@font-face {
+    font-family: 'Source Code Pro Regular';
+    src: url('/assets/fonts/Source_Code_Pro/SourceCodePro-VariableFont_wght.ttf') format('truetype');
+    font-weight: 200;
 }
-:root { /* Light */
-/*[data-theme="light"] {*/
+
+@font-face {
+    font-family: 'Source Code Pro Bold';
+    src: url('/assets/fonts/Source_Code_Pro/SourceCodePro-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400;
+}
+
+
+
+/* ============================================
+   PALETA ORIGINAL (BACKUP) - Teal/Coral Theme
+   ============================================
+:root {
     --app_light_background_color: #eaf4f4;
     --app_medium_background_color: #4da39d;
     --app_dark_background_color: #216972;
     
-    --app_main_text_color: #00353d; /* #333; */
-    --app_secondary_text_color: #0e636e; /* #555; */
+    --app_main_text_color: #00353d;
+    --app_secondary_text_color: #0e636e;
 
-    --app_clear_highlighted_text_color: #D4613E; /* #3fa7d6 */;
+    --app_clear_highlighted_text_color: #D4613E;
     --app_dark_highlighted_text_color: #D4613E;
     --app_relevant_button_bg_color: #D4613E;
 
     --app_relevant_button_text_color: #eaf4f4;
     --app_button_bg_color: #216972;
 
-    --app_chip_bg_color: #dfc1a777;
+    --app_chip_bg_color: #f4c4b6ee;
     --app_chip_text_color: #01454e;
 
-    --app_button_text_color: green; /* #8390a5; */
+    --app_button_text_color: green;
     --app_decoration_color: #f4d35e;
 
     --app_menu_bg_color: #8da8a6;
     --app_menu_text_color: #01454e;
 
-    --app_menu_font: 'Lucida Console', Monaco, monospace;
+    --app_menu_font: 'Source Code Pro Bold', monospace;
 
-    --app_font_family_bold: 'Lucida Console', cursive, sans-serif;
-    --app_font_family_light: 'Lucida Console', fantasy, sans-serif;
+    --app_font_family_bold: 'Source Code Pro Bold';
+    --app_font_family_light: 'Source Code Pro Bold';
 
     --app_contact_button_bg_color: #ec5425;
     --app_contact_button_text_color: #00353d;
     --app_contact_button_shadow_color_light: sandybrown;
     --app_contact_button_shadow_color_dark: #D4613E;
+}
+============================================ */
+
+/* ============================================
+   RADICAL OPTIMISM - Dua Lipa Inspired Palette
+   Basado en la portada del álbum:
+   - Turquesa océano vibrante
+   - Melocotón/coral del atardecer  
+   - Azul profundo del agua
+   - Rojo cobrizo (pelo de Dua)
+   ============================================ */
+:root { /* Light - Radical Optimism */
+    --app_light_background_color: #F5EDE8;      /* Melocotón muy claro / arena */
+    --app_medium_background_color: #3CBCB5;     /* Turquesa océano vibrante */
+    --app_dark_background_color: #1A4D5C;       /* Azul profundo del agua */
+    
+    --app_main_text_color: #1A4D5C;             /* Azul profundo */
+    --app_secondary_text_color: #2A7A7A;        /* Turquesa oscuro */
+
+    --app_clear_highlighted_text_color: #C44536; /* Rojo cobrizo (pelo) */
+    --app_dark_highlighted_text_color: #9E3A2B;  /* Rojo oscuro */
+    --app_relevant_button_bg_color: #C44536;     /* Rojo cobrizo */
+
+    --app_relevant_button_text_color: #F5EDE8;   /* Melocotón claro */
+    --app_button_bg_color: #1A4D5C;              /* Azul profundo */
+
+    --app_chip_bg_color: #B8E6E3ee;              /* Turquesa pastel translúcido */
+    --app_chip_text_color: #1A4D5C;              /* Azul profundo */
+
+    --app_button_text_color: #3CBCB5;            /* Turquesa vibrante */
+    --app_decoration_color: #E8A87C;             /* Coral sunset / melocotón */
+
+    --app_menu_bg_color: #7DD4CE;                /* Turquesa claro */
+    --app_menu_text_color: #1A4D5C;              /* Azul profundo */
+
+    --app_menu_font: 'Source Code Pro Bold', monospace;
+
+    --app_font_family_bold: 'Source Code Pro Bold';
+    --app_font_family_light: 'Source Code Pro Bold';
+
+    --app_contact_button_bg_color: #C44536;      /* Rojo cobrizo */
+    --app_contact_button_text_color: #F5EDE8;    /* Melocotón claro */
+    --app_contact_button_shadow_color_light: #E8A87C; /* Coral suave */
+    --app_contact_button_shadow_color_dark: #9E3A2B;  /* Rojo oscuro */
     
 }
 

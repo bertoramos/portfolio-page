@@ -53,6 +53,7 @@ const ExperiencePage: React.FC<{ cv: CVType | null }> = ({ cv }) => {
         <VerticalTimeline>
           {experience.map((exp: ExperienceType, index: number) => (
             <VerticalTimelineElement
+              key={index}
               className="vertical-timeline-element--work"
               contentStyle={{ background: 'var(--app_medium_background_color)', color: 'var(--app_main_text_color)' }}
               contentArrowStyle={{ borderRight: '7px solid var(--app_medium_background_color)' }}
