@@ -38,7 +38,12 @@ export default function Menu({ menuOpen, toggleMenu }: { menuOpen: boolean, togg
                                 className={`text group ${location.pathname === item.path ? 'active' : ''}`}
                             >
                                 <span className="menu-num text-2xl md:text-xl select-none">{`0${idx + 1}`}</span>
-                                <span className="menu-item text-4xl md:text-6xl select-none">{item.label}</span>
+                                <span 
+                                    className="text menu-item text-4xl md:text-6xl select-none"
+                                    data-text={item.label}
+                                >
+                                    {item.label}
+                                </span>
                             </NavLink>
                         </li>
                     ))}

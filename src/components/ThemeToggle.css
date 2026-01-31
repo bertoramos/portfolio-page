@@ -18,9 +18,9 @@
     /* Se superpone al checkbox */
     inset: 0;
     /* Ocupa todo el espacio del contenedor (top, right, bottom, left: 0) */
-    background: #96dcee;
+    background: #96dcee; /* CIELO DE DIA */
     /* Color gris cuando está OFF */
-    border: 1px solid #108dad;
+    border: 1px solid #108dad; /* BORDE CIELO DE DIA */
     border-radius: 34px;
     /* Bordes redondeados (forma de píldora) */
     cursor: pointer;
@@ -44,8 +44,8 @@
     /* Posición inicial: izquierda con 4px de margen */
     bottom: 4px;
     /* 4px desde abajo para centrarlo verticalmente */
-    background: #fffaa8;
-    border: 1px solid #f5eb71;
+    background: #fffaa8; /* SOL */
+    border: 1px solid #f5eb71; /* BORDE SOL */
     border-radius: 50%;
     /* Lo hace circular */
     transition: 0.3s;
@@ -54,8 +54,7 @@
 
 /* Fondo en estado DARK */
 input:checked+.slider {
-    background: #6b7abb;
-    /* Azul cuando el checkbox está marcado */
+    background: #6b7abb; /* CIELO NOCTURNO */
     
     background-image:
         /* Constelación estética */
@@ -80,7 +79,7 @@ input:checked+.slider {
         radial-gradient(circle 1.1px at 35px 18px, rgba(255, 255, 255, 0.5), transparent),
         radial-gradient(circle 1.1px at 22px 28px, rgba(255, 255, 255, 0.4), transparent);
 
-    border: 1px solid #808bbc;
+    border: 1px solid #808bbc; /* BORDE CIELO NOCTURNO */
 }
 
 /* Circulo en estado DARK */
