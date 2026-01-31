@@ -143,6 +143,7 @@
   padding-left: 0;    /* opcional, para no sumar espacio extra */
   margin: 0;
   list-style: none;
+  padding-bottom: 2rem; /* Añadir espacio inferior */
 }
 
 .tech-item {
