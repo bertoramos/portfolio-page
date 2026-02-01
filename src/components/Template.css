@@ -31,7 +31,7 @@ body {
 }
 
 #main_header {
-    height: 60px;
+  height: 60px;
 }
 
 #menu_toolbar {
@@ -50,9 +50,9 @@ body {
 
   background: transparent;
   backdrop-filter: blur(0px);
-  
-  transition: 
-    background 0.8s ease-in-out, 
+
+  transition:
+    background 0.8s ease-in-out,
     backdrop-filter 0.3s ease-in-out,
     background-color 0.6s ease;
   z-index: -1;
@@ -84,23 +84,34 @@ body {
   --background: var(--app_contact_button_bg_color);
   animation: button-anim 4s infinite ease-in-out;
   border-radius: 100%;
-  
+
   ion-icon {
     padding-right: 1vw;
+  }
+
+  @media screen and (max-width: 768px) {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    left: auto;
   }
 
 }
 
 @keyframes button-anim {
-  
-  0%, 50%, 100% {
+
+  0%,
+  50%,
+  100% {
     transform: scale(1);
     box-shadow: 0 0 10px var(--app_contact_button_shadow_color_dark);
   }
-  
-  25%, 75% {
+
+  25%,
+  75% {
     transform: scale(1.1);
-    box-shadow: 0 0 20px var(--app_contact_button_shadow_color_light);;
+    box-shadow: 0 0 20px var(--app_contact_button_shadow_color_light);
+    ;
   }
 
 }
