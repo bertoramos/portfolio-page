@@ -185,8 +185,17 @@
 .why-work-with-me-image {
   height: 50vh;
   width: auto;
-
+  object-fit: contain;
   border-radius: 9px;
+}
+
+@media (max-width: 768px) {
+  .why-work-with-me-image {
+    height: auto;
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+  }
 }
 
 /* ============================================
