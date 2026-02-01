@@ -189,13 +189,13 @@ const ProjectComponent: React.FC<ProjectComponentProps> = (props) => {
                     className="md:flex md:flex-col md:justify-center"
                 >
                     <IonRow>
-                        <p className="project-component-title font-bold text-lg md:text-3xl m-5">{props.title}</p>
+                        <p className="project-component-title font-bold text-base md:text-3xl mx-5 my-1 md:m-5">{props.title}</p>
                     </IonRow>
-                    <IonRow className="project-component-description m-5">
+                    <IonRow className="project-component-description mx-5 mt-1 md:m-5 text-sm md:text-base">
                         {props.short_description}
                     </IonRow>
                     
-                    <IonRow className="m-5">
+                    <IonRow className="m-0 mx-2 md:m-5">
                         <DetailsButton
                             title={props.title}
                             image={props.image}
@@ -205,7 +205,7 @@ const ProjectComponent: React.FC<ProjectComponentProps> = (props) => {
                         />
                     </IonRow>
                     
-                    <IonRow className="m-5 p-2">
+                    <IonRow className="mx-2 md:m-5 p-2">
                         {props.technologies.map((tech, index) => (
                             <TechChip tech={tech} key={index} />
                         ))}
