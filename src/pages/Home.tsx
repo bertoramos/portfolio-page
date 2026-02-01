@@ -19,7 +19,7 @@ const Home: React.FC<{ cv: CVType | null }> = ({ cv }) => {
           >
             <img
               id="home-image"
-              src="/portfolio-page/assets/images/home/profile_home.jpg"
+              src="/portfolio-page/assets/images/home/home_image_1.png"
               alt="Home photo"
             />
           </IonCol>

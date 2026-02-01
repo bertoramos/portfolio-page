@@ -63,7 +63,7 @@ export default function Contact({ cv, isOpen, onClose }: { cv: CVType | null, is
                         </IonCol>
                         <IonCol className="image-col" sizeMd="5" size="12">
                             { /* <img src="assets/contact_image.svg" alt="Contact" /> */}
-                            <img src="assets/images/contact/contact.jpg" alt="Contact" className="" />
+                            <img src="/portfolio-page/assets/images/contact/contact.jpg" alt="Contact" className="" />
                         </IonCol>
                     </IonRow>
                 </IonGrid>

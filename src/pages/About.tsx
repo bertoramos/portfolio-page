@@ -61,7 +61,7 @@ const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
               >
                 <img
                   id="about-image"
-                  src="/portfolio-page/assets/images/about/profile_about.jpg"
+                  src="/portfolio-page/assets/images/about/profile_about.png"
                   alt="about photo"
                 />
               </IonCol>
@@ -140,11 +140,11 @@ const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
                 </p>
               </IonCol>
 
-              <IonCol size="12" sizeMd='6' className="ion-text-center">
+              <IonCol size="12" sizeMd='6' className="ion-text-center flex items-center justify-center">
                 <img
-                  src="/portfolio-page/assets/images/about/why-work-with-me.png"
+                  src="/portfolio-page/assets/images/about/why-work-with-me.jpg"
                   alt="Why work with me illustration"
-                  className="why-work-with-me-image mt-8"
+                  className="why-work-with-me-image mt-8 md:mt-0"
                 />
               </IonCol>
             </IonRow>
