@@ -1,4 +1,3 @@
-
 .tech-chip {
     background-color: var(--app_chip_bg_color);
     font-family: var(--app_font_family_light);
@@ -13,4 +12,12 @@
 
     font-family: var(--app_font_family_light);
     --ion-font-family: var(--app_font_family_light);
+}
+
+.tech-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
 }

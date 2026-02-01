@@ -102,7 +102,7 @@ const App: React.FC = () => {
         <ThemeToggle checked={isDarkTheme} onChange={toggleTheme} />
         <Hamburger size={20} toggled={menuOpen} toggle={setMenuOpen} />
       </div>
-
+      
       <IonButton
         id="contact_button"
         shape="round"
