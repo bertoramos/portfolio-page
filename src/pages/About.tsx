@@ -127,15 +127,15 @@ const About: React.FC<{ cv: CVType | null }> = ({ cv }) => {
         <section id="why-work-with-me-section" className="about-section">
           <IonGrid>
             <IonRow>
-              <IonCol size="12" sizeMd='6' className="ion-text-justify-start flex flex-col">
-                <p className="about-bold-title text-2xl mb-8 ml-8 text-center">Why work with me?</p>
-                <p className="mb-4 ml-8">
+              <IonCol size="12" sizeMd='6' className="text-justify md:text-left flex flex-col">
+                <p className="about-bold-title text-2xl mb-4 text-center">Why work with me?</p>
+                <p className="mb-4 ml-4 mr-4 md:ml-8">
                   With a background in computer science, I'm trained to think in terms of problems and solutions. I like looking at strange and interesting ideas, and working out how to make them real.
                 </p>
-                <p className="mb-4 ml-8">
+                <p className="mb-4 ml-4 mr-4 md:ml-8">
                   I'm curious, honest, and I don't like doing things on autopilot. If something can be done better, I'll question it.
                 </p>
-                <p className="mb-4 ml-8">
+                <p className="mb-4 ml-4 mr-4 md:ml-8">
                   I care about what I build, and the people I build it with. I value clear communication, responsibility, appreciation, and doing things right without overcomplicating them. I take care of my work, and I treat projects as if they were my own.
                 </p>
               </IonCol>

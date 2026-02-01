@@ -75,8 +75,18 @@
 
     color: var(--app_main_text_color);
     --ion-color: var(--app_main_text_color);
+
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+
+    ion-button {
+        --color: var(--app_clear_highlighted_text_color);
+    }
 }
 
+/*
 #contact-buttons-container {
     display: flex;
     gap: 0.5rem;
@@ -87,6 +97,7 @@
         --color: var(--app_clear_highlighted_text_color);
     }
 }
+*/
 
 .image-col {
     display: flex;

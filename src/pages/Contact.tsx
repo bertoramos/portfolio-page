@@ -9,7 +9,7 @@ export default function Contact({ cv, isOpen, onClose }: { cv: CVType | null, is
     if (!cv) {
         return <p>FATAL ERROR in cv loading</p>
     }
-    
+
     return (
         <IonModal isOpen={isOpen} onDidDismiss={onClose} className="contact-modal">
             <IonHeader className="ion-no-border">
@@ -26,45 +26,43 @@ export default function Contact({ cv, isOpen, onClose }: { cv: CVType | null, is
                             <h2 className="mb-8 pb-8">Get in touch!</h2>
                             <p className="text-lg">Hey! 🤗 Feel free to send me an email at <a href={cv.contact.email}>{cv.contact.email.substring(7)}</a> or contact me on social media.</p>
                             <IonRow className="social-links">
-                                <div id="contact-buttons-container" className="ml-10 mr-10 md:m-0">
-                                    <IonButton
-                                        href={cv.contact.email}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        shape="round"
-                                        fill="clear">
-                                        <IonIcon className="ion-padding" size="medium" slot="icon-only" icon={mailOutline} />
-                                    </IonButton>
-                                    <IonButton
-                                        href={cv.contact.linkedin}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        shape="round"
-                                        fill="clear">
-                                        <IonIcon className="ion-padding" size="medium" slot="icon-only" icon={logoLinkedin} />
-                                    </IonButton>
-                                    <IonButton
-                                        href={cv.contact.github}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        shape="round"
-                                        fill="clear">
-                                        <IonIcon className="ion-padding" size="medium" slot="icon-only" icon={logoGithub} />
-                                    </IonButton>
-                                    <IonButton
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        shape="round"
-                                        fill="clear"
-                                        href={baseUrl + "/assets/pdf/cv_en.pdf"}>
-                                        <IonIcon className="ion-padding" size="medium" slot="icon-only" icon={download} />
-                                        <span className="pr-5 text-center text-xs md:text-sm">resume</span>
-                                    </IonButton>
-                                </div>
+                                <IonButton
+                                    href={cv.contact.email}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    shape="round"
+                                    fill="clear">
+                                    <IonIcon className="ion-padding" size="medium" slot="icon-only" icon={mailOutline} />
+                                </IonButton>
+                                <IonButton
+                                    href={cv.contact.linkedin}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    shape="round"
+                                    fill="clear">
+                                    <IonIcon className="ion-padding" size="medium" slot="icon-only" icon={logoLinkedin} />
+                                </IonButton>
+                                <IonButton
+                                    href={cv.contact.github}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    shape="round"
+                                    fill="clear">
+                                    <IonIcon className="ion-padding" size="medium" slot="icon-only" icon={logoGithub} />
+                                </IonButton>
+                                <IonButton
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    shape="round"
+                                    fill="clear"
+                                    href={baseUrl + "/assets/pdf/cv_en.pdf"}>
+                                    <IonIcon className="ion-padding" size="medium" slot="icon-only" icon={download} />
+                                    <span className="pr-5 text-center text-xs md:text-sm">resume</span>
+                                </IonButton>
                             </IonRow>
                         </IonCol>
                         <IonCol className="image-col" sizeMd="5" size="12">
-                            { /* <img src="assets/contact_image.svg" alt="Contact" /> */ }
+                            { /* <img src="assets/contact_image.svg" alt="Contact" /> */}
                             <img src="assets/images/contact/contact.jpg" alt="Contact" className="" />
                         </IonCol>
                     </IonRow>
