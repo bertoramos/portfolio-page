@@ -86,19 +86,6 @@
     }
 }
 
-/*
-#contact-buttons-container {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-    justify-content: center;
-
-    ion-button {
-        --color: var(--app_clear_highlighted_text_color);
-    }
-}
-*/
-
 .image-col {
     display: flex;
     align-items: center;
