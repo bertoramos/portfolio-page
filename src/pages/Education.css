@@ -38,3 +38,24 @@
     opacity: 1;
     mask-image: none;
 }
+
+@media screen and (max-width: 1169px) {
+  /* Forzar que la fecha aparezca arriba del contenido en móvil */
+  .vertical-timeline-element-content {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .vertical-timeline-element-date {
+    order: -1 !important;
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    margin: 0 0 0.75rem 0 !important;
+    padding: 0 !important;
+    text-align: left !important;
+    width: 100% !important;
+  }
+}
+

@@ -64,7 +64,6 @@ const Education: React.FC<{ cv: CVType | null }> = ({ cv }) => {
               <div
                 className=""
               >
-                
                 {/* Degree / Institution */}
                 <h3 className="education-company-role text-base sm:text-lg font-medium leading-tight">
                   {edu.degree}
