@@ -2,7 +2,7 @@ import { IonHeader, IonPage, IonIcon, IonToolbar, IonTitle, IonButtons, IonButto
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import { chatbubblesOutline, logoIonic } from 'ionicons/icons';
+import { chatbubblesOutline, logoAmplify, logoIonic } from 'ionicons/icons';
 
 import "./Template.css";
 import Menu from './Menu';
@@ -37,7 +37,10 @@ const Template: React.FC<{ title: string, content: React.ReactNode, noContentScr
 
             { /* Title with logo */}
             <div className="p-8 flex items-center gap-3">
-              <IonIcon icon={logoIonic} className="text-2xl" />
+              {/* TODO: ADD LOGO */
+              /*
+              <IonIcon icon={logoAmplify} className="text-2xl" />
+              */}
             </div>
 
           </IonToolbar>
