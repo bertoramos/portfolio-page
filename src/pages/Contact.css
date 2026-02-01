@@ -75,9 +75,7 @@
 
     color: var(--app_main_text_color);
     --ion-color: var(--app_main_text_color);
-}
 
-#contact-buttons-container {
     display: flex;
     gap: 0.5rem;
     align-items: center;
@@ -102,7 +100,7 @@
 .image-col img {
     max-width: 100%;
     height: auto;
-    max-height: 450px;
+    max-height: 50vh;
     border-radius: 1rem;
 }
 

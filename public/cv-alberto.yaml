@@ -152,7 +152,7 @@ technologies:
   
   latex: &tech_latex
     name: Latex
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/latex/latex-original.svg"
+    icon: "/portfolio-page/assets/logos/technologies/tex.svg"
     category: documentation_tool
     categoryLabel: Documentation Tool
   

@@ -37,7 +37,7 @@
     --ion-background-color: var(--app_light_background_color);
 
     @media screen and (max-width: 768px) {
-        height: 40%;
+        height: auto; /* Cambiar a auto en móvil */
     }
 }
 
@@ -46,6 +46,7 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+    padding: 2rem; /* Añadir padding */
 }
 
 #about-image-column {
@@ -53,20 +54,23 @@
     align-items: center;
     justify-content: center;
     height: 100%;
+    padding: 2rem; /* Añadir padding */
     background-color: var(--app_light_background_color);
     --ion-background-color: var(--app_light_background_color);
 }
 
 #about-image{
-    height: 100%;
-    object-fit: cover;
+    width: 100%; /* Hacer que ocupe todo el ancho disponible */
+    height: 100%; /* Hacer que ocupe todo el alto disponible */
+    max-height: 80vh; /* Limitar altura máxima */
+    object-fit: contain; /* Mantener proporciones */
     background-color: var(--app_light_background_color);
     --ion-background-color: var(--app_light_background_color);
 }
 
 #about-text {
-    margin: 10% 0% 0% 10%;
-    padding: 0;
+    margin: 0; /* Eliminar márgenes */
+    padding: 2rem; /* Añadir padding uniforme */
     position: relative;
     text-align: left;
     color: var(--app_main_text_color);
@@ -75,10 +79,13 @@
     
     height: 100%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrar verticalmente el contenido */
 
     @media screen and (max-width: 768px) {
         text-align: center;
-        margin: 0;
+        padding: 1rem;
     }
 }
 
@@ -173,6 +180,13 @@
 
 #why-work-with-me-section {
   min-height: 30vh;
+}
+
+.why-work-with-me-image {
+  height: 50vh;
+  width: auto;
+
+  border-radius: 9px;
 }
 
 /* ============================================

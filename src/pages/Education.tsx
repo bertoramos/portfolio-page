@@ -1,4 +1,4 @@
-import { IonAccordion, IonAccordionGroup, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonChip, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonItem, IonLabel, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
+import { IonIcon } from '@ionic/react';
 import './Education.css';
 import { CVType, EducationType } from '../model/cv';
 import { globe, locationOutline, school } from 'ionicons/icons';
@@ -64,7 +64,6 @@ const Education: React.FC<{ cv: CVType | null }> = ({ cv }) => {
               <div
                 className=""
               >
-                
                 {/* Degree / Institution */}
                 <h3 className="education-company-role text-base sm:text-lg font-medium leading-tight">
                   {edu.degree}

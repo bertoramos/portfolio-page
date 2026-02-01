@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
-import { IonButton, IonButtons, IonChip, IonCol, IonContent, IonGrid, IonHeader, IonIcon, IonLabel, IonModal, IonRow, IonText, IonTitle, IonToolbar } from "@ionic/react";
-import { mailOutline, logoGithub, logoLinkedin } from "ionicons/icons";
+import { IonButton, IonButtons, IonCol, IonContent, IonGrid, IonHeader, IonModal, IonRow, IonTitle, IonToolbar } from "@ionic/react";
 import { TechnologyType } from "../model/cv";
 
 import TechChip from "./TechChip";
@@ -92,54 +91,6 @@ interface ProjectComponentProps {
     description: string;
     technologies: TechnologyType[];
 }
-/*
-const ProjectComponent: React.FC<ProjectComponentProps> = (props) => {
-
-    return (
-        <IonGrid className="project-component-grid">
-            <IonRow>
-                <IonCol
-                    className="project-component-image-column project-component-center-column"
-                    size="12"
-                    size-md="6"
-                >
-                    <img src={props.image} alt={props.title} />
-                </IonCol>
-                <IonCol
-                    size="12"
-                    size-md="6"
-                    className="project-component-text-column project-component-center-column">
-                    <p className="project-component-title">{props.title}</p>
-                    <div className="project-component-description">
-                        <div className="ion-padding-bottom project-component-description-text">{props.short_description}</div>
-                        <IonButton
-                            id={props.title + "-open-project-detail-modal"}
-                            fill="clear"
-                            className="project-component-detail-button">
-                            Details
-                        </IonButton>
-                        <ProjectDetail
-                            modal_trigger={props.title + "-open-project-detail-modal"}
-                            title={props.title}
-                            image={props.image}
-                            description={props.description}
-                            url={props.url}
-                            technologies={props.technologies}
-                        />
-                        <div className="project-technologies-container">
-                            {
-                                props.technologies.map((tech, index) => (
-                                    <TechChip tech={tech} />
-                                ))
-                            }
-                        </div>
-                    </div>
-                </IonCol>
-            </IonRow>
-        </IonGrid>
-    );
-};
-*/
 
 const DetailsButton: React.FC<{
     title: string;
@@ -189,13 +140,13 @@ const ProjectComponent: React.FC<ProjectComponentProps> = (props) => {
                     className="md:flex md:flex-col md:justify-center"
                 >
                     <IonRow>
-                        <p className="project-component-title font-bold text-lg md:text-3xl m-5">{props.title}</p>
+                        <p className="project-component-title font-bold text-base md:text-3xl mx-5 my-1 md:m-5">{props.title}</p>
                     </IonRow>
-                    <IonRow className="project-component-description m-5">
+                    <IonRow className="project-component-description mx-5 mt-1 md:m-5 text-sm md:text-base">
                         {props.short_description}
                     </IonRow>
                     
-                    <IonRow className="m-5">
+                    <IonRow className="m-0 mx-2 md:m-5">
                         <DetailsButton
                             title={props.title}
                             image={props.image}
@@ -205,7 +156,7 @@ const ProjectComponent: React.FC<ProjectComponentProps> = (props) => {
                         />
                     </IonRow>
                     
-                    <IonRow className="m-5 p-2">
+                    <IonRow className="mx-2 md:m-5 p-2">
                         {props.technologies.map((tech, index) => (
                             <TechChip tech={tech} key={index} />
                         ))}

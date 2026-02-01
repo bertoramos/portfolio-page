@@ -1,5 +1,5 @@
-import { IonAccordion, IonAccordionGroup, IonCard, IonCardContent, IonCardHeader, IonChip, IonCol, IonContent, IonHeader, IonIcon, IonItem, IonLabel, IonPage, IonRow, IonTitle, IonToolbar } from '@ionic/react';
-import { briefcase, globe, locationOutline, school, star, starOutline } from 'ionicons/icons';
+import { IonIcon } from '@ionic/react';
+import { briefcase, globe, locationOutline } from 'ionicons/icons';
 import './Experience.css';
 import { CVType, ExperienceType } from '../model/cv';
 import TechChip from '../components/TechChip';
