@@ -24,7 +24,7 @@ export default function Contact({ cv, isOpen, onClose }: { cv: CVType | null, is
                     <IonRow>
                         <IonCol className="contact-col" sizeMd="7" size="12">
                             <h2 className="mb-8 pb-8">Get in touch!</h2>
-                            <p className="text-lg">Hey! 🤗 Feel free to send me an email at <a href={`mailto:${cv.contact.email}`}>{cv.contact.email.substring(7)}</a> or contact me on social media.</p>
+                            <p className="text-lg">Hey! 🤗 Feel free to send me an email at <a href={cv.contact.email}>{cv.contact.email.substring(7)}</a> or contact me on social media.</p>
                             <IonRow className="social-links">
                                 <div id="contact-buttons-container" className="ml-10 mr-10 md:m-0">
                                     <IonButton
